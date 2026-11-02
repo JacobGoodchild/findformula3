@@ -9,6 +9,7 @@
 #  [8] Fasi-Higham positivity conjecture (Pade of exp), diagonal case: rigorous per-m proofs; true failure threshold k*(m)=2m+12..14 -- PROVED per m <= M / VERIFIED law
 #  [9] Real CM degrees of Stirling remainders: d_CM(R_2)=2.8667042552, d_CM(-R_2')=3.7984354776, table to n=9 -- VERIFIED (numerical)
 #  [10] C''(2) for x_{n+1}=x_n+1+1/x_n^2: exact series, value 0.3746264219830173411168 -- PROVED formula / VERIFIED value
+#  [11] Riesz capacity: Conjectures 5.9 and 5.6 of arXiv:2609.11186 (odd-polygon equilibrium measure, r>2) -- PROVED
 #  [2] Gurland ratio series converges for all x,y>0 (open problems 1,2 of arXiv:2512.07028); sharp 1/3 for problem 3 -- PROVED / PARTIAL
 
 [1] Products of consecutive harmonic numbers
@@ -63,3 +64,7 @@ Who asked: Xu & Zhao, arXiv:2609.11072, Conjecture 6.1 (opened PDF). How checked
 [10] Finch (arXiv:2503.13378, Sec. 3): "An independent confirmation of the 0.3746 estimate [of C''(2)] remains open." For x_{n+1}=x_n+1+1/x_n^2, C(x0)=lim(x_n-n):
  C''(x0) = C'(x0) sum_{j>=0} 6 D_j / (x_j^4 (1-2/x_j^3)), D_j = prod_{k<j}(1-2/x_k^3)  (Finch's series lacks the factor D_j, explaining its wrong value 0.3909).
  C''(2) = 0.374626421983017341116776... (20 digits agree with his finite difference). Label: formula PROVED, value VERIFIED. Novelty: NOT FOUND. results/finch_c2.
+
+[11] Fan (arXiv:2609.11186), Conjectures 5.9 and 5.6: capacity of {A,B,C} on the unit circle (B,C = e^{+-i phi}) is nondecreasing as A moves toward AC=BC (r>=2), and for odd N and r>2 the equilibrium measure of the regular N-gon vertex set lives on the triple at angles 0, pi-+pi/N with energy 2^{r-1} sin^r(theta_N)/(1-2^{r-2}cos^r(theta_N)). -- PROVED
+ Proof: d log U/d psi has the sign of (1+t_r)/(1-t_r) - (1+t_2)/(1-t_2), t_r = rho_B^r - rho_A^r, plus an elementary lemma (unimodality in r + entropy comparison); then Fan's own Lemma 5.8 finishes Conjecture 5.6. See results/riesz_triangle/README.md.
+ Who asked: Fan, Sec. 5.2-5.4 ("Step 2 -- not proved"; opened PDF). Relies on Bjorck's 3-point support theorem and Clark-Laugesen Thm 8 as quoted. Novelty: NOT FOUND.

@@ -10,3 +10,4 @@ n=14 m=0 assertion failed (np.float64(-7326.738697866898), np.float64(-111061973
 n=15 m=0 assertion failed (np.float64(-174604.69232606268), np.float64(-2188458212.97439))
 n=16 m=0 assertion failed (np.float64(-4534825.655161886), np.float64(-49454933506.001976))
 n=17 m=0 assertion failed (np.float64(-129700172.22849298), np.float64(-1270665432366.4956))
+n=18 m=0 assertion failed (np.float64(-4096080846.478501), np.float64(-36837739043270.69))
