@@ -1,2 +1,3 @@
 ell 11  N 200000  prec 512  Gr=68283  Gr/3^ell=0.38546  zeros/undetermined(n<50)=[11]  [22s]
 ell 12  N 550000  prec 1024  Gr=190698  Gr/3^ell=0.35883  zeros/undetermined(n<50)=[13]  [220s]
+ell 13  N 1500000  prec 1024  Gr=530152  Gr/3^ell=0.33252  zeros/undetermined(n<50)=[13]  [709s]
