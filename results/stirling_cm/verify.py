@@ -16,4 +16,8 @@ vm = H_caputo(hp, a0 - mpf(3)/10**5, mpf(t)); vp = H_caputo(hp, a0 + mpf(3)/10**
 good = (vm > 0) and (vp < 0)
 ok &= good
 print("stirling independent mp check: H(a*-3e-5, t*) = %s > 0 and H(a*+3e-5, t*) = %s < 0 : %s" % (mp.nstr(vm, 3), mp.nstr(vp, 3), "OK" if good else "FAIL"))
+import subprocess
+r = subprocess.run([sys.executable, 'extrapolate.py'], capture_output=True, text=True)
+print('stirling limit extrapolation:', r.stdout.strip().replace('\n', ' | '), '->', 'OK' if r.returncode == 0 else 'FAIL')
+ok &= (r.returncode == 0)
 sys.exit(0 if ok else 1)

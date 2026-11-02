@@ -15,7 +15,7 @@ Every result carries an honest label: **proved** (a full argument, checked by co
 6. **Harmonic-number series.** For the series Σ H_k H_{k+1}…H_{k+q}/(k(k+1)…(k+q)) (Furdui–Sîntămărian; Chen–Nguyen asked for general q) I wrote an exact algorithm that reduces it to multiple zeta values for any q, got explicit answers for q up to 8, and found a clean law for the "leading part": (ζ(q+2)+ζ(q+1,1))/q!. *Proved for q ≤ 5, verified for q = 6–8, law verified for q ≤ 9.*
 7. **A positivity conjecture for matrix-exponential approximations (Fasi–Higham).** A 2026 paper disproved it in general but left the practically relevant diagonal case open. I proved the diagonal case for every odd size up to a few hundred (rigorous computer-assisted proofs) and found exactly where it really fails: the first failure is at k = 2m + 12…14, so the diagonal is nowhere near the danger zone. *Proved for each m tested; the failure law is verified.*
 8. **Capacity of three points on a circle (Fan, 2026).** A conjecture that was only half proved in the paper (which polygon vertices maximise a certain energy) — I proved the missing step with a short calculus lemma, which completes the proof for all odd polygons. *Proved.*
-9. **How "completely monotone" the Stirling remainders are (Krasniqi, 2026).** The paper only gave bounds, e.g. 8/3 < d < 3; I computed the actual numbers: 2.8667042552 and 3.7984354776 (and a table up to n = 9), with two independent checks. *Verified.*
+9. **How "completely monotone" the Stirling remainders are (Krasniqi, 2026).** The paper only gave bounds, e.g. 8/3 < d < 3; I computed the actual numbers: 2.8667042552 and 3.7984354776 (and tables up to n = 22), with two independent checks, and found numerically that the paper's open 'limit' question has the answer 2π²/Cin(2π) = 8.0976… (the paper's own upper bound is sharp; I match it to about 4 digits). *Verified (limit: numerical evidence).*
 10. **Gurland's gamma-function ratio (Wiśniewska, Dec. 2025).** Two of the three open problems have a one-line answer (a Taylor series that converges for all inputs); for the third I found the sharp constant (1/3) and a numerically supported inequality I could not prove. *Proved / partial.*
 
 ## What did not work / was dropped
@@ -58,7 +58,7 @@ Dear Dr Fan — an AI system (Claude, Anthropic), working under my direction, fo
 
 **7. To Valmir Krasniqi (arXiv:2610.33699)**
 Subject: Numerical values of d_CM(R_2), d_CM(−R_2′) and (2n−1)δ_n
-Dear Dr Krasniqi — an AI system (Claude, Anthropic), working under my direction, computed the real completely monotonic degrees via the fractional-derivative criterion: d_CM(R_2) = 2.8667042552, d_CM(−R_2′) = 3.7984354776, and a table for n ≤ 15+ (two independent evaluations of the criterion). (2n−1)δ_n increases slowly (2.60 at n=2 to ≈6.6 at n=15). Files: results/stirling_cm. — Jacob Goodchild
+Dear Dr Krasniqi — an AI system (Claude, Anthropic), working under my direction, computed the real completely monotonic degrees via the fractional-derivative criterion: d_CM(R_2) = 2.8667042552, d_CM(−R_2′) = 3.7984354776, and a table for n ≤ 15+ (two independent evaluations of the criterion). (2n−1)δ_n increases slowly (2.60 at n=2 to 7.03 at n=22) and extrapolates to 8.0974±0.0003, which matches your own upper bound 2π²/J=8.097627 — so that bound appears to be sharp. Files: results/stirling_cm. — Jacob Goodchild
 
 **8. To Halina Wiśniewska (arXiv:2512.07028)**
 Subject: Open problems 1–2 on Gurland's ratio

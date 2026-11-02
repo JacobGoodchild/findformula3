@@ -59,7 +59,7 @@ Who asked: Xu & Zhao, arXiv:2609.11072, Conjecture 6.1 (opened PDF). How checked
  Who asked: Scardino, abstract and Section 1/2 ("diagonal positivity therefore remains an open problem").
 
 [9] Krasniqi (arXiv:2610.33699, Sec. 6): exact values of d_CM(R_2) and d_CM(-R_2'): d_CM(R_2) = 2.8667042552, d_CM(-R_2') = 3.7984354776 (bounds in the paper: (8/3,3), (32/9,4)).
- Table of d_CM(R_n), d_CM(-R_n') for n=2..9 (results/stirling_cm/table_n2_9.txt); (2n-1)delta_n increases from 2.60 to 5.85 (m=0) with extrapolated limit ~7.7-7.8 (trend only).
+ Table of d_CM(R_n) for n=2..22 and d_CM(-R_n') for n=2..9 (results/stirling_cm); (2n-1)delta_{n,0} increases from 2.60 to 7.03 and its extrapolated limit is 8.0974 +- 3e-4, matching Krasniqi's upper bound 2*pi^2/Cin(2*pi) = 8.097627 (sharpness of his bound; numerical evidence only).
  Label: VERIFIED (numerical, two independent evaluations of the fractional-derivative positivity criterion). Novelty: NOT FOUND.
 
 [10] Finch (arXiv:2503.13378, Sec. 3): "An independent confirmation of the 0.3746 estimate [of C''(2)] remains open." For x_{n+1}=x_n+1+1/x_n^2, C(x0)=lim(x_n-n):

@@ -22,11 +22,13 @@ Gamma(1-a) t^a D^a h(t) = t^a int_0^t (t-u)^{-a} h'(u) du =: H(a,t).  So  d_CM =
 | 7 | 12.4144812972 | 5.3883 | 13.3943400805 | 5.1264 |
 | 8 | 14.3760290864 | 5.6404 | 15.3593656569 | 5.3905 |
 | 9 | 16.3441056945 | 5.8498 | 17.3300936514 | 5.6116 |
-(Further n for m=0: see table_m0_10_18.log when finished.)
+(m=0 continues to n = 22, see table_m0_n2_22.txt.)
 * Consistent with all of Krasniqi's bounds (e.g. 2.8667 in (8/3, 3), 3.7984 in (32/9, 4)); the critical t* decreases slowly (11.47, 6.36, 4.62, ... for m=0).
 * **Answer to the 'first remaining problem': d_CM(R_2) = 2.8667042552 and d_CM(-R_2') = 3.7984354776 (10 digits).**  Independent check (verify.py): 22-digit mpmath quadrature at (a*, t*) gives H(a* -+ 3e-5, t*) = +-1.0e-6 (and +-6.7e-7 at 2e-5) with the sign change exactly at a*,
   and a direct Leibniz/polygamma evaluation of (-1)^j d^j/dx^j [x^rho f] at 130 digits shows the first negative derivative for rho = d_CM + 0.1 (j=60) but none for rho = d_CM - 0.5.
-* **On the 'second problem':** (2n-1) delta_{n,0} increases monotonically over n = 2..9 (2.60, 3.54, 4.20, 4.69, 5.08, 5.39, 5.64, 5.85) with decreasing increments; a polynomial-in-1/n extrapolation gives a limit of about 7.7-7.8 (m=0: 7.78, m=1: 7.66),
-  comfortably below Krasniqi's upper bound 8.097 but far above his lower bound 3/pi = 0.955. This is a trend, not a proof (power-law fits are unstable: 10-20). So the limit, if it exists, is probably between 7 and 8.1.
+* **On the 'second problem' (does (2n-1) delta_{n,0} converge, and to what?):** computed for n = 2..22 (table_m0_n2_22.txt). The sequence increases monotonically (2.60, 3.54, 4.20, ..., 6.99 at n=21, 7.03 at n=22) with slowly shrinking increments.
+  Polynomial-in-1/n (or 1/(n+1/2)) extrapolation of degree 4-6 from n >= 8, 10, 12 gives limits in [8.0963, 8.0977], median **8.0974**, while Krasniqi's upper bound is 2 pi^2/J = **8.097627...** (J = int_0^{2pi} (1-cos u)/u du = Cin(2 pi) = 2.43765339...).
+  So the data say: **the limit exists and equals 2 pi^2 / Cin(2 pi) (agreement to ~4 digits; extrapolation noise ~2e-4), i.e. the paper's upper bound is asymptotically sharp for m = 0** (and his lower bound 3/pi = 0.955 is far from the truth). `extrapolate.py` reproduces this.  NOT a proof.
+  (m = 1 values for n <= 9 are below the m = 0 ones; larger n for m = 1 see table_m1_10_18.log if present.)
 ## Status
 Numerical (VERIFIED, 10 digits, two independent evaluations of the criterion); exact closed forms: none found. Novelty: NOT FOUND.
