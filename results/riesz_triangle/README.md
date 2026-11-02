@@ -15,8 +15,8 @@ With rho_A = a/c, rho_B = b/c, t_r := rho_B^r - rho_A^r we have R_r = (1+t_r)/(1
 **Lemma.** Let 0 < A < B < 1, A^2 + B^2 >= 1, r >= 2 and A^r + B^r > 1.  Then B^r - A^r >= B^2 - A^2.
  Proof. F(r) := B^r - A^r - (B^2 - A^2), F(2) = 0. F'(r) = B^r ln B - A^r ln A >= 0 iff (B/A)^r <= ln A/ln B, and (B/A)^r increases with r, so F increases then decreases: on [2, r_1], r_1 := the root of A^r + B^r = 1 (r_1 >= 2 since A^2+B^2 >= 1),
  F is minimal at an endpoint. So it suffices to show F(r_1) >= 0. Put w = B^{r_1} in (1/2,1), A^{r_1} = 1-w, s = 2/r_1 in (0,1]: F(r_1) = (2w-1) - phi(s) with phi(s) = w^s - (1-w)^s, phi(1) = 2w-1. phi'(s) = (1-w)^s|ln(1-w)| - w^s |ln w| >= 0 for s <= 1, because
- ((1-w)/w)^s >= (1-w)/w and then phi'(s) >= w^s (k(1-w)/k(w) - 1)|ln w|·... where k(u) = -u ln u and k(1-w) >= k(w) for w in [1/2,1) (the function D(u) = k(u)-k(1-u) is concave on (0,1/2] and vanishes at 0 and 1/2). Hence phi(s) <= phi(1), F(r_1) >= 0. []
-Apply the lemma with A = rho_A, B = rho_B: A^2 + B^2 - 1 = -(8 sin alpha sin beta cos phi)/c^2·... >= 0 because phi >= pi/2. So d log U/d psi >= 0 on the 3-point branch. On {x+y<=z}, U = z/2, and U > z/2 on the 3-point branch (U - z/2 = (z/2) s^2/D),
+ phi'(s) / (w^s |ln w|) = ((1-w)/w)^s |ln(1-w)|/|ln w| - 1 >= ((1-w)/w)|ln(1-w)|/|ln w| - 1 = k(1-w)/k(w) - 1 >= 0, using ((1-w)/w)^s >= (1-w)/w for s <= 1, where k(u) = -u ln u and k(1-w) >= k(w) for w in [1/2,1) (the function D(u) = k(u)-k(1-u) is concave on (0,1/2] and vanishes at 0 and 1/2). Hence phi(s) <= phi(1), F(r_1) >= 0. []
+Apply the lemma with A = rho_A, B = rho_B: A^2 + B^2 - 1 = -2 sin(alpha) sin(beta) cos(phi)/sin^2(phi) >= 0 because phi >= pi/2. So d log U/d psi >= 0 on the 3-point branch. On {x+y<=z}, U = z/2, and U > z/2 on the 3-point branch (U - z/2 = (z/2) s^2/D),
 so a 3-point stretch can never be followed by a 2-point stretch; U is constant then increasing, continuous, and maximal at psi = 2pi - 3phi. []
 
 ## Theorem 2 (PROVED, given Bjorck's theorem that for r > 2 an equilibrium measure is supported on <= 3 points, and Lemma 5.7 as quoted in the paper). Conjecture 5.6 holds for all odd N and r > 2.
