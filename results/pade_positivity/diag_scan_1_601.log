@@ -7,3 +7,8 @@ m=251 done prec=4096 [72s]
 m=301 done prec=8192 [107s]
 m=351 done prec=8192 [165s]
 m=401 done prec=8192 [237s]
+m=451 done prec=8192 [312s]
+m=501 done prec=8192 [390s]
+m=551 done prec=8192 [481s]
+m=601 done prec=8192 [582s]
+scan m in [1,601] odd, N=20000: problems=0
