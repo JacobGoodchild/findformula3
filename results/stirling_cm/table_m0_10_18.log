@@ -6,3 +6,6 @@ n=10 m=0  d_CM = 18 + 0.3171745147   delta=0.3171745147  (2n-1)*delta=6.026316  
 n=11 m=0 assertion failed (np.float64(-0.2617908721786338), np.float64(-36729.05155435975))
 n=12 m=0 assertion failed (np.float64(-13.692853844805086), np.float64(-449442.60134438047))
 n=13 m=0 assertion failed (np.float64(-324.81089218511227), np.float64(-6527830.386227372))
+n=14 m=0 assertion failed (np.float64(-7326.738697866898), np.float64(-111061973.36276335))
+n=15 m=0 assertion failed (np.float64(-174604.69232606268), np.float64(-2188458212.97439))
+n=16 m=0 assertion failed (np.float64(-4534825.655161886), np.float64(-49454933506.001976))
