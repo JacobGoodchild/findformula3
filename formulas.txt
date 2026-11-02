@@ -3,6 +3,7 @@
 #  [1] Closed forms for S_q = sum_k H_k...H_{k+q}/(k...(k+q)), q=4..8; exact MZV reduction for all q   -- PROVED (q<=5), VERIFIED (q=6..8)
 #  [3] Habib-Hildebrand Conjecture 7.1 (polynomial p_k exist for u''u-u'^2=e^{-x}P(u)-1 when pi0=0, pi1=pi2) -- PROVED
 #  [4] Gr(l) thresholds of higher-order Gregory coefficients: new values l=8..13; Conjecture 6.1 of arXiv:2609.11072 FALSE; Gr(l) ~ 1.55 exp(pi cot(pi/l)) -- PROVED (values, l<=10) / VERIFIED (l=11..13) / observation (asymptotics)
+#  [5] Finch's Abel-function identities A(x/(1+x))=B(x)+1 and I(x/(1+x))=J(x)+1 -- PROVED
 #  [2] Gurland ratio series converges for all x,y>0 (open problems 1,2 of arXiv:2512.07028); sharp 1/3 for problem 3 -- PROVED / PARTIAL
 
 [1] Products of consecutive harmonic numbers
@@ -31,3 +32,7 @@ Novelty: NOT FOUND (paper is from June 2026; one web search to be done). Related
  Gr(8..13) = 2995, 8580, 24303, 68283, 190698, 530152 (Gr(3..7) = 11,36,113,346,1030 reproduce the paper). Conjecture 6.1 (0.47*3^l < Gr(l) < 0.477*3^l, l>=5) is FALSE: Gr(5)=113<114.2, and Gr(l)<0.47*3^l for l=8..13.
  Data: Gr(l)/exp(pi*cot(pi/l)) = 1.50..1.545 (l=5..13); growth rate -> e, not 3.   Label: values PROVED for l<=10 (interval arithmetic + paper's Table 2 tail theorem), VERIFIED l=11..13; asymptotic law = observation.
 Who asked: Xu & Zhao, arXiv:2609.11072, Conjecture 6.1 (opened PDF). How checked: results/gregory (arb power series, certified signs, n2 criterion re-implemented). Novelty: NOT FOUND (single search).
+
+[5] Finch (arXiv:2503.00579) conjectured, with 100-digit numerical evidence, A(x/(1+x)) = B(x)+1 and I(x/(1+x)) = J(x)+1 for the Abel functions of x(1-x), x/(1+x+x^2), x/(1+x-x^2), x(1+x)/(1+2x).  -- PROVED.
+ Proof: h(x)=x/(1+x) conjugates the maps (f_A h = h g_B, f_I h = h f_J), 1/h(x) = 1/x + 1, and the Abel functions are lim[1/f^n(x) - n -/+ ln n]; see results/abel_finch/README.md.
+ Who asked: Finch, Section 1 ("A formal proof of both identities would be good to see someday"; opened PDF). Novelty: NOT FOUND (one reading of the paper; elementary). Caveat: simple argument, low depth.

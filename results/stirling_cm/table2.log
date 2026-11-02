@@ -4,3 +4,11 @@ n=3 m=0  d_CM = 4 + 0.7074638766   delta=0.7074638766  (2n-1)*delta=3.537319  t*
 n=3 m=1  d_CM = 5 + 0.6534285885   delta=0.6534285885  (2n-1)*delta=3.267143  t*=5.3286 [57s]
 n=4 m=0  d_CM = 6 + 0.5993536696   delta=0.5993536696  (2n-1)*delta=4.195476  t*=4.6155 [53s]
 n=4 m=1  d_CM = 7 + 0.5587377578   delta=0.5587377578  (2n-1)*delta=3.911164  t*=4.0792 [56s]
+n=5 m=0  d_CM = 8 + 0.5213225063   delta=0.5213225063  (2n-1)*delta=4.691903  t*=3.6639 [55s]
+/home/user/findformula3/results/stirling_cm/cmfast.py:33: IntegrationWarning: The occurrence of roundoff error is detected, which prevents 
+  the requested tolerance from being achieved.  The error may be 
+  underestimated.
+  v, err = quad(hpf, 0, t, weight='alg', wvar=(0, -a), limit=200, epsabs=1e-16, epsrel=1e-13)
+n=5 m=1  d_CM = 9 + 0.4900039902   delta=0.4900039902  (2n-1)*delta=4.410036  t*=3.3288 [64s]
+n=6 m=0  d_CM = 10 + 0.4617284606   delta=0.4617284606  (2n-1)*delta=5.079013  t*=3.0532 [56s]
+n=6 m=1  d_CM = 11 + 0.4369053276   delta=0.4369053276  (2n-1)*delta=4.805959  t*=2.8214 [65s]
