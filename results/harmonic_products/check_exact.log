@@ -2,3 +2,4 @@
 2 terms 5 exact-vs-numeric diff 1.96e-62  [0.2s]
 3 terms 9 exact-vs-numeric diff 1.59e-62  [0.7s]
 4 terms 17 exact-vs-numeric diff 2.87e-63  [4.5s]
+5 terms 33 exact-vs-numeric diff 8.49e-63  [126.4s]

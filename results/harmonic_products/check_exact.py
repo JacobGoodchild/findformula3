@@ -6,7 +6,7 @@ from numerics import S
 def mzv_val(w, dps):
     pari.set_real_precision(dps+10)
     if w == (): return mpf(1)
-    return mpf(str(pari('zetamult(%s)' % list(w))))
+    return mpf(str(pari('zetamult(%s)' % list(w))).replace(' ','').replace('E','e'))
 if __name__ == "__main__":
     dps = 60
     for q in range(1, int(sys.argv[1])+1):

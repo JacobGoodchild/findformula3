@@ -29,10 +29,11 @@ def monomials(weight):
     out = [(n, ) for n in names]
     mons = [list(n) for n in names]
     if weight == 8: mons.append(['z53'])
+    if weight == 10: mons += [[2, 'z53'], ['z73']]
     return mons
 def mval(m):
     v = mpf(1)
-    for g in m: v *= (val((5, 3)) if g == 'z53' else val((g,)))
+    for g in m: v *= (val((5, 3)) if g == 'z53' else val((7, 3)) if g == 'z73' else val((g,)))
     return v
 TABLE = 'mzv_table.json'
 table = json.load(open(TABLE)) if os.path.exists(TABLE) else {}

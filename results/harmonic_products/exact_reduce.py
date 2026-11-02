@@ -10,7 +10,6 @@ import sys
 from fractions import Fraction as Fr
 from functools import lru_cache
 from math import comb
-import sympy as sp
 
 # ---------- small linear-combination helpers ----------
 def vadd(a, b, c=1):
@@ -88,24 +87,32 @@ def Hrat(n, m=1, s=1):
 def Hn(n):
     return sum((Fr(1, i) for i in range(1, n+1)), Fr(0))
 
-p_ = sp.Symbol('p')
+from fastpf import pf
+from itertools import product as _iprod
+def _compositions(l, parts):
+    if parts == 1:
+        yield (l,); return
+    for i in range(l+1):
+        for rest in _compositions(l-i, parts-1):
+            yield (i,) + rest
 @lru_cache(None)
 def pf_dshift(a, l, s):
-    """partial fractions in p of  d_a(p)^l / p^s  as list of (b,u,coeff) meaning coeff/(p+b)^u
+    """partial fractions in p of  d_a(p)^l / p^s  as tuple of (b,u,coeff) meaning coeff/(p+b)^u
        d_a = -sum_{i=0}^{a-1} 1/(p-i) for a>0 ;  +sum_{i=1}^{|a|} 1/(p+i) for a<0"""
-    if a > 0: d = -sum(sp.Integer(1)/(p_-i) for i in range(a))
-    else:     d = sum(sp.Integer(1)/(p_+i) for i in range(1, -a+1))
-    expr = sp.apart(sp.together(d**l / p_**s), p_)
-    out = []
-    for term in sp.Add.make_args(expr):
-        c, rest = term.as_independent(p_)
-        # rest = (p+b)^(-u) or p^(-u)
-        base, ex = rest.as_base_exp()
-        u = -int(ex)
-        b = int(sp.expand(base - p_))
-        assert u >= 1
-        out.append((b, u, Fr(int(sp.numer(c)), int(sp.denom(c)))))
-    return tuple(out)
+    if a > 0: poles = [-i for i in range(a)]; sign = -1
+    else:     poles = [i for i in range(1, -a+1)]; sign = 1
+    from math import factorial
+    acc = {}
+    for comp in _compositions(l, len(poles)):
+        mult = factorial(l)
+        for k in comp: mult //= factorial(k)
+        ex = {}
+        for b, k in zip(poles, comp):
+            if k: ex[b] = ex.get(b, 0) + k
+        ex[0] = ex.get(0, 0) + s
+        for (b, u), c in pf(tuple(sorted(ex.items()))).items():
+            acc[(b, u)] = acc.get((b, u), 0) + (sign**l)*mult*c
+    return tuple((b, u, c) for (b, u), c in acc.items() if c != 0)
 
 @lru_cache(None)
 def reduce_sum(m, a, s, n0):
@@ -129,23 +136,22 @@ def reduce_sum(m, a, s, n0):
     return res
 
 def S_exact(q):
-    k = sp.Symbol('k'); x = sp.Symbol('x')
-    h = lambda j: sum((sp.Integer(1)/(k+i) for i in range(1, j+1)), sp.Integer(0))
-    num = sp.Integer(1)
-    for j in range(q+1): num *= (x + h(j))
-    den = sp.Integer(1)
-    for j in range(q+1): den *= (k+j)
-    poly = sp.Poly(sp.expand(num), x)
+    # expand prod_{j=0}^q (x + y_1+...+y_j) * prod_{j=0}^q y_j,  y_i = 1/(k+i)
+    poly = {(0, (0,)*(q+1)): Fr(1)}
+    for j in range(q+1):
+        new = {}
+        for (xp, ex), c in poly.items():
+            # term x
+            key = (xp+1, ex); new[key] = new.get(key, 0) + c
+            for i in range(1, j+1):
+                e2 = list(ex); e2[i] += 1
+                key = (xp, tuple(e2)); new[key] = new.get(key, 0) + c
+        poly = new
     total = {}
-    for (m,), coeff in poly.terms():
-        Rm = sp.apart(sp.together(coeff/den), k)
-        for term in sp.Add.make_args(Rm):
-            c, rest = term.as_independent(k)
-            base, ex = rest.as_base_exp()
-            u = -int(ex); a = int(sp.expand(base - k))
-            assert u >= 1 and a >= 0
-            cf = Fr(int(sp.numer(c)), int(sp.denom(c)))
-            total = vadd(total, reduce_sum(m, a, u, 1), cf)
+    for (m, ex), c in poly.items():
+        ex2 = tuple((i, e+1) for i, e in enumerate(ex))
+        for (a, u), cf in pf(ex2).items():
+            total = vadd(total, reduce_sum(m, a, u, 1), c*cf)
     return total
 
 if __name__ == "__main__":
