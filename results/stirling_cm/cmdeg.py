@@ -42,7 +42,7 @@ def make_h(n, m, q):
                 for r in range(i): di *= (m - 1 - r)
                 s += binomial(q, i) * di * t**(m - 1 - i) * (-j)**(q - i)
             return s * exp(-j*t)
-        jmax = int(mp.dps * 2.4 / float(t)) + 3
+        jmax = int((mp.dps * 2.4 + 2.5 * (q + 2) * float(mp.log(q + 3))) / float(t)) + 5
         val += (-1)**n * sum(exp_term(j) for j in range(1, jmax + 1))
         return val
     T0 = mpf(3)

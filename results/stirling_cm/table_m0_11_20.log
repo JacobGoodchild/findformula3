@@ -1,0 +1,10 @@
+/home/user/findformula3/results/stirling_cm/cmfast.py:33: IntegrationWarning: The occurrence of roundoff error is detected, which prevents 
+  the requested tolerance from being achieved.  The error may be 
+  underestimated.
+  v, err = quad(hpf, 0, t, weight='alg', wvar=(0, -a), limit=200, epsabs=1e-16, epsrel=1e-13)
+n=11 m=0 assertion failed (np.float64(-0.2617908721786466), np.float64(-36729.05155435976))
+n=12 m=0 assertion failed (np.float64(-13.692853844804908), np.float64(-449442.6013443808))
+n=13 m=0 assertion failed (np.float64(-324.81089218511005), np.float64(-6527830.38622737))
+n=14 m=0 assertion failed (np.float64(-7326.738697866869), np.float64(-111061973.36276336))
+n=15 m=0 assertion failed (np.float64(-174604.69232606277), np.float64(-2188458212.97439))
+n=16 m=0 assertion failed (np.float64(-4534825.655161893), np.float64(-49454933506.002014))

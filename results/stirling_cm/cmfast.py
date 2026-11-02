@@ -26,7 +26,7 @@ class Cheb:
 def build(n, m, Tmax=None):
     q = 2*n + m - 2
     hp = make_h(n, m, q+1)
-    Tmax = Tmax or 60.0*n
+    Tmax = Tmax or (60.0*n if n <= 9 else 60.0)
     edges = [0.0, 1.0, 3.0, 6.0, 12.0, 24.0, Tmax] if Tmax > 24 else [0.0, 1.0, 3.0, 6.0, Tmax]
     return Cheb(hp, edges), q, Tmax
 def H(hpf, a, t):
@@ -47,7 +47,7 @@ def minH(hpf, a, T0, T1):
     return best
 def crit(n, m, T0=0.3, T1=None, tol=1e-11):
     hpf, q, Tmax = build(n, m)
-    T1 = T1 or 30.0*n+60.0
+    T1 = T1 or (30.0*n+60.0 if n <= 9 else 50.0)
     lo, hi = 0.3, 0.999
     f_lo = minH(hpf, lo, T0, T1)[0]; f_hi = minH(hpf, hi, T0, T1)[0]
     assert f_lo > 0 and f_hi < 0, (f_lo, f_hi)
