@@ -48,4 +48,8 @@ for k in range(1, 13):
     g5 &= (p[k] == [H/factorial(k), Fr(1, factorial(k))])
 ok &= g5
 print("painleve P=t^2+t: p_k = (x+H_k)/k! for k<=12 :", "OK" if g5 else "FAIL")
+import subprocess
+r = subprocess.run([sys.executable, 'rhs_positivity.py', '1', '8'], capture_output=True, text=True)
+print(r.stdout.strip().replace('Lemma B', 'painleve Lemma B').replace('(A)', 'painleve (A)'))
+ok &= (r.returncode == 0)
 sys.exit(0 if ok else 1)

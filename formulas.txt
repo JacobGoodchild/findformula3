@@ -24,7 +24,7 @@ Novelty: NOT FOUND (no follow-up found; one search not done yet -> to be checked
  u = sum_k p_k(x) e^{-kx}, p_0=x, solving the ODE formally -- TRUE.  -- PROVED
 Proof (results/painleve_series/README.md): the obstruction to solving for p_s is [x^2](e^{-sx} rho_s) (a residue); a local expansion at the zero of the truncated series shows it equals a
  combination of lower-order residuals times O(eps) quantities, hence vanishes at every order. Key identity e2 = (a2/a1) e1 + q0 pi1 a1/(1+a1) e0 checked symbolically; the explicit recursion confirms p_k exist (exact rational arithmetic) to k=40.
-Who asked: Habib & Hildebrand, Section 7 "Conjectures", Conjecture 7.1 (opened PDF). Conjecture 7.2 (nonnegativity of coefficients when all pi_j>=0): NOT proved; exact check k<=40 (t^3), 30 (t^4), 20 (t^6), no counterexample.
+Who asked: Habib & Hildebrand, Section 7 "Conjectures", Conjecture 7.1 (opened PDF). Conjecture 7.2 (nonnegativity of coefficients when all pi_j>=0): PARTIAL -- reduced to coefficientwise nonnegativity of the right-hand sides rho_s (Lemma B proved: the linear solver preserves positivity); rho_s>=0 verified for 396 (P,s) cases, s<=12; symbolic p_1..p_4 positive in all parameters; exact check k<=40 (t^3), 30 (t^4), 20 (t^6); no counterexample.
 Novelty: NOT FOUND (paper is from June 2026; one web search to be done). Related: Kitaev 2025 (cited there) treats Painleve III trans-series.
 
 [4] Higher-order Gregory coefficients (x/log(1+x))^l: Gr(l) = least N with (-1)^{n-1}G_n^{(l)} > 0 for all n >= N.

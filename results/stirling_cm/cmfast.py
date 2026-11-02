@@ -33,14 +33,21 @@ def H(hpf, a, t):
     v, err = quad(hpf, 0, t, weight='alg', wvar=(0, -a), limit=200, epsabs=1e-16, epsrel=1e-13)
     return t**a * v
 def minH(hpf, a, T0, T1):
-    ts = np.linspace(T0, T1, 61)
-    vals = [H(hpf, a, t) for t in ts]
-    i = int(np.argmin(vals))
-    res = minimize_scalar(lambda t: H(hpf, a, t), bounds=(ts[max(i-1, 0)], ts[min(i+1, 60)]), method='bounded', options={'xatol': 1e-9})
-    return res.fun, res.x
-def crit(n, m, T0=2.0, T1=None, tol=1e-11):
+    """global minimum of t -> H(a,t) on [T0,T1]: dense log-spaced grid, then bounded refinement around every local minimum"""
+    ts = np.exp(np.linspace(np.log(T0), np.log(T1), 241))
+    vals = np.array([H(hpf, a, t) for t in ts])
+    best = (np.inf, None)
+    for i in range(len(ts)):
+        lo_ok = (i == 0) or vals[i] <= vals[i-1]
+        hi_ok = (i == len(ts)-1) or vals[i] <= vals[i+1]
+        if lo_ok and hi_ok:
+            res = minimize_scalar(lambda t: H(hpf, a, t), bounds=(ts[max(i-1, 0)], ts[min(i+1, len(ts)-1)]), method='bounded', options={'xatol': 1e-10})
+            v = min(res.fun, vals[i])
+            if v < best[0]: best = (v, res.x if res.fun <= vals[i] else ts[i])
+    return best
+def crit(n, m, T0=0.3, T1=None, tol=1e-11):
     hpf, q, Tmax = build(n, m)
-    T1 = T1 or Tmax*0.6
+    T1 = T1 or 30.0*n+60.0
     lo, hi = 0.3, 0.999
     f_lo = minH(hpf, lo, T0, T1)[0]; f_hi = minH(hpf, hi, T0, T1)[0]
     assert f_lo > 0 and f_hi < 0, (f_lo, f_hi)

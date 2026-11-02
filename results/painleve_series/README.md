@@ -28,6 +28,14 @@ Now a_2 = O(eps) and q_0 = O(eps), while e_m = eps^s [x^m]E_s / m! + O(eps^{s+1}
 where the obstruction is [x^2](e^{-x} P(x)) = pi_2 - pi_1 = 0 (this is where pi_1 = pi_2 comes from; pi_0 = 0 is needed for e_0 = 1 - a_1^2 / existence of a zero with slope +-1).
 (If pi_1 != pi_2 the s=1 obstruction is pi_2 - pi_1 != 0: the conditions in the paper are necessary and sufficient.)
 
+## Result 2 (towards Conjecture 7.2, nonnegativity when all pi_j >= 0): reduction + strong evidence.   Label: PARTIAL
+* **Lemma B (proved).** Solve L_s p = rho by the top-down recursion  s^2 a_{m-1} = rho_m + 2 s (m-1) a_m - (m+1)(m-2) a_{m+1}  (m = D, D-1, ..., 1).  If rho_m >= 0 for all m >= 1 then all a_m >= 0.
+  Proof: show by downward induction a_j >= (j/s) a_{j+1}.  Given it for j, a_{j-1} >= a_j [2 s (j-1) - (j+1)(j-2) s/j]/s^2 = a_j (j^2 - j + 2)/(s j) >= ((j-1)/s) a_j.  (The m = 0 equation is the consistency condition, which holds by Result 1.)
+* Hence **Conjecture 7.2 follows once every rho_s (the right-hand side of L_s p_s = rho_s, built from p_1..p_{s-1}) has nonnegative coefficients (statement (A))**.
+  (A) is NOT proved: rho_s = [q^{s-1}]P(u) - [q^s]N(v) with N(v) = v v'' - v'^2 sign-indefinite. But (A) holds in all 396 (P, s) cases tested (s <= 12, exact rational arithmetic, `rhs_positivity.py`),
+  and symbolically p_1..p_4 (and the consistency condition) are polynomials in x, pi_1, pi_3, pi_4 with all coefficients positive (P = pi_1(t + t^2) + pi_3 t^3 + pi_4 t^4, sympy), which suggests a positive combinatorial formula.
+* Useful identity (checked): e^{sx} [q^s] N(v) = (1/2) sum_{i+j=s} [ p_i'' p_j + p_i p_j'' - 2 p_i' p_j' + 2 (j-i)(p_i' p_j - p_i p_j') + (i-j)^2 p_i p_j ].
+
 ## Other (non-proof) data
 * Exact rational recursion (series.py): the p_k exist and, in all cases tested, have only nonnegative coefficients when all pi_j >= 0 (Conjecture 7.2):
   P = t^3 up to k=40, t^4 up to 30, t^6 up to 20, t+t^2+t^3 up to 30, several random P to k=14. The authors' numerics reached k ~ 10-20 and were unstable; this is exact.
