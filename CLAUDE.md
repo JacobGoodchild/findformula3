@@ -130,3 +130,4 @@ Go. Set up the wake-up alarms, write CLAUDE.md, then start.
 
 - 21:25 UTC: started. Scheduling tool available (send_later). Wake-ups set: +45min and 23:00, 00:30, 02:00, 03:30, 05:00, 06:15 UK.
 - 21:45 UTC: TARGETS.md written (9 candidates; T1 = Furdui-Sintamarian harmonic-product series, best). T1 working: numerics.py (EM tail, 60+ digits), exact_reduce.py (exact reduction to MZVs, matches numerics to 1e-62 for q<=4), reduce_mzv.py (MZV -> zeta products). q=4 closed form found (new?). NOTE: do not use `pkill -f` (killed own shell once).
+- 21:55 UTC: T1 DONE (formulas.txt [1], results/harmonic_products): S_q closed forms q<=8, exact algorithm, verified 45-60 digits. Next: T2 (Gurland: open problems 1,2 answered by Taylor series, problem 3 numerics suggest t > (x+y+sqrt(xy))/3), then T3.

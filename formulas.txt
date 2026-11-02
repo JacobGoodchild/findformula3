@@ -1,0 +1,12 @@
+# findformula3 -- recorded results (calculus night). Labels: PROVED / VERIFIED / PARTIAL.
+# INDEX
+#  [1] Closed forms for S_q = sum_k H_k...H_{k+q}/(k...(k+q)), q=4..8; exact MZV reduction for all q   -- PROVED (q<=5), VERIFIED (q=6..8)
+
+[1] Products of consecutive harmonic numbers
+Statement: S_q = sum_{k>=1} (H_k H_{k+1} ... H_{k+q}) / (k(k+1)...(k+q)) equals an explicit rational combination of products of single zeta values
+ (plus zeta(5,3) from q=7). Full list in results/harmonic_products/S_table.txt. E.g.
+ S_4 = zeta(2)/432 - 45zeta(3)/64 + 1799zeta(2)^2/8640 - 11zeta(2)zeta(3)/72 + 13zeta(5)/18 + zeta(2)^3/60 - zeta(3)^2/48.
+Label: PROVED for q<=5 (exact algorithm to MZVs + classical weight<=7 reductions); q=6,7,8 VERIFIED (MZV identities weight 8-10 found by PSLQ at 150 digits).
+Who asked: Chen & Nguyen, arXiv:2507.19502 (closing remark: compute S_q for general q); Furdui & Sintamarian conjecture (stated there) -- checked in the PDF.
+How checked: (a) exact algebra asserts all T=H_K divergences cancel; (b) exact MZV combination == Euler-Maclaurin numerics to 1e-62 (q<=9); (c) final forms == numerics to 45 digits (q<=8); (d) q<=3 match the literature.
+Novelty: q=1,2 (Furdui-Sintamarian), q=3 (Chen-Nguyen 2025) known. q>=4: NOT FOUND in two web searches (2025-2026 arXiv, general). "Not found" only.
