@@ -38,7 +38,7 @@ Novelty: NOT FOUND (paper is from June 2026; one web search to be done). Related
 
 [4] Higher-order Gregory coefficients (x/log(1+x))^l: Gr(l) = least N with (-1)^{n-1}G_n^{(l)} > 0 for all n >= N.
  Gr(8..14) = 2995, 8580, 24303, 68283, 190698, 530152, 1468691 (Gr(3..7) = 11,36,113,346,1030 reproduce the paper). Conjecture 6.1 (0.47*3^l < Gr(l) < 0.477*3^l, l>=5) is FALSE: Gr(5)=113<114.2, and Gr(l)<0.47*3^l for l=8..13.
- Data: Gr(l)/exp(pi*cot(pi/l)) = 1.50..1.545 (l=5..13); growth rate -> e, not 3.   Label: values PROVED for l<=10 (interval arithmetic + paper's Table 2 tail theorem), VERIFIED l=11..13; asymptotic law = observation.
+ Data: Gr(l)/exp(pi*cot(pi/l)) = 1.50..1.547 (l=5..16) then slowly decreasing (1.5327 at l=100); heuristic + numerics: Gr(l) ~ e^{l+1-gamma} (ratio -> e^{1-gamma}=1.5262; exact integral representation allows l up to 100+); growth rate e, not 3.   Label: values PROVED for l<=10 (interval arithmetic + paper's Table 2 tail theorem), VERIFIED l=11..13; asymptotic law = observation.
 Who asked: Xu & Zhao, arXiv:2609.11072, Conjecture 6.1 (opened PDF). How checked: results/gregory (arb power series, certified signs, n2 criterion re-implemented). Novelty: NOT FOUND (single search).
 
 [5] Finch (arXiv:2503.00579) conjectured, with 100-digit numerical evidence, A(x/(1+x)) = B(x)+1 and I(x/(1+x)) = J(x)+1 for the Abel functions of x(1-x), x/(1+x+x^2), x/(1+x-x^2), x(1+x)/(1+2x).  -- PROVED.

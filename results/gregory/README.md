@@ -30,6 +30,17 @@ ell  Gr(ell)   Gr/3^ell   r(ell)=exp(pi*cot(pi/ell))   Gr/r    Gr(l)/Gr(l-1)   t
   and Gr(l)/Gr(l-1) decreases 3.27, 3.14, ..., 2.78, 2.77 towards e = 2.718. So the data suggest Gr(l) ~ c * exp(pi cot(pi/l)) with c ~ 1.55, hence Gr(l)/3^l -> 0 geometrically; the factor 3 in the conjecture was an artefact of small l.
   (Observation only; no proof.)
 
+
+## Asymptotics of Gr(l): Gr(l) ~ e^{l + 1 - gamma}   (numerically verified to l = 100+, heuristic derivation; NOT a proof)
+* **Exact integral representation** (checked here against the power-series coefficients for l = 3, 4, n up to 50, ratio 1.0000 to 12 digits; `integral_form.py`): for n > l + 3,
+  (-1)^{n-1} G_n^{(l)} = int_0^infty h(e^L) f_n(e^L) e^L dL,  h(e^L) = (-1)^{l-1} Im[(L + i pi)^l] / (pi (L^2+pi^2)^l),  f_n(z) = (1 - (-1)^l z^{n-l-1})/(z+1)^{n-l+1}.
+  Because n enters only as an exponent this lets me compute the (real-n) last sign change n*(l) for large l without any power series (`big_ell.py`; it reproduces the exact thresholds: n* = 112.63, 2994.71, 24302.57, 190697.75 for l = 5, 8, 10, 12 against Gr = 113, 2995, 24303, 190698).
+* Data (n*(l)/r(l), r(l) = exp(pi cot(pi/l))): l = 14: 1.5460, 16: 1.54689, 20: 1.54645, 25: 1.54469, 30: 1.54294, 40: 1.53967, 50: 1.53747, 70: 1.53508, 100: 1.53265. The ratio peaks near l = 16 and then decreases slowly.
+* **Heuristic derivation.** For large n only the z^{n-l-1} term of f_n matters and with w = n e^{-L}, Lambda = ln n, lambda = l/Lambda:  J(n) ~ n^{-1} Lambda^{-l} int_0^infty w^lambda e^{-w} sin( pi lambda + (pi lambda/Lambda) ln w ) dw ~ Gamma(lambda+1) [ sin(pi lambda) + (pi lambda/Lambda) cos(pi lambda) psi(lambda+1) ].
+  With lambda = 1 + eps this vanishes when eps = -(1/Lambda) psi(2) = -(1-gamma)/Lambda, i.e. Lambda = ln n* = l + (1 - gamma) + O(1/l).  Since ln r(l) = l - pi^2/(3l) + ..., this predicts **n*(l)/r(l) -> e^{1-gamma} = 1.52620...**
+  A polynomial-in-1/l extrapolation of the computed ratios (l = 20..100) gives 1.5250 - 1.5254, consistent with e^{1-gamma} (differences O(1/l): the data minus e^{1-gamma} times l is about 0.56 (l=50), 0.62 (l=70), 0.64 (l=100)).
+* Consequence: Gr(l) = (1+o(1)) e^{l+1-gamma}, so Gr(l)/3^l -> 0 geometrically; Conjecture 6.1 (a 3^l law) is false for every large l, not just for l = 5, 8, ...
+
 ## Method / rigour
 * `gr.py`: coefficients of (x/log(1+x))^l as an arb power series (python-flint, exp(-l*log(log(1+x)/x))), with rigorous error balls. `grscan2.py` doubles the precision until every coefficient with n >= 50 is certified
   to have a definite sign (the only exact zeros are at tiny n, e.g. G_l^{(l)}=0 for odd l as in the paper's Theorem 3.1). Gr(l) = 1 + (last n with the wrong sign), for all n <= N (N = 8e4 for l<=10, 2e5/5.5e5/1.5e6 for l=11/12/13).
