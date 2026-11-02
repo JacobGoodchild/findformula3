@@ -29,6 +29,6 @@ Gamma(1-a) t^a D^a h(t) = t^a int_0^t (t-u)^{-a} h'(u) du =: H(a,t).  So  d_CM =
 * **On the 'second problem' (does (2n-1) delta_{n,0} converge, and to what?):** computed for n = 2..22 (table_m0_n2_22.txt). The sequence increases monotonically (2.60, 3.54, 4.20, ..., 6.99 at n=21, 7.03 at n=22) with slowly shrinking increments.
   Polynomial-in-1/n (or 1/(n+1/2)) extrapolation of degree 4-6 from n >= 8, 10, 12 gives limits in [8.0963, 8.0977], median **8.0974**, while Krasniqi's upper bound is 2 pi^2/J = **8.097627...** (J = int_0^{2pi} (1-cos u)/u du = Cin(2 pi) = 2.43765339...).
   So the data say: **the limit exists and equals 2 pi^2 / Cin(2 pi) (agreement to ~4 digits; extrapolation noise ~2e-4), i.e. the paper's upper bound is asymptotically sharp for m = 0** (and his lower bound 3/pi = 0.955 is far from the truth). `extrapolate.py` reproduces this.  NOT a proof.
-  (m = 1 values for n <= 9 are below the m = 0 ones; larger n for m = 1 see table_m1_10_18.log if present.)
+  For m = 1 (digamma remainder) the data to n = 17 (table_m1_all.txt) extrapolate to 8.095 (range 8.06-8.098), i.e. the same limit (as the scaling argument in the paper suggests).
 ## Status
 Numerical (VERIFIED, 10 digits, two independent evaluations of the criterion); exact closed forms: none found. Novelty: NOT FOUND.
