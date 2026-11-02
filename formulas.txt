@@ -11,6 +11,7 @@
 #  [10] C''(2) for x_{n+1}=x_n+1+1/x_n^2: exact series, value 0.3746264219830173411168 -- PROVED formula / VERIFIED value
 #  [11] Riesz capacity: Conjectures 5.9 and 5.6 of arXiv:2609.11186 (odd-polygon equilibrium measure, r>2) -- PROVED
 #  [12] t({2}^N,1) = (1/(2N)!) int_0^{pi/2} theta^{2N} cot(theta) dtheta (Conjecture 4.5, Chavan-Kobayashi-Layja) -- PROVED
+#  [13] Samart n_4(81): analytic-continuation value equals 40*L'(g_7,0) to 25 digits; true n_4(81)=4.16553(5) -- VERIFIED (explains the refutation)
 #  [2] Gurland ratio series converges for all x,y>0 (open problems 1,2 of arXiv:2512.07028); sharp 1/3 for problem 3 -- PROVED / PARTIAL
 
 [1] Products of consecutive harmonic numbers
@@ -73,3 +74,7 @@ Who asked: Xu & Zhao, arXiv:2609.11072, Conjecture 6.1 (opened PDF). How checked
 [12] Chavan, Kobayashi, Layja (arXiv:2111.07097), Conjecture 4.5: the multiple t-values t({2}^N,1) equal I(2N)/(2N)! with I(n)=int_0^{pi/2} theta^n cot(theta) dtheta, i.e. the explicit eta/zeta closed form. -- PROVED
  Proof: generating function; prod_{n odd>m}(1+u^2/n^2) = Gamma(S+1/2)^2/(Gamma(S+1/2+iu/2)Gamma(S+1/2-iu/2)) = c_S int cosh(u theta) cos^{2S-1} theta, and sum_S c_S x^{2S-1}/(2S-1) = x/sqrt(1-x^2) (=cot at x=cos theta). results/t_values/README.md.
  Numerically confirmed N=1..4 (19-32 digits). Novelty: NOT FOUND. (Hoffman proved N=1,2,3.)
+
+[13] Samart's conjecture n_4(81)=40 M_7 and its numerical refutation (arXiv:2608.02265; they say a closed form of the TRUE n_4(81) remains open).
+ Found: the real part of the analytic continuation (through the conifold s=256) of the large-s series for n_4 equals 40 L'(g_7,0) = 4.10686431115608044841826 to 25 digits, whereas the true Mahler measure (direct torus integral) is 4.16553(5).
+ So the identity is true for the continuation, false for the measure; the defect D(81)=0.05867. No closed form for the true value found. Label: VERIFIED (numerical). results/samart_n481. Novelty: explanation NOT FOUND in the report.
