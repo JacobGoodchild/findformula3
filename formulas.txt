@@ -1,6 +1,7 @@
 # findformula3 -- recorded results (calculus night). Labels: PROVED / VERIFIED / PARTIAL.
 # INDEX
 #  [1] Closed forms for S_q = sum_k H_k...H_{k+q}/(k...(k+q)), q=4..8; exact MZV reduction for all q   -- PROVED (q<=5), VERIFIED (q=6..8)
+#  [2] Gurland ratio series converges for all x,y>0 (open problems 1,2 of arXiv:2512.07028); sharp 1/3 for problem 3 -- PROVED / PARTIAL
 
 [1] Products of consecutive harmonic numbers
 Statement: S_q = sum_{k>=1} (H_k H_{k+1} ... H_{k+q}) / (k(k+1)...(k+q)) equals an explicit rational combination of products of single zeta values
@@ -10,3 +11,8 @@ Label: PROVED for q<=5 (exact algorithm to MZVs + classical weight<=7 reductions
 Who asked: Chen & Nguyen, arXiv:2507.19502 (closing remark: compute S_q for general q); Furdui & Sintamarian conjecture (stated there) -- checked in the PDF.
 How checked: (a) exact algebra asserts all T=H_K divergences cancel; (b) exact MZV combination == Euler-Maclaurin numerics to 1e-62 (q<=9); (c) final forms == numerics to 45 digits (q<=8); (d) q<=3 match the literature.
 Novelty: q=1,2 (Furdui-Sintamarian), q=3 (Chen-Nguyen 2025) known. q>=4: NOT FOUND in two web searches (2025-2026 arXiv, general). "Not found" only.
+
+[2] Gurland's ratio ln G*(x,y) = sum_k (1/k) ((x-y)/2)^{2k} zeta(2k,1+(x+y)/2): converges for ALL x,y>0 (radius exactly 1+(x+y)/2).  -- PROVED
+Who asked: H. Wisniewska, arXiv:2512.07028, Section 2 "Open problems" 1 and 2 (opened PDF). Answered: yes to both (Taylor series of ln Gamma). Proof in results/gurland/README.md.
+Also PARTIAL for open problem 3: sharp constant 1/3 (local expansion proved), inequality t(x,y) > (x+y+sqrt(xy))/3 conjectured with numerical evidence.
+Novelty: NOT FOUND (no follow-up found; one search not done yet -> to be checked). Triviality caveat: the answer is a one-line complex-analysis fact.
