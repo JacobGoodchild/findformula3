@@ -2,7 +2,7 @@
 """Re-run the headline checks for every recorded result. Prints OK/FAIL lines; exit code 1 if any FAIL."""
 import subprocess, sys, os
 here = os.path.dirname(os.path.abspath(__file__))
-checks = [("results/harmonic_products", "verify.py"), ("results/gregory", "verify.py"), ("results/painleve_series", "verify.py"), ("results/abel_finch", "verify.py")]
+checks = [("results/harmonic_products", "verify.py"), ("results/gregory", "verify.py"), ("results/painleve_series", "verify.py"), ("results/abel_finch", "verify.py"), ("results/abel_delta", "verify.py")]
 extra = os.path.join(here, "results")
 fail = False
 for d, script in checks:
