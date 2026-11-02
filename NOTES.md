@@ -30,3 +30,11 @@ the formal solution is the "a_3 = 0" member of a 2-parameter family of solutions
 ## T11 Pade positivity (results/pade_positivity)
 Lead: prove k*(m) = 2m + O(1) asymptotically (and with it the diagonal case for all odd m). The first bad n is ~ k+m-3, i.e. the oscillation of complex-pole terms first beats the real-pole term there.
 Hint: Laguerre representation q_{k,m} ~ L_m^{(-k-m-1)}(z); saddle point analysis in the (k/m) regime; the 2m threshold probably comes from the turning point of the Hermite/Laguerre oscillation.
+
+## Later dead ends / informal findings (evening)
+* Ulgenes (arXiv:2301.09699, Conjecture 3.1): Newton series for the inverse gamma function with nodes ln(k!). Numerically (results/invgamma_newton, 1500-digit arithmetic, up to 700 terms) the partial sums do approach the true value
+  but only at a logarithmic rate (error ~ (ln n)^-p with p ~ 1.8 at x=3, ~0.6 at x=1.2, ~0.3 at x=0.95), slower and slower towards the left end Gamma(alpha)=0.8856. So "converges" is plausible but useless in practice; no proof attempted.
+* Krzyz conjecture, Hadwiger-Nelson-type, Erdos-Falconer, Montgomery-Vaughan Hilbert-inequality constant: famous/heavily attacked -> skipped.
+* Alzer-Berg boundary (Krasniqi arXiv:2609.28707): open problem (3) asks for certified high-precision enclosures of A(b); not attempted (needs the regularised Laplace density machinery; 1-2 h).
+* Nazarov-Shcheglova conjecture (arXiv:2609.34516, only (n,p)=(3,2) known): a numerical test for other (n,p) via sign-pattern optimisation would be the first step; not done.
+* Many 2026 arXiv papers prove conjectures of Gautschi, Szego, Askey, Sun, Barry, Cigler, ... : the 'easy' conjectures in classical special functions are being cleared quickly by others; the less-trafficked vein (Finch-style numerical notes, ODE/functional-equation papers, short papers with 'we have not figured out why') was more productive.
