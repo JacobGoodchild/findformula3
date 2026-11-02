@@ -38,3 +38,6 @@ Hint: Laguerre representation q_{k,m} ~ L_m^{(-k-m-1)}(z); saddle point analysis
 * Alzer-Berg boundary (Krasniqi arXiv:2609.28707): open problem (3) asks for certified high-precision enclosures of A(b); not attempted (needs the regularised Laplace density machinery; 1-2 h).
 * Nazarov-Shcheglova conjecture (arXiv:2609.34516, only (n,p)=(3,2) known): a numerical test for other (n,p) via sign-pattern optimisation would be the first step; not done.
 * Many 2026 arXiv papers prove conjectures of Gautschi, Szego, Askey, Sun, Barry, Cigler, ... : the 'easy' conjectures in classical special functions are being cleared quickly by others; the less-trafficked vein (Finch-style numerical notes, ODE/functional-equation papers, short papers with 'we have not figured out why') was more productive.
+
+## Hurwitz p_4 (Gasull Problem 21 context)
+2-D integral reduction gives p_4 = 0.0092838447242981189571 (results/hurwitz_prob). No closed form found by PSLQ (several bases, 50 digits). Lead: reduce 2-D integral to elliptic integrals by hand.
