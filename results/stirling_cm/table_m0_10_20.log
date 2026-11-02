@@ -2,3 +2,7 @@
   the requested tolerance from being achieved.  The error may be 
   underestimated.
   v, err = quad(hpf, 0, t, weight='alg', wvar=(0, -a), limit=200, epsabs=1e-16, epsrel=1e-13)
+n=10 m=0  d_CM = 18 + 0.3171745147   delta=0.3171745147  (2n-1)*delta=6.026316  t*=1.8567 [73s]
+n=11 m=0 assertion failed (np.float64(-0.2617908721786466), np.float64(-36729.05155435976))
+n=12 m=0 assertion failed (np.float64(-13.692853844804908), np.float64(-449442.6013443808))
+n=13 m=0 assertion failed (np.float64(-324.81089218511005), np.float64(-6527830.38622737))
