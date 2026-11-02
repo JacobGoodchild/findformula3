@@ -1,6 +1,7 @@
 # findformula3 -- recorded results (calculus night). Labels: PROVED / VERIFIED / PARTIAL.
 # INDEX
 #  [1] Closed forms for S_q = sum_k H_k...H_{k+q}/(k...(k+q)), q=4..8; exact MZV reduction for all q   -- PROVED (q<=5), VERIFIED (q=6..8)
+#  [3] Habib-Hildebrand Conjecture 7.1 (polynomial p_k exist for u''u-u'^2=e^{-x}P(u)-1 when pi0=0, pi1=pi2) -- PROVED
 #  [2] Gurland ratio series converges for all x,y>0 (open problems 1,2 of arXiv:2512.07028); sharp 1/3 for problem 3 -- PROVED / PARTIAL
 
 [1] Products of consecutive harmonic numbers
@@ -16,3 +17,10 @@ Novelty: q=1,2 (Furdui-Sintamarian), q=3 (Chen-Nguyen 2025) known. q>=4: NOT FOU
 Who asked: H. Wisniewska, arXiv:2512.07028, Section 2 "Open problems" 1 and 2 (opened PDF). Answered: yes to both (Taylor series of ln Gamma). Proof in results/gurland/README.md.
 Also PARTIAL for open problem 3: sharp constant 1/3 (local expansion proved), inequality t(x,y) > (x+y+sqrt(xy))/3 conjectured with numerical evidence.
 Novelty: NOT FOUND (no follow-up found; one search not done yet -> to be checked). Triviality caveat: the answer is a one-line complex-analysis fact.
+
+[3] Conjecture 7.1 of Habib & Hildebrand (arXiv:2606.21145): for u''u-(u')^2 = e^{-x}P(u)-1 with P(0)=0 and P'(0)=P''(0)/2 (pi1=pi2), there are polynomials p_k with
+ u = sum_k p_k(x) e^{-kx}, p_0=x, solving the ODE formally -- TRUE.  -- PROVED
+Proof (results/painleve_series/README.md): the obstruction to solving for p_s is [x^2](e^{-sx} rho_s) (a residue); a local expansion at the zero of the truncated series shows it equals a
+ combination of lower-order residuals times O(eps) quantities, hence vanishes at every order. Key identity e2 = (a2/a1) e1 + q0 pi1 a1/(1+a1) e0 checked symbolically; the explicit recursion confirms p_k exist (exact rational arithmetic) to k=40.
+Who asked: Habib & Hildebrand, Section 7 "Conjectures", Conjecture 7.1 (opened PDF). Conjecture 7.2 (nonnegativity of coefficients when all pi_j>=0): NOT proved; exact check k<=40 (t^3), 30 (t^4), 20 (t^6), no counterexample.
+Novelty: NOT FOUND (paper is from June 2026; one web search to be done). Related: Kitaev 2025 (cited there) treats Painleve III trans-series.

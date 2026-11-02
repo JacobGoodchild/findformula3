@@ -1,0 +1,8 @@
+ell 3  N 80000  prec 512  Gr=11  Gr/3^ell=0.40741  zeros/undetermined(n<50)=[3]  [5s]
+ell 4  N 80000  prec 512  Gr=36  Gr/3^ell=0.44444  zeros/undetermined(n<50)=[5]  [6s]
+ell 5  N 80000  prec 512  Gr=113  Gr/3^ell=0.46502  zeros/undetermined(n<50)=[5]  [7s]
+ell 6  N 80000  prec 512  Gr=346  Gr/3^ell=0.47462  zeros/undetermined(n<50)=[7]  [5s]
+ell 7  N 80000  prec 512  Gr=1030  Gr/3^ell=0.47096  zeros/undetermined(n<50)=[7]  [6s]
+ell 8  N 80000  prec 512  Gr=2995  Gr/3^ell=0.45649  zeros/undetermined(n<50)=[9]  [7s]
+ell 9  N 80000  prec 512  Gr=8580  Gr/3^ell=0.43591  zeros/undetermined(n<50)=[9]  [6s]
+ell 10  N 80000  prec 512  Gr=24303  Gr/3^ell=0.41157  zeros/undetermined(n<50)=[11]  [7s]

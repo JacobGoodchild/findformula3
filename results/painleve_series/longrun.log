@@ -1,0 +1,5 @@
+P=[0, 0, 0, 1]  S=40 consistent=True nonneg=True [] [10s]
+P=[0, 0, 0, 0, 1]  S=30 consistent=True nonneg=True [] [11s]
+P=[0, 0, 0, 0, 0, 0, 1]  S=20 consistent=True nonneg=True [] [7s]
+P=[0, 1, 1, 1]  S=30 consistent=True nonneg=True [] [4s]
+P=[0, 1, 1, 0, 1]  S=25 consistent=True nonneg=True [] [6s]
