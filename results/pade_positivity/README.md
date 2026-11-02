@@ -5,7 +5,7 @@ q_{k,m}(z) = sum_{j<=m} (-1)^j C(m,j) (k+m-j)!/(k+m)! z^j.  The paper proves it 
 (exact counterexamples c_38(66,5) < 0, c_37(44,7) < 0, c_42(45,9) < 0) and says: "the diagonal case k = m, which is the case relevant in practice, remains open".
 
 ## Results
-1. **Diagonal case, odd m <= M: PROVED for each m (computer-assisted, rigorous ball arithmetic)** -- all c_n(m,m) > 0 for ALL n >= 0.   (`rigorous_diag.py`; M = see `rigorous_diag_*.log`, currently >= 301.)
+1. **Diagonal case, odd m <= M: PROVED for each m (computer-assisted, rigorous ball arithmetic)** -- all c_n(m,m) > 0 for ALL n >= 0.   (`rigorous_diag.py`; the run covered all odd m <= 301, log in `rigorous_diag_1_301.log`: 150 values of m, all proved; N0 reaches 251082 at m=301.)
    Proof for a given m: (i) isolate all m complex zeros of q_{m,m} with certified balls; exactly one is real positive (R) and every other zero has certified modulus > R;
    (ii) c_n = sum_i B_i rho_i^{-n-1}, B_i = -1/q'(rho_i); B_R > 0 (certified), so for n >= N0 the other zeros contribute less than the R term (explicit N0 from the residues and the spectral gap);
    (iii) positivity of c_n for n < N0 is verified with the interval power-series inverse (python-flint, precision raised until every ball is positive). N0 grows like 1.7 m^2.

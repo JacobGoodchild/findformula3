@@ -22,12 +22,12 @@ ell  Gr(ell)   Gr/3^ell   r(ell)=exp(pi*cot(pi/ell))   Gr/r    Gr(l)/Gr(l-1)   t
  12   190698   0.35883        123572.51   1.5432   2.7928   287998
  13   530152   0.33252        343156.69   1.5449   2.7801   800744
 ```
-* Gr(3..7) agree with the paper. **Gr(8)=2995, Gr(9)=8580, Gr(10)=24303 are new (rigorous, see below); Gr(11)=68283, Gr(12)=190698, Gr(13)=530152 are new (numerically certified tail).**
+* Gr(3..7) agree with the paper. **Gr(8)=2995, Gr(9)=8580, Gr(10)=24303 are new (rigorous, see below); Gr(11)=68283, Gr(12)=190698, Gr(13)=530152, Gr(14)=1468691 are new (numerically certified tail).**
 * **Conjecture 6.1 is false**: Gr(5)=113 < 0.47*3^5 = 114.2 (already visible in the paper's own table), and Gr(l) < 0.47*3^l for every l from 8 to 13 (ratio Gr/3^l: 0.456, 0.436, 0.412, 0.385, 0.359, 0.333).
   Among l >= 5 only l = 6, 7 satisfy it.
 * **What the data say instead:** the largest real zero of the paper's polynomial H_l is exactly r(l) = exp(pi cot(pi/l))  [h(z) ∝ sin(l*theta)/|log z + i pi|^l with theta = arg(log z + i pi), zeros at log z = pi cot(k pi/l), k=1..l-1],
-  so r(l) = exp(l - pi^2/(3l) - ...) grows like e^l, NOT 3^l (the paper's table value r(9)=5065 is a misprint of 5605.2). Gr(l)/r(l) = 1.4968 (l=5), ..., 1.5405, 1.5432, 1.5449 (l=11,12,13), still creeping up by ~0.002/step,
-  and Gr(l)/Gr(l-1) decreases 3.27, 3.14, ..., 2.78 towards e = 2.718. So the data suggest Gr(l) ~ c * exp(pi cot(pi/l)) with c ~ 1.55, hence Gr(l)/3^l -> 0 geometrically; the factor 3 in the conjecture was an artefact of small l.
+  so r(l) = exp(l - pi^2/(3l) - ...) grows like e^l, NOT 3^l (the paper's table value r(9)=5065 is a misprint of 5605.2). Gr(l)/r(l) = 1.4968 (l=5), ..., 1.5405, 1.5432, 1.5449, 1.5460 (l=11,12,13,14), still creeping up by ~0.002/step,
+  and Gr(l)/Gr(l-1) decreases 3.27, 3.14, ..., 2.78, 2.77 towards e = 2.718. So the data suggest Gr(l) ~ c * exp(pi cot(pi/l)) with c ~ 1.55, hence Gr(l)/3^l -> 0 geometrically; the factor 3 in the conjecture was an artefact of small l.
   (Observation only; no proof.)
 
 ## Method / rigour
