@@ -101,7 +101,8 @@ Remove the draft e-mails from the repo's summary documents; they are not needed.
 
 ## Paper progress log
 
-- PLAN (written at start, ~06:30 UTC 3 Nov 2026). Estimated hours: setup 0.25; Phase A citations 2-3; Phase B novelty 2-3; Phase C verification 3-5; Phase D paper 3-4; Phase E final review 1.5-2. Total about 12-17 h. Results that fail a check are downgraded or cut.
+- REVISED PLAN (user: finish by ~16:40 UTC, 3 Nov; must not take 17 h): A citations 1h (to ~09:30), B novelty 1h (~10:30), C verification 2.5h (~13:00), D paper 2h (~15:00), E final review 1h (~16:00-16:40). Run referee/search agents in parallel to save time.
+- (superseded) PLAN (written at start, ~06:30 UTC 3 Nov 2026). Estimated hours: setup 0.25; Phase A citations 2-3; Phase B novelty 2-3; Phase C verification 3-5; Phase D paper 3-4; Phase E final review 1.5-2. Total about 12-17 h. Results that fail a check are downgraded or cut.
 
 ---
 
