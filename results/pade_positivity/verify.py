@@ -28,4 +28,28 @@ for m, expect in [(9, 42), (19, 54), (29, 73)]:
     good = (ks == expect)
     ok &= good
     print("pade k*(%d) = %d: %s" % (m, ks, "OK" if good else "FAIL (expected %d)" % expect))
+
+# (d) added after the referee pass: exact certification of the zeros (squarefree, exactly one positive real zero, modulus gap) for a sample of m
+from exact_checks import check
+from flint import ctx
+ctx.prec = 256
+for m in [3, 5, 7, 9, 11, 21, 31, 101]:
+    try:
+        R, gap = check(m)
+        good = True
+    except AssertionError as e:
+        good = False
+    ok &= good
+    print("pade exact certification of zeros m=%d: %s" % (m, "OK" if good else "FAIL"))
+# (e) exact rational check around k*(109)=230 (no negative coefficient c_n, n<=k+m+10 at k=229; negative at k=230)
+def first_neg(k, m, nmax):
+    q = [(-1)**j * Fr(comb(m, j) * factorial(k+m-j), factorial(k+m)) for j in range(m+1)]
+    c = [Fr(1)]
+    for n in range(1, nmax+1):
+        c.append(-sum(q[j]*c[n-j] for j in range(1, min(n, m)+1)))
+        if c[n] < 0: return n
+    return None
+good = first_neg(229, 109, 229+109+10) is None and first_neg(230, 109, 230+109+10) is not None
+ok &= good
+print("pade exact rational k*(109)=230: %s" % ("OK" if good else "FAIL"))
 sys.exit(0 if ok else 1)
