@@ -1,3 +1,112 @@
+# Paper brief (current)
+
+# findformula3: verify everything, then write the paper
+
+You are working in the GitHub repo **JacobGoodchild/findformula3**. Last night's session left 13 results there (see `formulas.txt`, `MORNING_SUMMARY.md`, `results/`, `TARGETS.md`, `NOTES.md`). Your job now is to **check every result and every citation properly, cut anything that doesn't survive, and write one Zenodo-ready preprint.**
+
+This is a **wrap-up job, not more research**: no new problems, no extending results. Work only as long as it takes to check and write things up properly, then stop. **Tell me first**: your very first message should be a short plan in plain English, with an estimate of how many hours you expect each phase to take. Then start straight away without waiting for a reply (I may be away). Put the same plan at the top of the progress log.
+
+**First thing:** add this brief to the top of `CLAUDE.md`, above the old brief, under a heading `# Paper brief (current)`, with a new `## Paper progress log` section. Keep the old brief below it, marked as finished. CLAUDE.md is your memory if you get restarted.
+
+---
+
+## 0. Usage limits: keep a wake-up alarm set (set this up FIRST)
+
+A usage limit can stop you partway through, and you can't make a tool call once it hits. So keep a "dead man's switch" running:
+
+1. **Right at the start**, use your scheduling tool (`send_later`, or `ScheduleWakeup`; search your tools for "schedule" if neither shows) to schedule a message back into **this same session** about **45 minutes** from now, saying:
+   `WAKE-UP CHECK: if you were stopped by a usage limit, re-read CLAUDE.md (paper brief + paper progress log), check git status and git log, and carry on from where you left off. If you are already mid-task, ignore this, but make sure a new wake-up is scheduled. If the job is finished, do nothing.`
+2. **After every commit**, schedule a fresh wake-up about 45 minutes ahead, and cancel the older one if your tool allows it.
+3. **Backup chain:** at the start, also schedule wake-ups every 90 minutes for the next 8 hours. Extra ones that arrive while you're busy are harmless.
+4. **After any restart**, first re-read CLAUDE.md and `git log`. Never redo committed work. Background jobs are probably dead (last night the machine restarted about every 40 minutes), so check them and relaunch if needed. Design long jobs to **save progress to disk and resume**, not start over.
+5. **When the whole job is finished**, cancel every remaining wake-up.
+6. **If no scheduling tool exists in this session**, write that as the first line of the progress log.
+
+Commit and push after every small step, with a short progress-log entry each time.
+
+---
+
+## 1. Phase A: check every citation (do this before anything else)
+
+Last night's session moved fast and its novelty checks were often "one web search". Assume nothing.
+
+For **every paper cited anywhere** in `formulas.txt`, `results/*/README.md` and `MORNING_SUMMARY.md`:
+1. Open the actual arXiv page or DOI and the PDF.
+2. Confirm the **exact title, all authors (spelled correctly), year, and arXiv ID/DOI**.
+3. Confirm the **exact statement** we claim to answer: the conjecture/question number, the section, and the precise wording. Copy the original statement word for word into `CITATIONS.md` next to our claim, and check they really match. Watch especially for:
+   - **Gregory coefficients (Xu & Zhao, arXiv:2609.11072, "Conjecture 6.1")**: we claim their own table breaks their conjecture. That is unusual; make sure we haven't misread the statement (range of ℓ, the exact constants, how Gr(ℓ) is defined).
+   - **t-values (Chavan, Kobayashi, Layja, arXiv:2111.07097, "Conjecture 4.5")**: this paper is from 2021. Search hard (arXiv, citing papers, Google Scholar-style searches, the authors' later papers) for anyone who has proved it since. Check the author list too.
+   - **Anything cited from memory** (e.g. Hoffman proving N = 1, 2, 3; Björck; Clark–Laugesen; Kitaev 2025): find the real source or remove the claim.
+4. If a paper can't be opened, say so in `CITATIONS.md` and don't rely on it.
+5. Record anything wrong (titles, names, IDs, misquoted conjectures) and fix it everywhere.
+
+**Never invent or "repair" a citation from memory.** If you can't confirm it, it doesn't go in the paper.
+
+## 2. Phase B: novelty check for every result
+
+For each of the 13 results, do a **proper** literature search: at least 5 different search queries, the citing papers of the source paper, the authors' later work, standard references (DLMF, Gradshteyn & Ryzhik, OEIS for any integer sequences such as the Gr(ℓ) values), and searches for special cases. Record queries and findings in `NOVELTY.md`. Label each result **"not found" / "probably known" / "known"**, with links. Anything "known" is dropped from the paper (or kept only as a credited remark).
+
+## 3. Phase C: independent verification of every result
+
+The same AI that found a result is a poor judge of it. So:
+
+1. **For every result marked PROVED**, use a **separate agent that has not seen last night's work** (spawn a fresh subagent with the Agent tool, giving it only the statement and the written proof, not our code or our conclusions). Ask it to check the proof line by line as a sceptical referee: find gaps, unjustified steps, hidden assumptions, and cases not covered. Fix every gap it finds, or downgrade the label. Repeat until a fresh referee finds no gaps.
+2. **Every algebraic step** should be checked by computer algebra (sympy etc.), and **every numerical step used in a proof** must have rigorous error bounds (interval/ball arithmetic: mpmath `iv`, or python-flint/arb). Floating-point checks don't count as proof.
+3. **For every VERIFIED (numerical) result**, recompute the key numbers **from scratch with fresh code written by a fresh agent** that hasn't seen our code, using a different method where possible. The digits must agree.
+4. **Computer-assisted proofs** (Padé m ≤ 361, Gregory ℓ ≤ 10): check that the existing logs cover every case with no gaps, and re-run a sample of cases (including the largest) from clean scripts to confirm they reproduce. Don't re-run the whole overnight computation.
+5. Keep a table in `VERIFICATION.md`: result, what was checked, by which method, outcome, final label.
+
+Labels must be honest: **PROVED** only if the proof survives a fresh referee and all computations are rigorous; otherwise **VERIFIED (numerical)** or **PARTIAL**. Downgrading is fine. Being wrong in public is not.
+
+## 4. No new research
+
+**Don't start any new research or try to extend the results.** This is a wrap-up job: check what exists, cut what fails, and write it up. Open problems (e.g. Habib–Hildebrand Conjecture 7.2, a proof of the Gregory growth law, the all-m Padé diagonal case, the Gurland inequality) go in the paper's "open problems" section as they stand. Don't relaunch the long Padé or Stirling runs to push them further either; use the results already in the logs. Finish as soon as the job is done properly.
+
+## 5. Phase D: write the paper
+
+Write one LaTeX preprint in `paper/` (source + compiled PDF). Working title along the lines of *"Solutions to some recent conjectures and questions in classical analysis"*; choose a better one if the content suggests it.
+
+- **Only include results that passed Phases A–C.** Group them by topic (differential equations, special functions and series, asymptotics, inequalities, functional equations and iteration), with the strongest results first.
+- For each result: the original question, quoted and properly cited (who asked, where); our statement as a numbered theorem/proposition; the full proof (or, for numerical results, the method, precision and error bounds); and what remains open.
+- Clearly separate **proved theorems**, **computer-assisted proofs** (say exactly what was computed) and **numerical results** (never present these as theorems).
+- Credit prior work honestly, including special cases that were already known.
+- An abstract, an introduction explaining what the paper does, and a short "open problems" section at the end.
+- References: only papers you actually opened in Phase A, with correct details. Run a final check that every `\cite` resolves and every bibliography entry matches what you recorded in `CITATIONS.md`.
+- Code availability: link this repo.
+- Write it in normal mathematical style (no AI-flavoured filler, no hype words like "remarkable", "elegant", "groundbreaking").
+
+**AI disclosure statement** (put it in the abstract footnote or a clearly labelled section, and in the README):
+> This work was carried out with extensive use of an AI system, Claude (Anthropic), via the Claude Code software, under the direction of Jacob Goodchild. The AI system chose the problems from the recent literature, carried out the derivations, proofs and computations, searched and checked the literature, and wrote the manuscript. Proofs were checked by independent AI referee passes and by computer algebra and interval arithmetic, but have not been checked by a human expert or peer reviewed. Novelty assessments are based on literature searches and may be incomplete. Jacob Goodchild directed the work and is responsible for its publication.
+
+Remove the draft e-mails from the repo's summary documents; they are not needed.
+
+## 6. Phase E: final review
+
+1. Spawn **one more fresh agent** to read the finished PDF as a referee: correctness, clarity, whether every claim is supported, whether every citation is right, and whether any result looks trivial or already known. Fix what it finds.
+2. Run `verify_all.py` (updated to cover everything in the paper); all must be OK.
+3. Prepare `paper/ZENODO.md` with suggested metadata (title, description, keywords, licence CC BY 4.0, related link to this repo), using the same style as my earlier Zenodo records. **Do not upload anything.**
+4. Write `PAPER_SUMMARY.md` for me in **plain English, no jargon**: what's in the paper, what was dropped and why, what changed after verification (any downgrades or errors found), and an honest one-paragraph assessment of how significant the paper is.
+5. Commit, push, cancel all remaining wake-ups.
+
+---
+
+## Rules (non-negotiable)
+
+1. **Verify everything.** If a check fails, the result is wrong until shown otherwise.
+2. **Never invent citations, numbers, quotes or authors.** Only cite what you opened.
+3. **Honest labels.** Never call something proved when it was only matched numerically, or new when you haven't searched.
+4. **Computing:** only on this session's own machine. **Never use GitHub Actions** or any other cloud service. Don't hammer websites with automated requests.
+5. **Never post, upload, email, comment or submit anything anywhere** (no Zenodo, arXiv, emails). I'll publish it myself.
+6. Run long jobs in the background with logs and resumable progress; don't leave orphaned processes; never use `pkill -f`/`pgrep -f` with a pattern that matches your own shell.
+
+## Paper progress log
+
+- PLAN (written at start, ~06:30 UTC 3 Nov 2026). Estimated hours: setup 0.25; Phase A citations 2-3; Phase B novelty 2-3; Phase C verification 3-5; Phase D paper 3-4; Phase E final review 1.5-2. Total about 12-17 h. Results that fail a check are downgraded or cut.
+
+---
+
+# OLD BRIEF (overnight calculus night: FINISHED, kept for reference)
+
 # findformula3: overnight research brief
 
 You are working in the GitHub repo **JacobGoodchild/findformula3** (currently empty). **Tonight's topic is calculus** (see section 2). Work **all night without stopping until 07:00 UK time (07:00 UTC, the clocks are on GMT)**. Don't ask me questions; I'm asleep. Make the most reasonable choice, write down why in the log, and keep going. Never stop early because "enough has been done": if a target is finished or stuck, pick the next one.
