@@ -54,7 +54,7 @@ Who asked: Xu & Zhao, arXiv:2609.11072, Conjecture 6.1 (opened PDF). How checked
  Label: VERIFIED (numerical; checks in results/tetration_half/README.md). Novelty: NOT FOUND. Convention caveat: regular iteration (b<e^{1/e}); joins continuously to Finch's T(e^{1/e},1/2)=1.2571.
 
 [8] Fasi-Higham Conjecture 1 (Scardino, arXiv:2610.39051; diagonal case k=m explicitly left open): 1/q_{m,m}(z) has all Taylor coefficients > 0 for odd m.
- (i) PROVED for every odd m <= 301 (see results/pade_positivity/rigorous_diag_1_301.log; all 150 values proved): certified zeros + residue tail bound + interval check of the finitely many initial coefficients.
+ (i) PROVED for every odd 3 <= m <= 359 (see results/pade_positivity/rigorous_diag_*.log; all 179 values proved; the runs were split across several logs because the machine restarted overnight; m=1 is trivial): certified zeros + residue tail bound + interval check of the finitely many initial coefficients.
  (ii) VERIFIED (interval arithmetic) law for where the conjecture fails: smallest k with a negative coefficient is k*(m) = 2m+12..14 (m=109..1009; m=9: 42, 19: 54, 99: 210, 509: 1031, 1009: 2032); failing set is {k >= k*(m)}.
  The diagonal is far inside the true region of validity (k*/m -> 2). The all-m diagonal statement remains open. Novelty: NOT FOUND (law k*~2m not in the paper).
  Who asked: Scardino, abstract and Section 1/2 ("diagonal positivity therefore remains an open problem").
