@@ -16,7 +16,7 @@ and re-checkable with `python3 verify_all.py`.
 | 5 | Finch, arXiv:2503.00579: A(x/(1+x))=B(x)+1 and I(x/(1+x))=J(x)+1 | proved by a Möbius conjugacy | **PROVED** |
 | 1 | Chen–Nguyen, arXiv:2507.19502 / Furdui–Sîntămărian: closed form of Σ H_k…H_{k+q}/(k…(k+q)) | q=4…8 closed forms; exact algorithm for all q; top-weight law | **PROVED** (q≤5) / VERIFIED (6–8) |
 | 6 | Xu–Zhao, arXiv:2609.11072, Conjecture 6.1 on Gregory-coefficient sign thresholds | conjecture false; Gr(8..13) computed; true growth ~ exp(π cot(π/ℓ)) | **PROVED** (ℓ≤10) / VERIFIED |
-| 7 | Scardino, arXiv:2610.39051: Fasi–Higham positivity, diagonal Padé case | proved for each odd 3 ≤ m ≤ 359; failure threshold k*(m)=2m+12..14 | **PROVED** per m / VERIFIED law |
+| 7 | Scardino, arXiv:2610.39051: Fasi–Higham positivity, diagonal Padé case | proved for each odd 3 ≤ m ≤ 361; failure threshold k*(m)=2m+12..14 | **PROVED** per m / VERIFIED law |
 | 8 | Krasniqi, arXiv:2610.33699: exact degrees d_CM(R_2), d_CM(−R_2') | 2.8667042552, 3.7984354776 (+ table to n=9) | VERIFIED |
 | 9 | Finch, arXiv:2503.13378: independent confirmation of C''(2) | exact series; C''(2)=0.37462642198301734111… | formula PROVED / value VERIFIED |
 | 10 | Finch, arXiv:2509.24918: T(4/3,1/2), T(5/4,1/2), T(6/5,1/2) | 40-digit values | VERIFIED |
