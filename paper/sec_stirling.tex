@@ -32,15 +32,15 @@ Table~\ref{tab:stirling} gives $d_{CM}(R_n)$ for further $n$ and the normalised 
 $n$ & $d_{CM}(R_n)$ & $(2n-1)\delta_n$ & $d_{CM}(-R_n')$\\
 \midrule
 2 & 2.8667042552$^\dagger$ & 2.6001 & 3.7984354776$^\dagger$\\
-3 & 4.7074638766 & 3.5373 & 5.6534285885\\
+3 & 4.7074638766$^\dagger$ & 3.5373 & 5.6534285885$^\dagger$\\
 4 & 6.5993536696 & 4.1955 & 7.5587377578\\
-5 & 8.5213225063 & 4.6919 & 9.4900039902\\
+5 & 8.5213225063$^\dagger$ & 4.6919 & 9.4900039902$^\dagger$\\
 6 & 10.4617284606 & 5.0790 & 11.4369053276\\
 8 & 14.3760290864 & 5.6404 & 15.3593656569\\
-10 & 18.3171745147 & 6.0263 & --\\
+10 & 18.3171745147$^\dagger$ & 6.0263 & --\\
 14 & 26.2415343007 & 6.5214 & --\\
 18 & 34.1950137509 & 6.8255 & --\\
-22 & 42.1635160400 & 7.0312 & --\\
+22 & 42.1635160400$^\dagger$ & 7.0312 & --\\
 27 & 52.1360471128 & 7.2105 & --\\
 \bottomrule
 \end{tabular}
@@ -48,4 +48,4 @@ $n$ & $d_{CM}(R_n)$ & $(2n-1)\delta_n$ & $d_{CM}(-R_n')$\\
 
 \paragraph{Numerical observation on the sharpness of Krasniqi's constant.} The numbers $(2n-1)\delta_n$ increase monotonically with $n$ in the table. Extrapolating the sequence for $n=2,\dots,27$ by least-squares polynomials of degree $4$--$6$ in $1/n$ or $1/(n+\frac12)$ (using the data for $n\ge8,10,12$) gives limits between $8.0967$ and $8.0977$, median $8.0975$, to be compared with Krasniqi's bound $2\pi^2/J=2\pi^2/\mathrm{Cin}(2\pi)=8.097627\ldots$. The data are therefore compatible with $\lim_n(2n-1)\delta_n=2\pi^2/J$, i.e.\ with his upper bound being attained (at $m=0$); the extrapolation is not a proof, and the spread above is a rough indication of its uncertainty (no error bound).
 
-\paragraph{Caveats.} The computations are in double-precision/quadrature arithmetic with the stability checks described, not in interval arithmetic; non-negativity of $D^\rho h$ below $\rho_c$ was checked on grids. Entries of Table~\ref{tab:stirling} other than $n=2$ were computed by one implementation only.
+\paragraph{Caveats.} The computations are quadrature computations with the stability checks described, not interval arithmetic; non-negativity of $D^\rho h$ below $\rho_c$ was checked on grids, and the root $\rho_c$ was located as a tangency (double root) of $D^\rho h$. The entries marked $^\dagger$ agree with the independent implementation to at least 10 digits (for $n=22$ the independent value needed many quadrature nodes to converge; its quoted uncertainty is $3\cdot10^{-11}$); the other entries come from one implementation only.
