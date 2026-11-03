@@ -1,0 +1,98 @@
+\section{Three questions of Finch on iteration}\label{sec:finch}
+
+Finch has recently posed several questions about iterated maps~\cite{FinchDelta,FinchIII,FinchIV}. We answer three of them. The first is an elementary consequence of classical asymptotics of Fatou coordinates and is presented as such; the other two are an exact series with a numerical evaluation and a table of numerical values.
+
+\subsection{The constant $\delta$ between two solutions of Abel's equation}
+
+\paragraph{Setting.} Let $\theta(x)=x+\sum_{m\ge1}c_mx^{m\tau+1}$ be analytic near $0$, with an integer $\tau\ge1$ and $c_1=\gamma<0$, so that $0$ is an attracting parabolic fixed point. Put $\kappa=-\tau\gamma>0$ and
+\[
+a=\frac{\tau+1}2-\frac{c_2}{\gamma^2}.
+\]
+Let $x_0>0$ be a starting point in the basin, $x_n=\theta^n(x_0)$, so $x_n\downarrow0$. Finch considers two numerical solutions of Abel's equation $g(\theta(x))=g(x)+1$.
+
+\begin{itemize}[leftmargin=2em]
+\item The \emph{EJ solution} (\'Ecalle--Jagy). There is a unique formal series $G(x)=\kappa^{-1}x^{-\tau}+a\ln x+\sum_{m\ge1}b_mx^{m\tau}$ (no constant term) with $G(\theta(x))=G(x)+1$ (see the proof below). One sets $g_{\mathrm{EJ}}(x_0)=\lim_{n\to\infty}\big[G_K(x_n)-n\big]$ where $G_K$ is the truncation of $G$ after the term $b_Kx^{K\tau}$ ($K\ge1$; the limit exists and does not depend on $K$, see below). This is Finch's description $g(x)=\lim[g(x_n)-n]$.
+\item The \emph{ML solution} (Mavecha--Laohakosol), given by the limit
+\[
+\tilde g(x_0)=-\tau\lim_{n\to\infty}n^{1+1/\tau}\Big[\kappa^{1/\tau}x_n-n^{-1/\tau}+\frac a{\tau^2}\,\frac{\ln n}{n^{1+1/\tau}}\Big].
+\]
+Finch displays this formula for the maps he studies, e.g.\ $\tilde g_{13}(x)=-2\lim n^{3/2}\big(\sqrt2x_n-n^{-1/2}+\tfrac38\ln n\,n^{-3/2}\big)$ for $\theta_{13}(x)=x(1-x^2)$ (here $\tau=2$, $\kappa=2$, $a=\tfrac32$), and the corresponding formulas for $x(1-x^k)$ and for $x(1-x)(1+\rho x)$; in all of these cases it agrees with the formula above. We take the formula above as the definition of $\tilde g$ for general $\theta$.
+\end{itemize}
+He conjectured exact values of $\delta=g_{\mathrm{EJ}}-\tilde g$ in many cases, in particular $\delta_{13}=-\tfrac34\ln2$, $\delta_{16}=-\tfrac23\ln3$, $\delta_{17}=-\tfrac59\ln6$, and (Addendum III of~\cite{FinchDelta}) for $\theta(x)=x(1-\sigma x^\tau-\rho x^{2\tau})$, $\sigma>0$:
+\[
+\delta=\Big(\frac{\tau+1}{2\tau}+\frac{\rho}{\tau\sigma^2}\Big)\ln\frac1{\tau\sigma},
+\]
+remarking that ``$\delta$ seems to be completely determined by the parameter $\tau$ and two coefficients $c_1$ \& $c_2$''. All these are consequences of the following statement.
+
+\begin{proposition}\label{prop:delta}
+In the setting above, the formal series $G$ exists and is unique, the limits defining $g_{\mathrm{EJ}}(x_0)$ and $\tilde g(x_0)$ exist, and
+\[
+\delta=g_{\mathrm{EJ}}(x_0)-\tilde g(x_0)=-\frac a\tau\ln\kappa=\Big(\frac{\tau+1}{2\tau}-\frac{c_2}{\tau\gamma^2}\Big)\ln\frac1{\tau|\gamma|}\qquad\text{for every }x_0.
+\]
+For $\theta=x(1-\sigma x^\tau-\rho x^{2\tau})$ ($c_1=-\sigma$, $c_2=-\rho$) this is exactly Finch's Addendum III formula.
+\end{proposition}
+
+\begin{remark}
+The logarithmic coefficient $a=\tfrac{\tau+1}2-c_2/c_1^2$ is classical: it is (up to normalisation) \'Ecalle's \emph{r\'esidu it\'eratif} of the parabolic germ, which is the coefficient of the logarithm in the Fatou coordinate (see for example Milnor's survey and Lanford--Yampolsky~\cite{LY}). Given this, Proposition~\ref{prop:delta} is a short corollary of the definitions of the two algorithms, and we do not claim the asymptotics as new; what we supply is a complete derivation of Finch's conjectured constants.
+\end{remark}
+
+\begin{proof}
+\emph{The formal series.} Put $\eps=x^\tau$. Then
+\[
+\theta(x)^{-\tau}=x^{-\tau}\big(1+\gamma\eps+c_2\eps^2+O(\eps^3)\big)^{-\tau}=\eps^{-1}-\tau\gamma+\Big(\tfrac{\tau(\tau+1)}2\gamma^2-\tau c_2\Big)\eps+O(\eps^2),
+\]
+\[
+\ln\frac{\theta(x)}{x}=\gamma\eps+O(\eps^2),\qquad \theta(x)^{m\tau}-x^{m\tau}=m\tau\gamma\,\eps^{m+1}+O(\eps^{m+2}).
+\]
+For $G=Ax^{-\tau}+a'\ln x+\sum_{m\ge1}b_mx^{m\tau}$ we get $G(\theta(x))-G(x)=-A\tau\gamma+\big[A(\tfrac{\tau(\tau+1)}2\gamma^2-\tau c_2)+a'\gamma\big]\eps+\sum_{j\ge2}(\cdots)\eps^j$, where the coefficient of $\eps^j$ for $j\ge2$ contains $b_{j-1}$ with the nonzero factor $(j-1)\tau\gamma$ plus terms involving only $A,a',b_1,\dots,b_{j-2}$. Equating with $1$ gives successively $A=-1/(\tau\gamma)=1/\kappa$; then $a'=-A(\tfrac{\tau(\tau+1)}2\gamma^2-\tau c_2)/\gamma=\tfrac{\tau+1}2-\tfrac{c_2}{\gamma^2}=a$ (using $A=-1/(\tau\gamma)$); then $b_1,b_2,\dots$ uniquely. So $G$ exists, is unique, and the truncation satisfies $G_K(\theta(x))-G_K(x)-1=O(x^{(K+1)\tau})$.
+
+\emph{Existence of $g_{\mathrm{EJ}}$.} Since $x_n\to0$ monotonically and the recurrence gives $x_{n+1}/x_n=1+\gamma x_n^\tau+O(x_n^{2\tau})$, we have $x_n^{-\tau}=\kappa n(1+o(1))$ (indeed $x_{n+1}^{-\tau}-x_n^{-\tau}=\kappa+O(x_n^\tau)\to\kappa$, and Ces\`aro's lemma applies), so $x_j^{(K+1)\tau}=O(j^{-(K+1)})$ is summable for $K\ge1$. Hence $G_K(x_n)-n-G_K(x_0)=\sum_{j<n}[G_K(x_{j+1})-G_K(x_j)-1]$ converges, so $g_{\mathrm{EJ}}(x_0)$ exists; it does not depend on $K\ge1$ because $b_{K+1}x_n^{(K+1)\tau}\to0$. Moreover, since $b_mx_n^{m\tau}\to0$,
+\begin{equation}\label{eq:orbit}
+\kappa^{-1}x_n^{-\tau}+a\ln x_n=n+g_{\mathrm{EJ}}(x_0)+o(1).
+\end{equation}
+
+\emph{Asymptotics of the orbit.} From \eqref{eq:orbit}, $x_n^{-\tau}=\kappa n+\kappa g_{\mathrm{EJ}}-\kappa a\ln x_n+o(1)$. Since $x_n\to0$ and $\ln x_n=O(\ln x_n^{-\tau})$ we first get $x_n^{-\tau}=\kappa n+O(\ln n)$, hence $\ln x_n=-\tfrac1\tau\ln(\kappa n)+o(1)$, and then
+\[
+x_n^{-\tau}=\kappa n\,(1+\eps_n),\qquad \eps_n=\frac{\tfrac a\tau\ln(\kappa n)+g_{\mathrm{EJ}}(x_0)}{n}+o\Big(\frac1n\Big)=O\Big(\frac{\ln n}n\Big).
+\]
+Therefore $\kappa^{1/\tau}x_n=n^{-1/\tau}(1+\eps_n)^{-1/\tau}=n^{-1/\tau}\big[1-\tfrac1\tau\eps_n+O(\ln^2n/n^2)\big]$ and
+\[
+\kappa^{1/\tau}x_n-n^{-1/\tau}+\frac a{\tau^2}\frac{\ln n}{n^{1+1/\tau}}=-\frac1\tau\,n^{-1-1/\tau}\Big[\frac a\tau\ln\kappa+g_{\mathrm{EJ}}(x_0)\Big]+o\big(n^{-1-1/\tau}\big),
+\]
+where the $\ln n$ terms cancelled. Multiplying by $-\tau n^{1+1/\tau}$ shows that the limit defining $\tilde g(x_0)$ exists and equals $g_{\mathrm{EJ}}(x_0)+\tfrac a\tau\ln\kappa$. \end{proof}
+
+\begin{remark}[Checks]
+The proposition reproduces every value in Finch's paper that we tested: $\delta_{13}$, $\delta_{14}=0$, $\delta_{15}$, $\delta_{16}$, $\delta_{17}$, $\delta(k)=-\frac{k+1}{2k}\ln k$ for $x(1-x^k)$ and for $x(1-x)^k$, $\delta(\rho)$, and the transcendental examples $\ln(1+x)$ ($-\tfrac13\ln2$), $xe^{-x}$ ($0$), $x/(1+x^2)$ ($-\tfrac14\ln 2$), $\sin x$ ($\tfrac35\ln3$) and the Fresnel cosine ($\tfrac{55}{108}\ln\tfrac{10}{\pi^2}$). Numerically, Finch's printed 100-digit values $g_{13}(\tfrac12)=1.18935\ldots$ and $\tilde g_{13}(\tfrac12)=1.70921\ldots$ differ by $-0.5198604\ldots=-\tfrac34\ln2$; and a fresh implementation at 40 digits with $4\cdot10^5$ orbit steps reproduces $-0.5198604$ to seven digits (the ML limit converges like $\ln^2n/n$ and needs extrapolation). These checks use his definitions of the algorithms; we have used his version v6, as an earlier draft (v3) contained a programming error acknowledged in his paper.
+\end{remark}
+
+\subsection{The second derivative $C''(2)$ of an orbit limit}
+Finch~\cite{FinchIII} studies $x_{n+1}=x_n+1+1/x_n^2$ and the limit $C(x_0)=\lim_{n\to\infty}(x_n-n)$. He computes by finite differences $C(2)=2.59878685582487\ldots$, $C'(2)=0.66156132404868\ldots$, $C''(2)\approx0.37462642198301734111$, notes that an earlier series estimate $0.3909\ldots$ disagrees, and writes: ``An independent confirmation of the $0.3746$ estimate remains open.''
+
+Let $x_k$ be the orbit of $x_0$, $f(x)=x+1+x^{-2}$ so $f'(x)=1-2x^{-3}$. Since $x_k-k\to C$ and $\prod_k f'(x_k)$ converges ($x_k\sim k$, $\sum x_k^{-3}<\infty$), $C'(x_0)=\prod_{k\ge0}(1-2x_k^{-3})$. Writing $D_k=\prod_{j<k}(1-2x_j^{-3})=\dd x_k/\dd x_0$ and differentiating once more, $\dd^2x_k/\dd x_0^2=:E_k$ satisfies $E_{k+1}=f'(x_k)E_k+f''(x_k)D_k^2$, with $f''(x)=6x^{-4}$, and $C''(x_0)=\lim_kE_k$. Solving the linear recursion,
+\begin{equation}\label{eq:Cpp}
+C''(x_0)=C'(x_0)\sum_{j\ge0}\frac{6\,D_j}{x_j^{4}\,(1-2x_j^{-3})}=C'(x_0)\sum_{j\ge0}\frac{6\,D_j}{x_j(x_j^3-2)} .
+\end{equation}
+(Finch's series in~\cite{FinchIII}, $C'(x_0)\sum_n\big(1-2x_n^{-3}\big)^{-1}6x_n^{-4}$ under a uniformity assumption, lacks the factor $D_j$; this is why it gave $0.3909$.) The interchange of the limit $k\to\infty$ with differentiation is justified by the uniform summability of the terms; we have not written out the details, and \eqref{eq:Cpp} converges only like $O(1/N)$ in the number $N$ of terms. For $x_0=2$ we obtained, with the asymptotic expansion $x_n-n=C-\frac1n+\frac{C-1/2}{n^2}+\cdots$ (all logarithmic terms vanish) and exact orbit recursions for the derivatives,
+\[
+C''(2)=0.374626421983017341116776\ldots,
+\]
+in agreement with Finch's $0.37462642198301734111$ to all 20 digits he printed. A second, independent implementation (fresh code; $N=10^4$ and $3\cdot10^4$ orbit steps agree to 33--35 digits) gives $0.374626421983017341116776248793$, agreeing with the digits above, and a finite-difference evaluation at high precision agrees to 22 digits; the series \eqref{eq:Cpp} summed over $2\cdot10^5$ terms gives $0.3746264219924$, consistent with the expected tail $O(1/N)$. None of these computations is interval-certified.
+
+\subsection{Half-iterates of $b^x$ for $b=4/3,\,5/4,\,6/5$}
+Finch~\cite{FinchIV} writes: ``It would be good to see the values of $T(4/3,1/2)$, $T(5/4,1/2)$ and $T(6/5,1/2)$ someday.'' Here $T(b,x)$ is tetration, and $T(b,\tfrac12)=f^{[1/2]}(1)$ for $f(x)=b^x$, where for $b<e^{1/e}$ we use the regular (Koenigs--Schr\"oder) iteration at the attracting fixed point $L$ ($b^L=L$, $L<e$): with multiplier $\lambda=f'(L)=L\ln b\in(0,1)$ and Koenigs function $\phi(f(x))=\lambda\phi(x)$, $\phi'(L)=1$, one puts $f^{[1/2]}=\phi^{-1}(\sqrt\lambda\,\phi(\cdot))$. This is the real-analytic half-iterate that is analytic at $L$; other solutions of $g\circ g=f$ exist and are not analytic at $L$.
+
+\begin{table}[h]
+\centering
+\caption{Half-iterates $T(b,\tfrac12)=f^{[1/2]}(1)$, $f(x)=b^x$ (regular iteration at the attracting fixed point $L$). Two independent methods (power series of the inverse Koenigs function; limit formulas at 500-digit working precision) agree to the digits shown.}\label{tab:tet}
+\begin{tabular}{llll}
+\toprule
+$b$ & $L$ & $\lambda$ & $T(b,\tfrac12)$\\
+\midrule
+$4/3$ & 1.57167727089176302 & 0.45214337 & 1.205837434043095594941839306507112566900\\
+$5/4$ & 1.35220351364068086 & 0.30173549 & 1.163595361965008849025943273358436312883\\
+$6/5$ & 1.25773454137652642 & 0.22931212 & 1.136262486727128084185300918647426025589\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+As a check of the convention, the same construction for $b=\sqrt2$ (attracting fixed point $L=2$, $\lambda=\ln2$) reproduces the value $f^{[1/2]}(1)=1.24362162766852180429509898\ldots$ printed in~\cite{FinchIV}, Section 1.5 (in a quick check with 120 iterations, to about 20 digits). The values are numerical, not interval-certified: the two methods agree to at least 50 digits, the functional equation $g(g(x))=b^x$ holds to better than $10^{-85}$ at several points, and the digits shown are well inside the observed convergence.
