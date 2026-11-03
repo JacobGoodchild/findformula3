@@ -170,3 +170,7 @@ m=339: OK squarefree, exactly one positive real root R=450.002835323727, min |ot
 m=341: OK squarefree, exactly one positive real root R=452.653808687299, min |other|/R > 1.000008973 [35.8s]
 m=343: OK squarefree, exactly one positive real root R=455.304782054525, min |other|/R > 1.000008869 [29.1s]
 m=345: OK squarefree, exactly one positive real root R=457.955755425343, min |other|/R > 1.000008766 [31.4s]
+m=347: OK squarefree, exactly one positive real root R=460.606728799689, min |other|/R > 1.000008666 [30.8s]
+m=349: OK squarefree, exactly one positive real root R=463.257702177504, min |other|/R > 1.000008567 [31.0s]
+m=351: OK squarefree, exactly one positive real root R=465.908675558728, min |other|/R > 1.000008469 [30.9s]
+m=353: OK squarefree, exactly one positive real root R=468.559648943303, min |other|/R > 1.000008374 [32.2s]
