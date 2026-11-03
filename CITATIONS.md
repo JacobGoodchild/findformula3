@@ -27,7 +27,9 @@ Our claim: Conjecture 7.1 proved (results/painleve_series); 7.2 NOT proved. Stat
 Steven Finch, "Half-Iterates and Delta Conjectures", v1 9 Jun 2025, v6 3 Sep 2025 (math.NT). (the version read is v6.)
 Setting: theta(x) = x + sum_{m>=1} c_m x^{m tau + 1}, c_1 = gamma < 0, tau >= 1 integer; Abel's equation g(theta(x)) = g(x) + 1; two algorithms "EJ" and "ML" give g that differ by a constant delta.
 > (Addendum III) "Given a polynomial of type x(1 - sigma x^tau - rho x^{2 tau}) where sigma > 0, we believe that delta = ((tau+1)/(2 tau) + rho/(tau sigma^2)) ln(1/(tau sigma)). This extends to transcendental functions, e.g., the Fresnel cosine [4] has delta = (55/108) ln(10/pi^2)."
-> (Addendum II) "We conjecture, assuming sigma > 0, that delta = (1 + 2 rho/sigma) ln(1/sigma)" for cubics x(1 - sigma x - rho x^2) [tau = 1].
+> (Addendum II, read off the rendered page 7) "The cubics in this paper are all of type x(1 - sigma x - rho x^2), where -infinity < rho < infinity and sigma >= 0. We conjecture, assuming sigma > 0, that delta = (1 + rho/sigma^2) ln(1/sigma)." (This is Addendum III at tau = 1. An earlier version of this file misquoted it as (1 + 2 rho/sigma) ln(1/sigma); that was a transcription error from garbled text extraction and is corrected here.)
+> (Section 1 "Clarification", page 7) "A software programming error led to false conclusions in an earlier draft (v3) ... every EJ-based result in that draft about g_14, g_15, g_16 is regretably wrong." We use v6.
+> (end of Section 3, page 8) "In essence, delta seems to be completely determined by the parameter tau and two coefficients c_1 & c_2."
 Also individual conjectures delta_13 = -(3/4) ln 2, delta_14 = 0, delta_15 = -(3/4) ln 2, delta_16 = -(2/3) ln 3, delta_17 = -(5/9) ln 6, and the listed pairs (e.g. sin x: delta = (3/5) ln 3).
 Our claim: one formula delta = -(a/tau) ln(-tau gamma), a = (tau+1)/2 - c_2/gamma^2, which with gamma = -sigma, c_2 = -rho reproduces Addendum III exactly. Need: precise definition of delta in the paper (EJ vs ML) and the hypotheses we assume (see VERIFICATION.md).
 
