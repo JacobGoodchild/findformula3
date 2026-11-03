@@ -1,0 +1,29 @@
+\section{Introduction}\label{sec:intro}
+
+This paper collects answers to a number of specific questions and conjectures that appeared in recent arXiv papers (2021--2026) in classical analysis: inequalities and sharp constants, series and sums, special functions, iteration and asymptotics. The questions were chosen from the literature by an AI system, by the rule that someone had written the question down (as a conjecture, an open problem, or a request for a value) and that it could be attacked by calculus together with computer algebra, interval arithmetic or exact computation. For each question we state the original wording and its source, we state our result, and we give the proof or, for numerical results, the method and the precision. We distinguish three kinds of statements throughout.
+
+\begin{itemize}[leftmargin=2em]
+\item \textbf{Theorems}: complete proofs in the text (Section~\ref{sec:riesz}; Propositions~\ref{prop:delta} and~\ref{prop:gurland}, which are short and elementary).
+\item \textbf{Computer-assisted theorems}: statements whose proof consists of a written argument plus a finite computation in exact or interval arithmetic that we describe precisely (Theorems~\ref{thm:gregory}(ii) and~\ref{thm:pade}, and the exact reductions in Section~\ref{sec:harmonic}).
+\item \textbf{Numerical results}: values or laws obtained by high-precision computation and checked by independent code, but not proved (for example the tables in Sections~\ref{sec:finch} and~\ref{sec:stirling} and the law for $k^*(m)$ in Section~\ref{sec:kstar}). These are never presented as theorems.
+\end{itemize}
+
+\paragraph{Summary of results.}
+\begin{enumerate}[leftmargin=2em]
+\item (Section~\ref{sec:riesz}) We prove two conjectures of Fan~\cite{Fan} on Riesz capacity of three-point sets on a circle and of the vertex sets of regular odd polygons (Theorem~\ref{thm:riesz}).
+\item (Section~\ref{sec:gregory}) We show that a conjecture of Xu and Zhao~\cite{XZ} on the sign thresholds $\Gr(\ell)$ of higher-order Gregory coefficients is false, compute $\Gr(\ell)$ rigorously for $\ell\le10$ (and numerically up to $14$), and describe the observed growth.
+\item (Section~\ref{sec:pade}) For the denominators $q_{m,m}$ of diagonal Pad\'e approximants to $e^z$ we prove, by computer assistance, that $1/q_{m,m}$ has positive Taylor coefficients for every odd $3\le m\le361$, a case left open in~\cite{Scardino} of a conjecture of Fasi and Higham~\cite{FH}, and we describe numerically where positivity first fails for fixed $m$.
+\item (Section~\ref{sec:harmonic}) We give an exact algorithm and explicit values for the series $S_q=\sum_{k\ge1}H_kH_{k+1}\cdots H_{k+q}/(k(k+1)\cdots(k+q))$ studied in~\cite{CN}.
+\item (Section~\ref{sec:finch}) We give a derivation of Finch's conjectured values of the constant between two solutions of Abel's equation (an easy consequence of classical Fatou-coordinate asymptotics), an exact series and the value of a second derivative asked for in~\cite{FinchIII}, and half-iterate values asked for in~\cite{FinchIV}.
+\item (Section~\ref{sec:gurland}) We answer two of the three open problems of Wi\'sniewska~\cite{Wis} on Gurland's ratio (by an elementary argument) and give numerical information on the third.
+\item (Section~\ref{sec:stirling}) We give numerical values of two completely monotonic degrees whose exact values are said to be open in~\cite{Kr}.
+\end{enumerate}
+
+\paragraph{Results that turned out to be known.} We also found proofs of three statements that, as our literature search showed, had already been settled, and which we therefore do not claim: Conjecture 7.1 of Habib and Hildebrand~\cite{HH} (proved by the same authors a few days later in~\cite{HH2}); Conjecture 4.5 of Chavan, Kobayashi and Layja~\cite{CKL} on the multiple $t$-values $t(\{2\}^N,1)$ (proved by Charlton~\cite{Charlton}); and the two conjectured identities between Abel functions in~\cite{FinchAB} (explained by the author himself in the corrigendum of that paper). A numerical refutation of a Mahler-measure conjecture and its explanation, which we also reproduced, are in~\cite{Zheng}. We mention them to give an accurate account of what the search found.
+
+\paragraph{Limits of the literature search.} Novelty statements are based on web and arXiv searches carried out in November 2026; citation-count tools were mostly unavailable, so a later or less visible reference to a result may have been missed. ``Not found'' means only that. Several papers cited here appeared in 2026; they are cited by arXiv number and were read in their arXiv versions.
+
+\paragraph{Code availability.} All code, logs and verification scripts are in the repository \url{https://github.com/JacobGoodchild/findformula3}, under \texttt{results/}; the file \texttt{VERIFICATION.md} lists, for each result, what was checked and by which method.
+
+\paragraph{Statement on the use of AI.}
+This work was carried out with extensive use of an AI system, Claude (Anthropic), via the Claude Code software, under the direction of Jacob Goodchild. The AI system chose the problems from the recent literature, carried out the derivations, proofs and computations, searched and checked the literature, and wrote the manuscript. Proofs were checked by independent AI referee passes and by computer algebra and interval arithmetic, but have not been checked by a human expert or peer reviewed. Novelty assessments are based on literature searches and may be incomplete. Jacob Goodchild directed the work and is responsible for its publication.
