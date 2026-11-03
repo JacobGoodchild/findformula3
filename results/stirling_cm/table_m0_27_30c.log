@@ -1,0 +1,5 @@
+/home/user/findformula3/results/stirling_cm/cmfast.py:33: IntegrationWarning: The occurrence of roundoff error is detected, which prevents 
+  the requested tolerance from being achieved.  The error may be 
+  underestimated.
+  v, err = quad(hpf, 0, t, weight='alg', wvar=(0, -a), limit=200, epsabs=1e-16, epsrel=1e-13)
+n=27 m=0  d_CM = 52 + 0.1360471128   delta=0.1360471128  (2n-1)*delta=7.210497  t*=0.7099 [291s]
