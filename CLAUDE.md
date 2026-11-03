@@ -104,6 +104,13 @@ Remove the draft e-mails from the repo's summary documents; they are not needed.
 - REVISED PLAN (user: finish by ~16:40 UTC, 3 Nov; must not take 17 h): A citations 1h (to ~09:30), B novelty 1h (~10:30), C verification 2.5h (~13:00), D paper 2h (~15:00), E final review 1h (~16:00-16:40). Run referee/search agents in parallel to save time.
 - (superseded) PLAN (written at start, ~06:30 UTC 3 Nov 2026). Estimated hours: setup 0.25; Phase A citations 2-3; Phase B novelty 2-3; Phase C verification 3-5; Phase D paper 3-4; Phase E final review 1.5-2. Total about 12-17 h. Results that fail a check are downgraded or cut.
 
+- 08:14 UTC: brief added; wake-ups set (+45 min, then every 90 min through ~15:44 UTC).
+- 08:15 UTC: user asked to finish by ~16:40 UTC (not 17 h). Revised plan above.
+- 08:20 UTC: Phase A done -> CITATIONS.md (all papers opened). Findings: 2608.02265 is by Zheng (not Samart) and already contains our Samart result; Finch's own corrigendum already explains A/B, I/J identities; "Hoffman proved N=1,2,3" was from memory (reworded); Finch Addendum II and t-value formula had been mis-transcribed from garbled text (fixed after reading rendered pages); Fasi-Higham Conj 3.2 opened and confirmed.
+- 08:25-08:40 UTC: Phase B (4 search agents) -> NOVELTY.md. KNOWN: Painleve Conj 7.1 (Hildebrand-Habib 2606.24182 Thm 2.5, verified by me), t-values Conj 4.5 (Charlton 2112.14613 Sec 3.3, verified by me). Finch delta: formula probably known (residu iteratif; Lanford-Yampolsky Prop 2.14 verified by me). Gurland 1,2 probably known (elementary). Not found: Fan, Gregory, Pade, harmonic closed forms, C'' and half-iterates, Krasniqi numerics.
+- 08:30-09:00 UTC: Phase C: 7 fresh referees (all 'complete modulo minor'; Pade referee listed exact certifications -> new exact_checks.py, 0 failures for all odd m<=361); Riesz proof re-refereed in round 2 (complete modulo minor; fixes applied). Fresh-code recomputation: tetration values and C''(2) (50+ / 33 digits), Gregory Gr(3..10) incl. rigorous interval tail, Stirling d_CM (n=2,3,5,10,22; -R2', -R3', -R5'), Gurland theta scan. Pending: harmonic S5-S8 PSLQ verifier, Pade large-m re-run.
+- 08:45-09:00 UTC: Phase D: paper/ written (sections riesz, gregory, pade, harmonic, finch, gurland, stirling, intro, open, refs), compiles with pdflatex (installed via apt). formulas.txt, README.md, VERIFICATION.md rewritten; MORNING_SUMMARY emails removed; verify_all.py extended (gurland, pade exact checks). paper/ZENODO.md drafted.
+
 ---
 
 # OLD BRIEF (overnight calculus night: FINISHED, kept for reference)
