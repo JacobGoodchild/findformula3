@@ -1,2 +1,46 @@
 \section{Series of products of consecutive harmonic numbers}\label{sec:harmonic}
-(to be completed)
+
+\subsection{The question}
+Let $H_n=1+\frac12+\dots+\frac1n$ and, for $q\ge1$,
+\[
+S_q=\sum_{k=1}^\infty\frac{H_kH_{k+1}\cdots H_{k+q}}{k(k+1)\cdots(k+q)} .
+\]
+Known values (as recalled in Chen and Nguyen~\cite{CN}) are $S_1=\zeta(2)+2\zeta(3)$ and $S_2=-\tfrac12\zeta(2)+\tfrac54\zeta(3)+\tfrac58\zeta(4)$, and Chen and Nguyen prove
+\[
+S_3=-\tfrac49\zeta(2)-\tfrac16\zeta(2)\zeta(3)-\tfrac7{24}\zeta(3)+\tfrac{191}{144}\zeta(4)+\tfrac12\zeta(5).
+\]
+Furdui and S\^{\i}nt\u{a}m\u{a}rian conjectured that $S_q$ is always a rational linear combination of $\zeta(2),\dots,\zeta(q+2)$ (stated as Conjecture 1 in~\cite{CN}, which we have not read in the original); the value of $S_3$ shows that this holds for $q=3$ only if $\zeta(2)\zeta(3)\in\operatorname{span}_\Q\{\zeta(2),\dots,\zeta(5)\}$, which is open. Chen and Nguyen end with: ``Perhaps we can learn more by computing the closed form for $S_q$ $(q\in\N)$.'' We do this for $q\le 8$.
+
+\subsection{Method}
+The method is standard in outline (reduction of sums of products of harmonic numbers over rational weights to Euler sums and then to multiple zeta values, in the spirit of Flajolet--Salvy~\cite{FS} and Xu--Wang~\cite{XW}); what we contribute is its execution in exact arithmetic for the specific family $S_q$.
+
+Multiple zeta values are $\zeta(s_1,\dots,s_r)=\sum_{n_1>\dots>n_r\ge1}n_1^{-s_1}\cdots n_r^{-s_r}$ ($s_1\ge2$). Fix $q$ and a cut-off $K$, and let $S_q(K)$ be the sum over $k\le K$.
+\begin{enumerate}[leftmargin=2em]
+\item Write $H_{k+j}=H_k+\sum_{i=1}^j\frac1{k+i}$ ($0\le j\le q$) and expand the product: $\prod_{j=0}^qH_{k+j}=\sum_mH_k^m\,c_m(k)$ with $c_m$ rational functions of $k$ with poles in $\{-1,\dots,-q\}$. Multiplying by $\prod_j(k+j)^{-1}$ and splitting into partial fractions (in exact rational arithmetic) gives a finite $\Q$-linear combination of sums $\sum_{k\le K}H_k^m(k+a)^{-s}$ with integers $0\le a\le q$ and $s\ge1$; the individual sums with $s=1$ diverge as $K\to\infty$ and only the combination converges.
+\item A shifted sum is reduced to unshifted ones: with $p=k+a$ one has $H_{p-a}=H_p-\sum_{i=0}^{a-1}\frac1{p-i}$, which lowers the power of $H$ by expanding; induction on the power $m$ terminates in sums $\sum_p(p+b)^{-u}$ with explicit rational boundary terms. The changes of the upper limit contribute $O(\log^mK/K)$.
+\item The unshifted sums $\sum_{p\le K}H_p^m\,p^{-s}$ are rewritten as truncated nested sums (quasi-shuffle algebra of the truncated multiple zeta values $\zeta_K(s_1,\dots,s_r)$, which satisfy the stuffle relations \emph{exactly} at finite $K$); those with $s_1=1$ are polynomials in $T=H_K$ plus $o(1)$ (the standard stuffle regularisation of multiple zeta values, with $T=H_K$ exactly). Since $S_q(K)$ converges, all positive powers of $T$ in the resulting expression must cancel; our program asserts this cancellation identically in exact rational arithmetic, and it always holds.
+\item The output is a $\Q$-linear combination of multiple zeta values. In step~1 a term with $H_k^m$ carries $q+1-m$ factors of the form $1/(k+i)$, $1\le i\le q$, and the factor $\prod_j(k+j)^{-1}$ has simple poles; hence the pole at $k=-a$ has order $s\le q+2-m$, and the sums $\sum H_p^m p^{-s}$ that arise have weight $m+s\le q+2$. The shift reductions of step~2 do not increase the weight.
+\end{enumerate}
+
+\begin{theorem}[computer-assisted]\label{thm:harmonic}
+For $1\le q\le9$ the procedure above expresses $S_q$ as an explicit $\Q$-linear combination of multiple zeta values of weight at most $q+2$. The expression is the output of a program that works in exact rational arithmetic; the program is in the repository.
+\end{theorem}
+
+We checked each of these expressions against independent high-precision numerics for $S_q$ (Euler--Maclaurin summation with exact Taylor data): the exact MZV combinations agree with the numerical values to about $10^{-62}$ for $q\le9$. The same procedure applies verbatim for every $q$; we do not claim a theorem for all $q$ because we have only executed it for $q\le9$.
+
+\subsection{Closed forms}
+Every multiple zeta value of weight $\le7$ is a polynomial with rational coefficients in single zeta values $\zeta(n)$ (a classical result, available through the standard tables of multiple zeta values), and at weight $8$ one new generator, for instance $\zeta(5,3)$, is needed. We found the rational coefficients of these reductions by PSLQ at 150 digits (the MZVs being computed with PARI/GP), so the closed forms below are \emph{numerical identifications} of exact reductions; we label them accordingly. They were then checked against independent numerics (45 digits for $q\le8$).
+
+\begin{align*}
+S_4&=\tfrac1{432}\zeta(2)-\tfrac{45}{64}\zeta(3)+\tfrac{1799}{8640}\zeta(2)^2-\tfrac{11}{72}\zeta(2)\zeta(3)+\tfrac{13}{18}\zeta(5)+\tfrac1{60}\zeta(2)^3-\tfrac1{48}\zeta(3)^2,\\
+S_5&=\tfrac{83}{16200}\zeta(2)-\tfrac{26657}{86400}\zeta(3)-\tfrac{9811}{64800}\zeta(2)^2+\tfrac{347}{43200}\zeta(2)\zeta(3)+\tfrac{1669}{2880}\zeta(5)+\tfrac{61633}{756000}\zeta(2)^3\\
+&\qquad-\tfrac{137}{1440}\zeta(3)^2-\tfrac1{300}\zeta(2)^2\zeta(3)-\tfrac1{120}\zeta(2)\zeta(5)+\tfrac1{30}\zeta(7).
+\end{align*}
+Numerically $S_4=0.21289073764960874091117088329\ldots$ (confirmed to 40 digits by an independent implementation). The values of $S_6,S_7,S_8$ are listed in the repository (\texttt{results/harmonic\_products/S\_table.txt}); the constant $\zeta(5,3)$ first appears in $S_7$ (the top weight of $S_6$ is $8$ but its weight-$8$ part reduces to single zeta values). We did not find $S_q$ for $q\ge4$ in the literature, but as noted the method is standard and these values should be viewed as the explicit evaluation of a known type of sum.
+
+\subsection{An observation on the top-weight part}
+In the exact MZV expressions produced for $q\le9$, the terms of weight $q+2$ add up to
+\[
+\frac1{q!}\sum_{n\ge1}\frac{H_n}{n^{q+1}}=\frac{\zeta(q+2)+\zeta(q+1,1)}{q!}=\frac1{q!}\Big[\frac{q+3}2\zeta(q+2)-\frac12\sum_{\substack{a+b=q+2\\a,b\ge2}}\zeta(a)\zeta(b)\Big].
+\]
+(The last equality is Euler's formula for $\sum H_n/n^s$.) We verified this identity exactly for $q\le9$; a heuristic explanation (only partial fractions with all extra harmonic terms placed on a single pole preserve the weight, and a binomial identity collapses them) is not a proof, so we state it as an observation and leave the general case open (Section~\ref{sec:open}). It shows, in particular, that for $q=3$ the top-weight part contains $\zeta(2)\zeta(3)$, as in~\cite{CN}.
