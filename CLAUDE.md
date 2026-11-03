@@ -137,3 +137,4 @@ Go. Set up the wake-up alarms, write CLAUDE.md, then start.
 - 00:32 UTC: container restarted, background jobs died; restarted stirling 25..30 (n=23,24 done), rigorous_diag 337..401 (<=335 proved), kstar 1509 (1209: k*=2432=2m+14).
 - 01:19 UTC: jobs died again (restart); proved odd m<=341; stirling n=25 done (d_CM=48.1458475899). Relaunched with setsid: rigorous_diag 343..401, kstar 1509, stirling 26..30.
 - 02:00 UTC: jobs died at restart again; proved odd m<=345; stirling n=26 d_CM=50.1407770082. Relaunched: rigorous_diag 347..401, kstar 1509, stirling 27..30.
+- 02:41 UTC: jobs died again; proved odd m<=347; stirling 27 not finished. Dropped kstar 1509 (1209 suffices). Relaunched rigorous_diag 349..401, stirling 27..30.
