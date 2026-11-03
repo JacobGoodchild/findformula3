@@ -125,12 +125,7 @@ Overfull \hbox (20.86214pt too wide) in paragraph at lines 11--13
 95 S[]$ \T1/lmr/m/n/10.95 is al-ways a ra-tio-nal lin-ear com-bi-na-tion of $\O
 ML/lmm/m/it/10.95 ^^P\OT1/lmr/m/n/10.95 (2)\OML/lmm/m/it/10.95 ; [] ; ^^P\OT1/l
 mr/m/n/10.95 (\OML/lmm/m/it/10.95 q \OT1/lmr/m/n/10.95 +
-[12] [13]
-Overfull \hbox (121.30638pt too wide) in paragraph at lines 38--40
-\T1/lmr/m/n/10.95 dent im-ple-men-ta-tion). The val-ues of $\OML/lmm/m/it/10.95
- S[]; S[]; S[]$ \T1/lmr/m/n/10.95 are listed in the repos-i-tory (\T1/lmtt/m/n/
-10.95 results/harmonic_products/S_table.txt\T1/lmr/m/n/10.95 );
-) (./sec_finch.tex
+[12] [13]) (./sec_finch.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 5.
@@ -201,12 +196,19 @@ mm/m/it/10.95 =\OT1/lmr/m/n/10.95 4\OML/lmm/m/it/10.95 ; \OT1/lmr/m/n/10.95 1\O
 ML/lmm/m/it/10.95 =\OT1/lmr/m/n/10.95 2)$ \T1/lmr/m/n/10.95 and $\OML/lmm/m/it/
 10.95 T\OT1/lmr/m/n/10.95 (6\OML/lmm/m/it/10.95 =\OT1/lmr/m/n/10.95 5\OML/lmm/m
 /it/10.95 ; \OT1/lmr/m/n/10.95 1\OML/lmm/m/it/10.95 =\OT1/lmr/m/n/10.95 2)$
-) (./sec_gurland.tex [17] [18]) (./sec_stirling.tex [19] [20]) (./sec_open.tex
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./sec_gurland.tex [17] [18]) (./sec_stirling.tex [19]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (./sec_open.tex [20] [21]
 Overfull \hbox (11.84312pt too wide) in paragraph at lines 11--12
 []\T1/lmr/bx/n/10.95 Harmonic prod-ucts. \T1/lmr/m/n/10.95 Does the top-weight 
 law $[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 q \OT1/lmr/m/n/10.95 + 2)[]\OML/
 lmm/m/it/10.95 S[] \OT1/lmr/m/n/10.95 = [] [][] \OML/lmm/m/it/10.95 H[]=n[]$
-) (./refs.tex [21]
+) (./refs.tex
 Underfull \hbox (badness 2426) in paragraph at lines 14--15
 []\T1/lmr/m/n/10.95 H. Wi±niewska, \T1/lmr/m/it/10.95 Some in-equal-i-ties for 
 Gur-land's ra-tio of the gamma func-tions\T1/lmr/m/n/10.95 ,
@@ -226,5 +228,5 @@ exmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lm
 sy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (23 pages, 487555 bytes).
+Output written on main.pdf (23 pages, 488119 bytes).
 Transcript written on main.log.
