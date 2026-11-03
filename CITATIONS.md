@@ -103,6 +103,11 @@ Armengol Gasull, "Some open problems in low dimensional dynamical systems", 4 De
 > "In [34] it is proved that p_n <= 1/2^n, so lim p_n = 0. Furthermore, it is also shown that p_1 = 1/2, p_2 = 1/4, p_3 = 1/16, p_4 < 1/32, and, by using Monte Carlo simulation, that p_4 ~ 0.0092 and p_5 ~ 0.0007. Hence the following questions arise: **Problem 21.** Let p_n be the probability that the zero solution of the n-th order linear random differential equation (18) is globally asymptotically stable. Find the asymptotic expansion of p_n at n = infinity. Is it true that the sequence p_n is strictly decreasing?" (coefficients i.i.d. N(0,1); stable iff all roots of the characteristic polynomial have negative real part).
 Our p_4 = 0.0092838447... agrees with the paper's Monte Carlo 0.0092. **Our computation does not answer Problem 21** (it asks for an asymptotic expansion and monotonicity).
 
+### [FH] Fasi & Higham, MIMS EPrint 2018.36
+Massimiliano Fasi, Nicholas J. Higham, "An Arbitrary Precision Scaling and Squaring Algorithm for the Matrix Exponential", MIMS EPrint 2018.36, Manchester Institute for Mathematical Sciences, version of 19 March 2019 (https://eprints.maths.manchester.ac.uk/2691/1/fahi19.pdf; opened and read; 25 pages). **Only the eprint is cited** (journal details were not verified by me).
+> "Conjecture 3.2. Let k, m in N. If m is odd, then all the coefficients of the series expansion of q_{km}(z)^{-1} at 0 are positive." (Section 3, after the remark that "most optimal degrees are, in fact, odd"; "since we do not have a proof of the conjecture we will bound the truncation error of r_{km} for any k and m.")
+Matches the statement as quoted by Scardino. Added after Phase B noted this had not been opened.
+
 ## Not opened
 * Furdui–Sîntămărian (Gazeta Matematică 2023): journal not accessible.
 * Björck (1956), Clark–Laugesen (SIAM J. Math. Anal. 2025, Anal. Math. Phys. 2025), Hoffman (Commun. Number Theory Phys.), Saha (arXiv:1712.06325), Fasi–Higham: used only through the papers above.
