@@ -144,4 +144,5 @@ Go. Set up the wake-up alarms, write CLAUDE.md, then start.
 - 04:51 UTC: jobs died again; proved odd m<=355. Relaunched rigorous_diag 357..401, stirling 28..30.
 - 05:01 UTC: proved odd m<=357; relaunched rigorous_diag 359..401; stirling n=28 never completes between restarts -> final table uses n<=27. verify_all.py running in background (scratchpad log).
 - 05:40 UTC: verify_all.py ALL OK; Pade claim extended to odd 3<=m<=359 (179 values, no gaps/failures across logs) in formulas.txt, pade README, main README. rigorous_diag 361..401 still running.
-- 06:25 UTC: wrap-up: MORNING_SUMMARY.md finalised (13 items, 9 draft emails, restart note), README/formulas/pade README updated to odd m<=361. Final verify_all run next.
+- 06:20 UTC: wrap-up: MORNING_SUMMARY.md finalised (13 items, 9 draft emails, restart note), README/formulas/pade README updated to odd m<=361. Final verify_all run next.
+- 06:20 UTC: final verify_all.py ALL OK (0 FAIL). No wake-ups pending after 07:00. Background jobs stopped. Done.
