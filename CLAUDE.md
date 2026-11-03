@@ -135,3 +135,4 @@ Go. Set up the wake-up alarms, write CLAUDE.md, then start.
 - 22:45 UTC: T1 (harmonic products + top-weight law), T2 (Gurland), T3 (Gregory Gr(l), Conj 6.1 false), T10 (Painleve: Conj 7.1 PROVED, 7.2 reduced), T13 (Finch Abel identities PROVED) recorded. In progress: T11 pade positivity (rigorous diagonal proofs running, k*(m)=2m+12..14 law), T12 Stirling CM degrees (table2.log). Backups: results/*/README.md. 
 - 23:47 UTC: hurwitz_prob p_4=0.0092838447242981189571 (partial; no closed form). Background: rigorous_diag at m=331, kstar 1209/1509 and stirling n=23..30 still running.
 - 00:32 UTC: container restarted, background jobs died; restarted stirling 25..30 (n=23,24 done), rigorous_diag 337..401 (<=335 proved), kstar 1509 (1209: k*=2432=2m+14).
+- 01:19 UTC: jobs died again (restart); proved odd m<=341; stirling n=25 done (d_CM=48.1458475899). Relaunched with setsid: rigorous_diag 343..401, kstar 1509, stirling 26..30.
