@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  3 NOV 2026 09:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  3 NOV 2026 10:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -572,15 +572,9 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/
 texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-math
 it.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}]
-Overfull \hbox (76.43755pt too wide) in paragraph at lines 16--17
-[]\T1/lmr/m/n/10.95 (Section [][]5[][]) We give an ex-act al-go-rithm and ex-pl
-icit val-ues for the se-ries $\OML/lmm/m/it/10.95 S[] \OT1/lmr/m/n/10.95 = [][]
- \OML/lmm/m/it/10.95 H[]H[] [] H[]=\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 k\OT
-1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 k \OT1/lmr/m/n/10.95 +
- []
-
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
 6.
+
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]) (./sec_riesz.tex [3] 
@@ -593,7 +587,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 68.
 
-[5] [6]) (./sec_gregory.tex [7]
+[5] [6]) (./sec_gregory.tex [7] [8]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 36.
@@ -606,7 +600,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 36.
 
-[8]) (./sec_pade.tex [9] [10]
+) (./sec_pade.tex [9] [10]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
 Overfull \hbox (6.91586pt too wide) in paragraph at lines 62--63
 \OML/lmm/m/it/10.95 ^^Z[]=R \OMS/lmsy/m/n/10.95 ! \OT1/lmr/m/n/10.95 1$ \T1/lmr
 /m/n/10.95 and the growth of $\OML/lmm/m/it/10.95 N[]$ \T1/lmr/m/n/10.95 (the r
@@ -628,14 +626,14 @@ ML/lmm/m/it/10.95 ^^P\OT1/lmr/m/n/10.95 (2)\OML/lmm/m/it/10.95 ; [] ; ^^P\OT1/l
 mr/m/n/10.95 (\OML/lmm/m/it/10.95 q \OT1/lmr/m/n/10.95 +
  []
 
-[12]
+[12] [13]
 Overfull \hbox (121.30638pt too wide) in paragraph at lines 38--40
 \T1/lmr/m/n/10.95 dent im-ple-men-ta-tion). The val-ues of $\OML/lmm/m/it/10.95
  S[]; S[]; S[]$ \T1/lmr/m/n/10.95 are listed in the repos-i-tory (\T1/lmtt/m/n/
 10.95 results/harmonic_products/S_table.txt\T1/lmr/m/n/10.95 );
  []
 
-[13]) (./sec_finch.tex
+) (./sec_finch.tex
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 5.
@@ -708,8 +706,7 @@ ML/lmm/m/it/10.95 =\OT1/lmr/m/n/10.95 2)$ \T1/lmr/m/n/10.95 and $\OML/lmm/m/it/
 /it/10.95 ; \OT1/lmr/m/n/10.95 1\OML/lmm/m/it/10.95 =\OT1/lmr/m/n/10.95 2)$
  []
 
-) (./sec_gurland.tex [17] [18]) (./sec_stirling.tex [19]) (./sec_open.tex
-[20]
+) (./sec_gurland.tex [17] [18]) (./sec_stirling.tex [19] [20]) (./sec_open.tex
 Overfull \hbox (11.84312pt too wide) in paragraph at lines 11--12
 []\T1/lmr/bx/n/10.95 Harmonic prod-ucts. \T1/lmr/m/n/10.95 Does the top-weight 
 law $[]\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 q \OT1/lmr/m/n/10.95 + 2)[]\OML/
@@ -722,7 +719,7 @@ Underfull \hbox (badness 2426) in paragraph at lines 14--15
 Gur-land's ra-tio of the gamma func-tions\T1/lmr/m/n/10.95 ,
  []
 
-) [22] [23] (./main.aux)
+[22]) [23] (./main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -731,13 +728,19 @@ L3 programming layer <2024-01-22>
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 19D51A521A17F6B85A94F7492C48C2F4;6729.
+
+Package rerunfilecheck Warning: File `main.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `main.out':
+(rerunfilecheck)             Before: E6D330B90B537077DAC22296C5234935;6724
+(rerunfilecheck)             After:  19D51A521A17F6B85A94F7492C48C2F4;6729.
  ) 
 Here is how much of TeX's memory you used:
- 12437 strings out of 476106
- 189278 string characters out of 5793933
- 1949975 words of memory out of 5000000
+ 12438 strings out of 476106
+ 189289 string characters out of 5793933
+ 1948975 words of memory out of 5000000
  34070 multiletter control sequences out of 15000+600000
  641632 words of font info for 98 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
@@ -757,10 +760,10 @@ exmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lm
 tt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
 m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
 10.pfb>
-Output written on main.pdf (23 pages, 484957 bytes).
+Output written on main.pdf (23 pages, 487017 bytes).
 PDF statistics:
- 630 PDF objects out of 1000 (max. 8388607)
- 551 compressed objects within 6 object streams
- 143 named destinations out of 1000 (max. 500000)
+ 642 PDF objects out of 1000 (max. 8388607)
+ 563 compressed objects within 6 object streams
+ 144 named destinations out of 1000 (max. 500000)
  273 words of extra memory for PDF output out of 10000 (max. 10000000)
 
