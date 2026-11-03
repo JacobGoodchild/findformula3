@@ -1,80 +1,49 @@
-# findformula3 -- recorded results (calculus night). Labels: PROVED / VERIFIED / PARTIAL.
-# INDEX
-#  [1] Closed forms for S_q = sum_k H_k...H_{k+q}/(k...(k+q)), q=4..8; exact MZV reduction for all q   -- PROVED (q<=5), VERIFIED (q=6..8)
-#  [3] Habib-Hildebrand Conjecture 7.1 (polynomial p_k exist for u''u-u'^2=e^{-x}P(u)-1 when pi0=0, pi1=pi2) -- PROVED
-#  [4] Gr(l) thresholds of higher-order Gregory coefficients: new values l=8..13; Conjecture 6.1 of arXiv:2609.11072 FALSE; Gr(l) ~ 1.55 exp(pi cot(pi/l)) -- PROVED (values, l<=10) / VERIFIED (l=11..13) / observation (asymptotics)
-#  [5] Finch's Abel-function identities A(x/(1+x))=B(x)+1 and I(x/(1+x))=J(x)+1 -- PROVED
-#  [6] Finch's delta conjectures (EJ vs ML Abel solutions): delta = -(a/tau) ln(-tau*gamma), a=(tau+1)/2-c2/gamma^2 -- PROVED
-#  [7] Half-iterate values T(4/3,1/2), T(5/4,1/2), T(6/5,1/2) requested by Finch -- VERIFIED (40 digits)
-#  [8] Fasi-Higham positivity conjecture (Pade of exp), diagonal case: rigorous per-m proofs; true failure threshold k*(m)=2m+12..14 -- PROVED per m <= M / VERIFIED law
-#  [9] Real CM degrees of Stirling remainders: d_CM(R_2)=2.8667042552, d_CM(-R_2')=3.7984354776, table to n=9 -- VERIFIED (numerical)
-#  [10] C''(2) for x_{n+1}=x_n+1+1/x_n^2: exact series, value 0.3746264219830173411168 -- PROVED formula / VERIFIED value
-#  [11] Riesz capacity: Conjectures 5.9 and 5.6 of arXiv:2609.11186 (odd-polygon equilibrium measure, r>2) -- PROVED
-#  [12] t({2}^N,1) = (1/(2N)!) int_0^{pi/2} theta^{2N} cot(theta) dtheta (Conjecture 4.5, Chavan-Kobayashi-Layja) -- PROVED
-#  [13] Samart n_4(81): analytic-continuation value equals 40*L'(g_7,0) to 25 digits; true n_4(81)=4.16553(5) -- VERIFIED (explains the refutation)
-#  [2] Gurland ratio series converges for all x,y>0 (open problems 1,2 of arXiv:2512.07028); sharp 1/3 for problem 3 -- PROVED / PARTIAL
+findformula3: recorded results (revised 3 Nov 2026 after citation checks, novelty checks and independent verification)
+=====================================================================================================================
+Labels: PROVED / PROVED (computer-assisted) / VERIFIED (numerical) / PARTIAL.  Novelty: "not found" means only that we could not find it (see NOVELTY.md).
+Sources and exact quoted statements: CITATIONS.md.  What was checked and by whom: VERIFICATION.md.  The write-up: paper/main.pdf.
 
-[1] Products of consecutive harmonic numbers
-Statement: S_q = sum_{k>=1} (H_k H_{k+1} ... H_{k+q}) / (k(k+1)...(k+q)) equals an explicit rational combination of products of single zeta values
- (plus zeta(5,3) from q=7). Full list in results/harmonic_products/S_table.txt. E.g.
- S_4 = zeta(2)/432 - 45zeta(3)/64 + 1799zeta(2)^2/8640 - 11zeta(2)zeta(3)/72 + 13zeta(5)/18 + zeta(2)^3/60 - zeta(3)^2/48.
-Label: PROVED for q<=5 (exact algorithm to MZVs + classical weight<=7 reductions); q=6,7,8 VERIFIED (MZV identities weight 8-10 found by PSLQ at 150 digits).
-Who asked: Chen & Nguyen, arXiv:2507.19502 (closing remark: compute S_q for general q); Furdui & Sintamarian conjecture (stated there) -- checked in the PDF.
-How checked: (a) exact algebra asserts all T=H_K divergences cancel; (b) exact MZV combination == Euler-Maclaurin numerics to 1e-62 (q<=9); (c) final forms == numerics to 45 digits (q<=8); (d) q<=3 match the literature.
-Extra (PARTIAL: proof sketch + exact check q<=9): weight-(q+2) part of S_q = (zeta(q+2)+zeta(q+1,1))/q! = (1/q!) sum_n H_n/n^{q+1}.
-Novelty: q=1,2 (Furdui-Sintamarian), q=3 (Chen-Nguyen 2025) known. q>=4: NOT FOUND in two web searches (2025-2026 arXiv, general). "Not found" only.
+INDEX  (results kept in the paper)
+  [1] Fan, arXiv:2609.11186, Conjectures 5.9 and 5.6 (Riesz energy of 3 points on a circle; odd regular N-gon)  -- PROVED  (relies on three results quoted in Fan's paper: Clark-Laugesen Thm 8, Bjorck Thm 12, Fan Lemma 5.8)
+  [2] Xu-Zhao, arXiv:2609.11072, Conjecture 6.1 is FALSE; Gr(l) for l<=10 -- PROVED (computer-assisted); Gr(11..14) numerical
+  [3] Fasi-Higham conjecture, diagonal case (Scardino, arXiv:2610.39051): 1/q_{m,m} has positive Taylor coefficients for every odd 3<=m<=361 -- PROVED (computer-assisted, per m); law k*(m)=2m+12..14 -- VERIFIED (numerical)
+  [4] Chen-Nguyen, arXiv:2507.19502: S_q = sum H_k..H_{k+q}/(k..(k+q)): exact reduction to MZVs for q<=9 -- PROVED (computer-assisted); closed forms in zeta values q<=8 -- VERIFIED (numerical identification)
+  [5] Finch, arXiv:2506.07625: delta = -(a/tau) ln(-tau gamma), a=(tau+1)/2-c2/gamma^2 (his delta conjectures) -- PROVED (elementary; formula probably known as a corollary of classical Fatou-coordinate asymptotics)
+  [6] Wisniewska, arXiv:2512.07028, open problems 1 and 2 (Gurland ratio series converges for all x,y>0) -- PROVED (elementary; probably known in essence); problem 3 -- conjecture, numerical evidence only
+  [7] Finch, arXiv:2503.13378: exact series and value C''(2)=0.374626421983017341116776...; Finch, arXiv:2509.24918: T(4/3,1/2), T(5/4,1/2), T(6/5,1/2) -- VERIFIED (numerical)
+  [8] Krasniqi, arXiv:2610.33699: d_CM(R_2)=2.8667042552, d_CM(-R_2')=3.7984354776 (+ table) -- VERIFIED (numerical)
 
-[2] Gurland's ratio ln G*(x,y) = sum_k (1/k) ((x-y)/2)^{2k} zeta(2k,1+(x+y)/2): converges for ALL x,y>0 (radius exactly 1+(x+y)/2).  -- PROVED
-Who asked: H. Wisniewska, arXiv:2512.07028, Section 2 "Open problems" 1 and 2 (opened PDF). Answered: yes to both (Taylor series of ln Gamma). Proof in results/gurland/README.md.
-Also PARTIAL for open problem 3: sharp constant 1/3 (local expansion proved), inequality t(x,y) > (x+y+sqrt(xy))/3 conjectured with numerical evidence.
-Novelty: NOT FOUND (no follow-up found; one search not done yet -> to be checked). Triviality caveat: the answer is a one-line complex-analysis fact.
+REMOVED / NOT CLAIMED  (found, but already known, or not an answer to the question asked)
+  [K1] Habib-Hildebrand Conjecture 7.1 (Painleve-type ODE):  KNOWN. Proved by Hildebrand-Habib, arXiv:2606.24182, Theorem 2.5 (23 Jun 2026). Our independent proof (results/painleve_series) was checked by a fresh referee and is correct but not new.
+  [K2] Chavan-Kobayashi-Layja Conjecture 4.5 (t({2}^N,1)):  KNOWN. Charlton, arXiv:2112.14613, Sec. 3.3. Our generating-function proof (results/t_values) is an independent proof.
+  [K3] Finch A(x/(1+x))=B(x)+1, I(x/(1+x))=J(x)+1:  KNOWN. Finch's own Corrigendum (Sec. 5) of arXiv:2503.00579.
+  [K4] Samart n_4(81) != 40 M_7 explanation:  KNOWN. H. Zheng, arXiv:2608.02265 (the paper is by Zheng, not Samart; an earlier version of this file misattributed it).
+  [K5] Gasull Problem 21, p_4 = 0.0092838447242981189571:  a numerical value only; it does not answer the question (asymptotic expansion and monotonicity of p_n). Prior: Monte Carlo ~0.0092/0.00925 (Cima-Gasull-Manosa, arXiv:1904.05725, as reported). Not in the paper.
+  [K6] Habib-Hildebrand Conjecture 7.2 (nonnegativity of the coefficients of p_k): NOT proved; exact computations only (see paper, open problems).
 
-[3] Conjecture 7.1 of Habib & Hildebrand (arXiv:2606.21145): for u''u-(u')^2 = e^{-x}P(u)-1 with P(0)=0 and P'(0)=P''(0)/2 (pi1=pi2), there are polynomials p_k with
- u = sum_k p_k(x) e^{-kx}, p_0=x, solving the ODE formally -- TRUE.  -- PROVED
-Proof (results/painleve_series/README.md): the obstruction to solving for p_s is [x^2](e^{-sx} rho_s) (a residue); a local expansion at the zero of the truncated series shows it equals a
- combination of lower-order residuals times O(eps) quantities, hence vanishes at every order. Key identity e2 = (a2/a1) e1 + q0 pi1 a1/(1+a1) e0 checked symbolically; the explicit recursion confirms p_k exist (exact rational arithmetic) to k=40.
-Who asked: Habib & Hildebrand, Section 7 "Conjectures", Conjecture 7.1 (opened PDF). Conjecture 7.2 (nonnegativity of coefficients when all pi_j>=0): PARTIAL -- reduced to coefficientwise nonnegativity of the right-hand sides rho_s (Lemma B proved: the linear solver preserves positivity); rho_s>=0 verified for 396 (P,s) cases, s<=12; symbolic p_1..p_4 positive in all parameters; exact check k<=40 (t^3), 30 (t^4), 20 (t^6); no counterexample.
-Novelty: NOT FOUND (paper is from June 2026; one web search to be done). Related: Kitaev 2025 (cited there) treats Painleve III trans-series.
+==============================================================================================================
+[1] Riesz energy of three points on a circle (Fan)
+Statement: for r>=2, B,C=e^{+-i phi}, phi in (pi/2,2pi/3], A=e^{i psi}, psi in [0,2pi-3phi]: the energy U_r({A,B,C}) is nondecreasing in psi (Conjecture 5.9); for odd N>=3, r>2 the vertex set P_N has energy 2^{r-1} sin^r(theta_N)/(1-2^{r-2}cos^r(theta_N)), theta_N=(N-1)pi/(2N), and an equilibrium measure on the three vertices 1, e^{i(pi-+pi/N)} with masses (2b^r-a^r, b^r, b^r)/(4b^r-a^r), a=2 sin(pi/N), b=2 sin theta_N (Conjecture 5.6; existence, not uniqueness).
+Label: PROVED, given the three quoted inputs. Who asked: Fan, Conjectures 5.9 and 5.6 (opened PDF; see CITATIONS.md).
+Checks: derivative formula and key lemma in sympy / 50-digit numerics; brute force over all vertex triples (odd N<=31, several r>2); two rounds of fresh referee review (both: complete modulo minor, fixes applied); an optimiser-based maximisation over measures on P_N (N<=13) by the referee.
+Novelty: not found (a bot-posted GitHub issue claims a Lean 'result' for 5.9; unverified, see NOVELTY.md). paper Sec. 2; results/riesz_triangle.
 
-[4] Higher-order Gregory coefficients (x/log(1+x))^l: Gr(l) = least N with (-1)^{n-1}G_n^{(l)} > 0 for all n >= N.
- Gr(8..14) = 2995, 8580, 24303, 68283, 190698, 530152, 1468691 (Gr(3..7) = 11,36,113,346,1030 reproduce the paper). Conjecture 6.1 (0.47*3^l < Gr(l) < 0.477*3^l, l>=5) is FALSE: Gr(5)=113<114.2, and Gr(l)<0.47*3^l for l=8..13.
- Data: Gr(l)/exp(pi*cot(pi/l)) = 1.50..1.547 (l=5..16) then slowly decreasing (1.5327 at l=100); heuristic + numerics: Gr(l) ~ e^{l+1-gamma} (ratio -> e^{1-gamma}=1.5262; exact integral representation allows l up to 100+); growth rate e, not 3.   Label: values PROVED for l<=10 (interval arithmetic + paper's Table 2 tail theorem), VERIFIED l=11..13; asymptotic law = observation.
-Who asked: Xu & Zhao, arXiv:2609.11072, Conjecture 6.1 (opened PDF). How checked: results/gregory (arb power series, certified signs, n2 criterion re-implemented). Novelty: NOT FOUND (single search).
+[2] Gregory coefficients (Xu-Zhao)
+Gr(l) = least N with (-1)^{n-1}G_n^{(l)}>0 for all n>=N, G_n^{(l)}=[x^n](x/ln(1+x))^l.  Conjecture 6.1 (0.47*3^l<Gr(l)<0.477*3^l, l>=5) is false: Gr(5)=113<114.21 (the paper's own value), and Gr(l)<0.47*3^l also for l=8,9,10 (rigorous) and l=11..14.
+Gr(3..10)=11,36,113,346,1030,2995,8580,24303 (computer-assisted, rigorous, two independent implementations; tail via the authors' criterion with interval integration; takes their identity (6) and Lemma 4.1 as given). Gr(11..14)=68283,190698,530152,1468691 (numerical; Gr(11) also by an independent scan). r(l)=exp(pi cot(pi/l)) is the largest zero of h; Gr(l)/r(l) in [1.49,1.55] for 5<=l<=14: growth rate e, not 3 (observation; heuristic law Gr~e^{l+1-gamma} not independently reproduced).
+Novelty: not found; OEIS has no match for 11,36,113,346,1030,2995,8580,24303. paper Sec. 3; results/gregory.
 
-[5] Finch (arXiv:2503.00579) conjectured, with 100-digit numerical evidence, A(x/(1+x)) = B(x)+1 and I(x/(1+x)) = J(x)+1 for the Abel functions of x(1-x), x/(1+x+x^2), x/(1+x-x^2), x(1+x)/(1+2x).  -- PROVED.
- Proof: h(x)=x/(1+x) conjugates the maps (f_A h = h g_B, f_I h = h f_J), 1/h(x) = 1/x + 1, and the Abel functions are lim[1/f^n(x) - n -/+ ln n]; see results/abel_finch/README.md.
- Who asked: Finch, Section 1 ("A formal proof of both identities would be good to see someday"; opened PDF). Novelty: NOT FOUND (one reading of the paper; elementary). Caveat: simple argument, low depth.
+[3] Diagonal Pade denominators (Scardino / Fasi-Higham)
+q_{m,m}(z)=sum_j (-1)^j C(m,j)(2m-j)!/(2m)! z^j. For every odd 3<=m<=361 all Taylor coefficients of 1/q_{m,m} are positive (m=1 trivial). Proof: certificate lemma (partial fractions + one dominant positive real zero + tail bound N0 + ball-arithmetic check of c_n, n<N0); 180 values of m, logs results/pade_positivity/rigorous_diag_*.log (no gaps, no failures); exact certification (squarefree, exactly one positive real zero, modulus gap) for all odd m<=361 in exact_checks.log. N0=372888 at m=361.
+Law: k*(m)=smallest k with a negative coefficient: k*(5)=66, k*(7)=44, k*(9)=42, k*(19)=54 (exact rational), k*(109)=230, k*(209)=430 (exact rational near k*), and k*(m)-2m in {12,13,14} for sampled m in 109..1009 (interval arithmetic with bisection, monotonicity in k assumed) -- numerical.
+Checks: fresh referee (scheme valid; completes m=3..11 and exact check c_n>0 for n<=3000 for m<=31); fresh re-run of m=101,201,301,(361) (see VERIFICATION.md). Novelty: not found. paper Sec. 4; results/pade_positivity.
 
-[6] Finch (arXiv:2506.07625) conjectured exact values of the constant delta = g_EJ - g_ML between two normalisations of the Abel function of theta(x) = x + c1 x^{tau+1} + c2 x^{2tau+1} + ...: delta13 = -(3/4)ln 2, delta16 = -(2/3)ln 3, delta17 = -(5/9)ln 6, the families delta(k), delta(rho), the general Addendum III formula, and transcendental maps (sin, ln(1+x), Fresnel...). -- PROVED
- Theorem: delta = -(a/tau) ln(kappa), kappa = -tau c1, a = (tau+1)/2 - c2/c1^2. Proof = asymptotic inversion of g(x_n) = g(x_0) + n (results/abel_delta/README.md); reproduces all ~17 cases in the paper and 30 printed digits of delta13.
- Who asked: Finch, Section 'Delta conjectures' and Addenda ("Formal proofs would be good to see someday"; opened PDF). Novelty: NOT FOUND. Caveat: elementary; relies on the standard existence of the asymptotic expansion of the Abel function.
+[4] Harmonic products (Chen-Nguyen, Furdui-Sintamarian)
+S_q expressed as an exact Q-combination of MZVs of weight <= q+2, q<=9 (program in exact rational arithmetic; asserts cancellation of divergent terms; referee: valid scheme). Closed forms in single zeta values (and zeta(5,3) from q=7): identified by PSLQ (150 digits), checked to 45 digits; q=1,2,3 known [Furdui-Sintamarian, Chen-Nguyen]; q=4..8 not found. S_4 and S_5 are in the paper; S_6..S_8: results/harmonic_products/S_table.txt. Fresh code: S_4 to 40 digits (referee); S_5..S_8 independent PSLQ (see VERIFICATION.md).
+Observation (exact check q<=9): top-weight part = (zeta(q+2)+zeta(q+1,1))/q!.
+Novelty: closed forms not found; method standard (Flajolet-Salvy; Xu-Wang). paper Sec. 5.
 
-[7] Finch (arXiv:2509.24918, Sec. 1.5): "It would be good to see the values of T(4/3,1/2), T(5/4,1/2) and T(6/5,1/2) someday."  (T = tetration, half-iterate of b^x applied to 1.)
- T(4/3,1/2)=1.2058374340430955949418393065071125669..., T(5/4,1/2)=1.1635953619650088490259432733584363128..., T(6/5,1/2)=1.1362624867271280841853009186474260255... (regular iteration at the attracting fixed point; 40 digits certified).
- Label: VERIFIED (numerical; checks in results/tetration_half/README.md). Novelty: NOT FOUND. Convention caveat: regular iteration (b<e^{1/e}); joins continuously to Finch's T(e^{1/e},1/2)=1.2571.
-
-[8] Fasi-Higham Conjecture 1 (Scardino, arXiv:2610.39051; diagonal case k=m explicitly left open): 1/q_{m,m}(z) has all Taylor coefficients > 0 for odd m.
- (i) PROVED for every odd 3 <= m <= 361 (see results/pade_positivity/rigorous_diag_*.log; all 180 values proved; the runs were split across several logs because the machine restarted overnight; m=1 is trivial): certified zeros + residue tail bound + interval check of the finitely many initial coefficients.
- (ii) VERIFIED (interval arithmetic) law for where the conjecture fails: smallest k with a negative coefficient is k*(m) = 2m+12..14 (m=109..1009; m=9: 42, 19: 54, 99: 210, 509: 1031, 1009: 2032); failing set is {k >= k*(m)}.
- The diagonal is far inside the true region of validity (k*/m -> 2). The all-m diagonal statement remains open. Novelty: NOT FOUND (law k*~2m not in the paper).
- Who asked: Scardino, abstract and Section 1/2 ("diagonal positivity therefore remains an open problem").
-
-[9] Krasniqi (arXiv:2610.33699, Sec. 6): exact values of d_CM(R_2) and d_CM(-R_2'): d_CM(R_2) = 2.8667042552, d_CM(-R_2') = 3.7984354776 (bounds in the paper: (8/3,3), (32/9,4)).
- Table of d_CM(R_n) for n=2..22 and d_CM(-R_n') for n=2..9 (results/stirling_cm); (2n-1)delta_{n,0} increases from 2.60 to 7.03 and its extrapolated limit is 8.0974 +- 3e-4, matching Krasniqi's upper bound 2*pi^2/Cin(2*pi) = 8.097627 (sharpness of his bound; numerical evidence only).
- Label: VERIFIED (numerical, two independent evaluations of the fractional-derivative positivity criterion). Novelty: NOT FOUND.
-
-[10] Finch (arXiv:2503.13378, Sec. 3): "An independent confirmation of the 0.3746 estimate [of C''(2)] remains open." For x_{n+1}=x_n+1+1/x_n^2, C(x0)=lim(x_n-n):
- C''(x0) = C'(x0) sum_{j>=0} 6 D_j / (x_j^4 (1-2/x_j^3)), D_j = prod_{k<j}(1-2/x_k^3)  (Finch's series lacks the factor D_j, explaining its wrong value 0.3909).
- C''(2) = 0.374626421983017341116776... (20 digits agree with his finite difference). Label: formula PROVED, value VERIFIED. Novelty: NOT FOUND. results/finch_c2.
-
-[11] Fan (arXiv:2609.11186), Conjectures 5.9 and 5.6: capacity of {A,B,C} on the unit circle (B,C = e^{+-i phi}) is nondecreasing as A moves toward AC=BC (r>=2), and for odd N and r>2 the equilibrium measure of the regular N-gon vertex set lives on the triple at angles 0, pi-+pi/N with energy 2^{r-1} sin^r(theta_N)/(1-2^{r-2}cos^r(theta_N)). -- PROVED
- Proof: d log U/d psi has the sign of (1+t_r)/(1-t_r) - (1+t_2)/(1-t_2), t_r = rho_B^r - rho_A^r, plus an elementary lemma (unimodality in r + entropy comparison); then Fan's own Lemma 5.8 finishes Conjecture 5.6. See results/riesz_triangle/README.md.
- Who asked: Fan, Sec. 5.2-5.4 ("Step 2 -- not proved"; opened PDF). Relies on Bjorck's 3-point support theorem and Clark-Laugesen Thm 8 as quoted. Novelty: NOT FOUND.
-
-[12] Chavan, Kobayashi, Layja (arXiv:2111.07097), Conjecture 4.5: the multiple t-values t({2}^N,1) equal I(2N)/(2N)! with I(n)=int_0^{pi/2} theta^n cot(theta) dtheta, i.e. the explicit eta/zeta closed form. -- PROVED
- Proof: generating function; prod_{n odd>m}(1+u^2/n^2) = Gamma(S+1/2)^2/(Gamma(S+1/2+iu/2)Gamma(S+1/2-iu/2)) = c_S int cosh(u theta) cos^{2S-1} theta, and sum_S c_S x^{2S-1}/(2S-1) = x/sqrt(1-x^2) (=cot at x=cos theta). results/t_values/README.md.
- Numerically confirmed N=1..4 (19-32 digits). Novelty: NOT FOUND. (Hoffman proved N=1,2,3.)
-
-[13] Samart's conjecture n_4(81)=40 M_7 and its numerical refutation (arXiv:2608.02265; they say a closed form of the TRUE n_4(81) remains open).
- Found: the real part of the analytic continuation (through the conifold s=256) of the large-s series for n_4 equals 40 L'(g_7,0) = 4.10686431115608044841826 to 25 digits, whereas the true Mahler measure (direct torus integral) is 4.16553(5).
- So the identity is true for the continuation, false for the measure; the defect D(81)=0.05867. No closed form for the true value found. Label: VERIFIED (numerical). results/samart_n481. Novelty: explanation NOT FOUND in the report.
+[5] Finch's delta constant: elementary proof (fresh referee: complete modulo minor, fixes applied); log coefficient a is the classical residu iteratif (Lanford-Yampolsky, Prop. 2.14). paper Sec. 6.1; results/abel_delta.
+[6] Gurland ratio: ln G*(x,y)=sum_k (1/k)((x-y)/2)^{2k} zeta(2k,1+(x+y)/2) for all x,y>0 (radius of convergence exactly 1+(x+y)/2 in d). Problem 3 inequality t>(x+y+sqrt(xy))/3: conjecture; numerical support (max theta ~0.33327 over random samples). paper Sec. 7; results/gurland.
+[7] C''(2) = 0.374626421983017341116776248793... (two implementations agree to 24 digits; formula C''=C' sum 6 D_j/(x_j^4(1-2/x_j^3)) derived, interchange of limit and derivative not written out); T(4/3,1/2)=1.20583743404309559494183930650711256690..., T(5/4,1/2)=1.16359536196500884902594327335843631288..., T(6/5,1/2)=1.13626248672712808418530091864742602558... (regular iteration; two independent methods, >=50 digits). paper Sec. 6.2-6.3; results/finch_c2, results/tetration_half.
+[8] Stirling CM degrees: see paper Sec. 8 and results/stirling_cm. Numerical.

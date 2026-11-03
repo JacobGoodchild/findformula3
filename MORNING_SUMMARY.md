@@ -1,3 +1,5 @@
+> **SUPERSEDED (3 Nov 2026).** This is the first-night summary, kept for the record. A second session checked everything: several items below turned out to be **already known** (items 1/Painlevé 7.1, 3/Finch A-B, and the t-values conjecture and Samart explanation) or were **downgraded** (see `PAPER_SUMMARY.md`, `VERIFICATION.md`, `NOVELTY.md`). The draft e-mails that used to be here were removed. For the current state read `PAPER_SUMMARY.md` and `paper/main.pdf`.
+
 # Morning summary (final, written 06:20 UK, 3 November 2026)
 
 Good morning. This is the plain-English version. Everything below was done by Claude, on the session's own machine, and **nothing has been sent, posted or submitted** — the e-mails at the bottom are drafts for you to look at.
@@ -31,47 +33,6 @@ Every result carries an honest label: **proved** (a full argument, checked by co
 ## Best leads for next time
 (see NOTES.md) 1. Finish the positivity proof for the Painlevé series (Conjecture 7.2); the proof structure is half there. 2. Prove k*(m)=2m+O(1) for the Padé problem, which would settle the diagonal case for all m. 3. Prove the Gurland inequality t(x,y) > (x+y+√xy)/3.
 
-## Draft e-mails (NOT sent) — see the end of this file, added at the end of the night.
 
 ---
 **Note on the night:** the computer was restarted about every 40 minutes after midnight, which killed long jobs; I restarted them and the logs show it. Nothing was lost, but the Padé proofs stopped at m=361 and the n=28..30 Stirling values were never finished.
-
----
-## Draft e-mails (NOT sent — you decide). Each discloses that the work was done by an AI system under your direction.
-
-**1. To Rahaf Habib and Roland Hildebrand (arXiv:2606.21145, Conjecture 7.1)**
-Subject: A proof of Conjecture 7.1 in "Necessary conditions for the existence of exponential-polynomial expansions ..."
-Dear Dr Habib, dear Prof. Hildebrand — I am writing on behalf of myself and an AI system (Claude, Anthropic), which did the mathematical work under my direction. Your Conjecture 7.1 (polynomials p_k exist when π0=0, π1=π2) follows from a short argument: the obstruction at order s is the coefficient [x²] of e^{−sx}ρ_s (a residue), and expanding the truncated series around its zero shows this coefficient is a combination of lower-order residuals times O(ε), hence vanishes. For Conjecture 7.2 we could only reduce it to coefficientwise positivity of the right-hand sides ρ_s (checked exactly for s ≤ 12, hundreds of polynomials P). The write-up and code are at <repo>/results/painleve_series. We have not posted this anywhere; please tell us if you would like a cleaner note. — Jacob Goodchild
-
-**2. To Steven Finch**
-Subject: Proofs of the delta conjectures and of the A,B,I,J identities; three numerical items
-Dear Dr Finch — an AI system (Claude, Anthropic), working under my direction, found (i) a one-line asymptotic derivation of all your delta conjectures: δ = −(a/τ)ln(−τγ) with a = (τ+1)/2 − c2/γ² (it reproduces ≈17 of your cases, including sin x, ln(1+x), the Fresnel cosine, and your Addendum II/III formulas); (ii) a proof of A(x/(1+x)) = B(x)+1 and I(x/(1+x)) = J(x)+1 (the map x/(1+x) conjugates the iterations and shifts 1/x by 1); (iii) 40-digit values T(4/3,½), T(5/4,½), T(6/5,½); (iv) the exact series C″(x0) = C′(x0)Σ f″(xj)Dj/f′(xj), giving C″(2) = 0.374626421983017341116…, and an explanation of the missing factor Dj in the 0.3909 series. Details: results/abel_delta, abel_finch, tetration_half, finch_c2. — Jacob Goodchild
-
-**3. To Wilson Chen and Vincent Nguyen (arXiv:2507.19502)**
-Subject: Closed forms for Σ H_k…H_{k+q}/(k…(k+q)), q ≤ 8
-Dear Dr Chen, dear Dr Nguyen — an AI system (Claude, Anthropic), working under my direction, wrote an exact algorithm reducing S_q to multiple zeta values for every q; it reproduces your q=3 formula and gives explicit closed forms for q=4,…,8 (e.g. S_4 = ζ(2)/432 − 45ζ(3)/64 + 1799ζ(2)²/8640 − 11ζ(2)ζ(3)/72 + 13ζ(5)/18 + ζ(2)³/60 − ζ(3)²/48), checked to 60 digits, plus the observation that the top-weight part is (ζ(q+2)+ζ(q+1,1))/q!, which shows the Furdui–Sîntămărian conjecture fails unless products like ζ(a)ζ(b) (a+b=q+2) collapse. Files: results/harmonic_products. — Jacob Goodchild
-
-**4. To Ce Xu and Jianqiang Zhao (arXiv:2609.11072)**
-Subject: Conjecture 6.1 (Gr(ℓ)) appears to be false; new values of Gr(ℓ)
-Dear Dr Xu, dear Prof. Zhao — an AI system (Claude, Anthropic), working under my direction, recomputed Gr(ℓ) with interval arithmetic: Gr(3..7) agree with your table; Gr(8)=2995, Gr(9)=8580, Gr(10)=24303 (rigorous using your tail bound), Gr(11..13)=68283, 190698, 530152. Gr(5)=113 < 0.47·3⁵ already violates Conjecture 6.1, and Gr(ℓ)/3^ℓ keeps decreasing: Gr(ℓ)/exp(π cot(π/ℓ)) stays near 1.5–1.55 (the largest zero of H_ℓ is exactly exp(π cot(π/ℓ)); r(9) in your table seems to be a misprint of 5605.2). Files: results/gregory. — Jacob Goodchild
-
-**5. To Francesco Scardino (arXiv:2610.39051)**
-Subject: Diagonal case of the Fasi–Higham conjecture
-Dear Dr Scardino — an AI system (Claude, Anthropic), working under my direction, proved by rigorous ball arithmetic (certified roots, residues, interval check of the initial coefficients) that for every odd m from 3 to 361 all Taylor coefficients of 1/q_{m,m} are positive, and found numerically that the smallest k with a negative coefficient is k*(m)=2m+12…14 (m up to 1009), with the failing set exactly {k ≥ k*(m)}. So the diagonal sits far inside the region of validity; the general diagonal statement remains open. Files: results/pade_positivity. — Jacob Goodchild
-
-**6. To Qiuling Fan (arXiv:2609.11186)**
-Subject: A proof of Conjectures 5.9 and 5.6
-Dear Dr Fan — an AI system (Claude, Anthropic), working under my direction, found a proof of Conjecture 5.9: d log U/dψ has the sign of (1+t_r)/(1−t_r) − (1+t_2)/(1−t_2) with t_r = ρ_B^r − ρ_A^r, and t_r ≥ t_2 follows from a short lemma (unimodality in r plus an entropy comparison). Together with your Lemma 5.8 this completes Conjecture 5.6 for all odd N and r>2 (given the Björck and Clark–Laugesen results you quote). Brute-force checks for odd N ≤ 31 agree. Files: results/riesz_triangle. — Jacob Goodchild
-
-**7. To Valmir Krasniqi (arXiv:2610.33699)**
-Subject: Numerical values of d_CM(R_2), d_CM(−R_2′) and (2n−1)δ_n
-Dear Dr Krasniqi — an AI system (Claude, Anthropic), working under my direction, computed the real completely monotonic degrees via the fractional-derivative criterion: d_CM(R_2) = 2.8667042552, d_CM(−R_2′) = 3.7984354776, and a table for n ≤ 15+ (two independent evaluations of the criterion). (2n−1)δ_n increases slowly (2.60 at n=2 to 7.03 at n=22) and extrapolates to 8.0974±0.0003, which matches your own upper bound 2π²/J=8.097627 — so that bound appears to be sharp. Files: results/stirling_cm. — Jacob Goodchild
-
-**8. To Halina Wiśniewska (arXiv:2512.07028)**
-Subject: Open problems 1–2 on Gurland's ratio
-Dear Dr Wiśniewska — an AI system (Claude, Anthropic), working under my direction, notes that ln Γ(1+m+z) is analytic on |z|<1+m, so the series S_∞ converges to ln G* for all x,y>0 (answering open problems 1 and 2 affirmatively), and that for problem 3 the constant 1/3 is sharp (t(x,y) lies at most 1/3 of the way from the midpoint toward √(xy) asymptotically); a conjectured inequality t > (x+y+√xy)/3 is supported by numerics but unproved. Files: results/gurland. — Jacob Goodchild
-
-**9. To Chavan, Kobayashi and Layja (arXiv:2111.07097, Conjecture 4.5)**
-Subject: A proof of Conjecture 4.5, t({2}^N,1) = I(2N)/(2N)!
-Dear Dr Chavan, Prof. Kobayashi, Dr Layja — an AI system (Claude, Anthropic), working under my direction, found a proof of your Conjecture 4.5 using a Gamma-product / Beta-integral generating function and the expansion x/sqrt(1-x^2). The write-up and a check script (N=1..4 against partial sums) are in results/t_values of the repository. I would be glad to send it. Please treat it as unreviewed until you have checked it yourselves.
-(Please check the exact titles and spellings of the names against the paper before sending.)

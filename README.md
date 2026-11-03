@@ -1,30 +1,34 @@
-# findformula3 — calculus night (2 November 2026)
+# findformula3 — answers to recent conjectures and questions in classical analysis (calculus night, 2 November 2026; verified and written up 3 November 2026)
 
-**AI disclosure.** All research in this repository was carried out by Claude (Anthropic), via Claude Code, under the direction of Jacob Goodchild (who set the brief and the rules and was asleep while it ran).
-No result has been posted, e-mailed or submitted anywhere; everything here is a draft for him to judge. Computations ran only on the session's own machine.
+**AI disclosure.** This work was carried out with extensive use of an AI system, Claude (Anthropic), via the Claude Code software, under the direction of Jacob Goodchild. The AI system chose the problems from the recent literature, carried out the derivations, proofs and computations, searched and checked the literature, and wrote the manuscript. Proofs were checked by independent AI referee passes and by computer algebra and interval arithmetic, but have not been checked by a human expert or peer reviewed. Novelty assessments are based on literature searches and may be incomplete. Jacob Goodchild directed the work and is responsible for its publication.
+Nothing here has been posted, e-mailed or submitted anywhere. All computations ran on the session's own machine.
 
 ## What this is
-In findformula (lattice models) and findformula2 (Kerr black holes) the targets were things nobody had asked about. This repo does the opposite: every target is a **calculus question that someone wrote down in a recent paper**
-(an open problem, a conjecture, an "it would be good to see ..." remark), checked by opening the paper. Each result is labelled PROVED / VERIFIED / PARTIAL (see `formulas.txt`), with code, logs and a proof write-up in `results/<name>/`,
-and re-checkable with `python3 verify_all.py`.
+In findformula (lattice models) and findformula2 (Kerr black holes) the targets were things nobody had asked about. This repository does the opposite: every target is a **question or conjecture that someone wrote down in a recent paper**, checked by opening the paper. A first overnight session produced 13 results; a second session (3 November) **checked every citation, searched the literature again for each result, had each proof read by independent referee agents, recomputed the numerical results with fresh code, dropped what was already known, and wrote one preprint**:
 
-## Results (best first; details in `formulas.txt`, `MORNING_SUMMARY.md`)
-| # | Question (who asked) | Result | Label |
-|---|---|---|---|
-| 3 | Habib–Hildebrand, arXiv:2606.21145, Conjecture 7.1: polynomial coefficients p_k exist for u''u−u'^2=e^{-x}P(u)−1 | true; proof via a residue/zero-of-u argument | **PROVED** (7.2, positivity: reduced, not proved) |
-| 4 | Finch, arXiv:2506.07625: exact value of the constant δ between two Abel-function normalisations (≈17 conjectured cases) | one formula δ = −(a/τ)ln(−τγ) covers all of them | **PROVED** |
-| 5 | Finch, arXiv:2503.00579: A(x/(1+x))=B(x)+1 and I(x/(1+x))=J(x)+1 | proved by a Möbius conjugacy | **PROVED** |
-| 1 | Chen–Nguyen, arXiv:2507.19502 / Furdui–Sîntămărian: closed form of Σ H_k…H_{k+q}/(k…(k+q)) | q=4…8 closed forms; exact algorithm for all q; top-weight law | **PROVED** (q≤5) / VERIFIED (6–8) |
-| 6 | Xu–Zhao, arXiv:2609.11072, Conjecture 6.1 on Gregory-coefficient sign thresholds | conjecture false; Gr(8..13) computed; true growth ~ exp(π cot(π/ℓ)) | **PROVED** (ℓ≤10) / VERIFIED |
-| 7 | Scardino, arXiv:2610.39051: Fasi–Higham positivity, diagonal Padé case | proved for each odd 3 ≤ m ≤ 361; failure threshold k*(m)=2m+12..14 | **PROVED** per m / VERIFIED law |
-| 8 | Krasniqi, arXiv:2610.33699: exact degrees d_CM(R_2), d_CM(−R_2') | 2.8667042552, 3.7984354776 (+ table to n=9) | VERIFIED |
-| 9 | Finch, arXiv:2503.13378: independent confirmation of C''(2) | exact series; C''(2)=0.37462642198301734111… | formula PROVED / value VERIFIED |
-| 10 | Finch, arXiv:2509.24918: T(4/3,1/2), T(5/4,1/2), T(6/5,1/2) | 40-digit values | VERIFIED |
-| 2 | Wiśniewska, arXiv:2512.07028, open problems 1–3 on Gurland's ratio | 1,2 proved (Taylor series converges for all x,y>0); 3: sharp constant 1/3, conjectured inequality | **PROVED** / PARTIAL |
-| 11 | arXiv:2609.11186, Conjectures 5.9 and 5.6 (Riesz energy of 3-point sets) | both true; proved via unimodality + entropy comparison, finished with the paper's Lemma 5.8 | **PROVED** |
-| 12 | arXiv:2111.07097, Conjecture 4.5: t({2}^N,1)=I(2N)/(2N)! | proved via a Gamma-product / Beta-integral generating function | **PROVED** |
-| 13 | Samart (arXiv:2608.02265): why n_4(81) is not 40 M_7 | the real part of the analytic continuation equals 40 L'(g_7,0) to 25+ digits; true Mahler measure 4.16553(5) (no closed form found) | VERIFIED |
-| 14 | Gasull (arXiv:2012.02524): chance a random degree-4 polynomial is stable | p_4 = 0.0092838447242981189571 via a 2-D integral (asymptotics question NOT answered) | PARTIAL (numerical) |
+* **`paper/main.pdf`** (source `paper/main.tex`): *Answers to some recent conjectures and questions in classical analysis, with computer assistance.*
+* `CITATIONS.md` — every cited paper opened; exact titles/authors; the conjectures quoted word for word; corrections found.
+* `NOVELTY.md` — literature search for each result (queries in `novelty_parts/`), with labels not found / probably known / known.
+* `VERIFICATION.md` — for each result: what was checked, by which method, the outcome, the final label (referee reports and fresh-code reports are in `referee_reports/`).
+* `PAPER_SUMMARY.md` — plain-English account of the paper, what was dropped and why, what changed after verification.
+
+## Results in the paper (details in `formulas.txt`)
+| Question (who asked) | Result | Label |
+|---|---|---|
+| Fan, arXiv:2609.11186, Conjectures 5.9 and 5.6 (Riesz capacity of three points on a circle; odd regular polygons) | both true (equilibrium measure exists with the stated support and masses) | **PROVED** (relying on three results quoted in Fan's paper) |
+| Xu–Zhao, arXiv:2609.11072, Conjecture 6.1 (sign thresholds Gr(ℓ) of higher-order Gregory coefficients) | false; Gr(3..10)=11,36,113,346,1030,2995,8580,24303; Gr(11..14) numerically | **PROVED (computer-assisted)** for ℓ ≤ 10; numerical beyond |
+| Fasi–Higham Conjecture 3.2, diagonal case left open by Scardino (arXiv:2610.39051) | true for every odd 3 ≤ m ≤ 361 (positive Taylor coefficients of 1/q_{m,m}); first failure for fixed m at k*(m) ≈ 2m+12..14 | **PROVED (computer-assisted)** per m; law **VERIFIED (numerical)** |
+| Chen–Nguyen, arXiv:2507.19502 (closed forms of Σ H_k…H_{k+q}/(k…(k+q))) | exact reduction to multiple zeta values for q ≤ 9; closed forms in zeta values for q ≤ 8 | **PROVED (computer-assisted)** reduction; closed forms **VERIFIED (numerical identification)** |
+| Finch, arXiv:2506.07625 (delta conjectures for Abel's equation) | δ = −(a/τ)·ln(−τγ), a=(τ+1)/2−c₂/γ² | **PROVED** (elementary; log coefficient is classical) |
+| Wiśniewska, arXiv:2512.07028, open problems 1, 2 (Gurland's ratio) | series converges for all x,y>0; problem 3: conjecture t > (x+y+√xy)/3 | **PROVED** (elementary) / conjecture (numerical) |
+| Finch, arXiv:2503.13378 and 2509.24918 | C″(2)=0.37462642198301734111677…; T(4/3,½), T(5/4,½), T(6/5,½) | **VERIFIED (numerical)** |
+| Krasniqi, arXiv:2610.33699 (exact real completely monotonic degrees) | d_CM(R₂)=2.8667042552, d_CM(−R₂′)=3.7984354776 (+ table) | **VERIFIED (numerical)** |
+
+## Found but already known (not claimed)
+* Habib–Hildebrand Conjecture 7.1 — proved by the same authors in arXiv:2606.24182 (our independent proof in `results/painleve_series` is correct but not new).
+* Chavan–Kobayashi–Layja Conjecture 4.5 (t-values) — proved by Charlton, arXiv:2112.14613.
+* Finch's A/B and I/J identities — explained in Finch's own corrigendum (arXiv:2503.00579).
+* Samart's n₄(81) conjecture — refuted and explained in H. Zheng, arXiv:2608.02265.
 
 ## Repo map
-`CLAUDE.md` brief + progress log · `TARGETS.md` scouting list with status · `NOTES.md` dead ends and leads · `formulas.txt` recorded results · `results/*/` code and write-ups · `verify_all.py` re-runs headline checks · `MORNING_SUMMARY.md` plain-English summary and draft e-mails.
+`paper/` the preprint · `CLAUDE.md` briefs and progress logs · `CITATIONS.md`, `NOVELTY.md`, `VERIFICATION.md`, `PAPER_SUMMARY.md` · `formulas.txt` recorded results · `TARGETS.md` scouting list · `NOTES.md` dead ends and leads · `results/*/` code, logs, proof write-ups · `referee_reports/` independent referee and verification reports · `novelty_parts/` raw literature-search logs · `verify_all.py` re-runs the headline checks.
