@@ -256,3 +256,4 @@ Go. Set up the wake-up alarms, write CLAUDE.md, then start.
 - 05:40 UTC: verify_all.py ALL OK; Pade claim extended to odd 3<=m<=359 (179 values, no gaps/failures across logs) in formulas.txt, pade README, main README. rigorous_diag 361..401 still running.
 - 06:20 UTC: wrap-up: MORNING_SUMMARY.md finalised (13 items, 9 draft emails, restart note), README/formulas/pade README updated to odd m<=361. Final verify_all run next.
 - 06:20 UTC: final verify_all.py ALL OK (0 FAIL). No wake-ups pending after 07:00. Background jobs stopped. Done.
+- 08:20 UTC: Phase A done (CITATIONS.md). Findings: (1) 2608.02265 is by Zheng not Samart and ALREADY contains our Samart result -> KNOWN; (2) Finch 2503.00579 corrigendum already explains A/B, I/J identities -> KNOWN; (3) 'Hoffman proved N=1,2,3' was from memory, corrected; (4) Fan's Bjorck/Clark-Laugesen only as quoted; (5) Gasull p_4 does not answer Problem 21. Next: Phase B novelty.
