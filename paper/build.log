@@ -86,16 +86,16 @@ icit val-ues for the se-ries $\OML/lmm/m/it/10.95 S[] \OT1/lmr/m/n/10.95 = [][]
  \OML/lmm/m/it/10.95 H[]H[] [] H[]=\OT1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 k\OT
 1/lmr/m/n/10.95 (\OML/lmm/m/it/10.95 k \OT1/lmr/m/n/10.95 +
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd) [2{/usr/share/texmf/fonts/enc/dvips/l
-m/lm-mathex.enc}]) (./sec_riesz.tex [3]
+m/lm-mathex.enc}]) (./sec_riesz.tex [3] [4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 66.
+(hyperref)                removing `math shift' on input line 68.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 66.
+(hyperref)                removing `math shift' on input line 68.
 
-[4] [5] [6]) (./sec_gregory.tex [7]
+[5] [6]) (./sec_gregory.tex [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 36.
@@ -204,9 +204,7 @@ Underfull \hbox (badness 2426) in paragraph at lines 14--15
 Gur-land's ra-tio of the gamma func-tions\T1/lmr/m/n/10.95 ,
 [18]) [19] (./main.aux)
 
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  )
 (see the transcript file for additional information)</usr/share/texmf/fonts/typ
@@ -224,5 +222,5 @@ exmf/fonts/type1/public/lm/lmsy6.pfb></usr/share/texmf/fonts/type1/public/lm/lm
 sy8.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/t
 exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (19 pages, 460035 bytes).
+Output written on main.pdf (19 pages, 461538 bytes).
 Transcript written on main.log.

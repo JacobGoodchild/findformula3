@@ -21,6 +21,8 @@ Fan proves the special case of Conjecture~\ref{conj:fan59} in which $A$ is repla
 Conjecture~\ref{conj:fan59} and Conjecture~\ref{conj:fan56} are true. More precisely, in the setting of Conjecture~\ref{conj:fan59}, the energy $U_r(\{A,B,C\})$ is a nondecreasing function of $\psi\in[0,2\pi-3\varphi]$.
 \end{theorem}
 
+\noindent\emph{Notation.} In Conjecture~\ref{conj:fan56} the symbols $a,b$ are Fan's; in the proof below they correspond to $\beta$ and $\ell$. Elsewhere $a,b,c$ denote side lengths of a triangle.\medskip
+
 \subsection{Inputs taken from the literature}
 \begin{itemize}[leftmargin=2em]
 \item[\textbf{(I1)}] \emph{Energy of three points} (Clark--Laugesen, Theorem 8, quoted as Lemma 5.7 in~\cite{Fan}). Let $T\subset\R^2$ have three points with mutual distances $a,b,c$, $0<a,b\le c$, and let $r>0$. If $a^r+b^r\le c^r$ then $U_r(T)=c^r/2$; otherwise
@@ -41,18 +43,18 @@ At $s=0$ both expressions equal $z/2$, so $U$ is a continuous function of $(x,y,
 
 Fix $\varphi\in(\pi/2,2\pi/3]$ and let $B=e^{i\varphi}$, $C=e^{-i\varphi}$, $A=e^{i\psi}$ with $0\le\psi\le 2\pi-3\varphi$. Put
 \[
-\lambda=\frac{\varphi-\psi}{2},\qquad \mu=\frac{\varphi+\psi}{2},\qquad\text{so}\qquad 0\le\lambda\le\mu\le\pi-\varphi<\frac\pi2<\varphi .
+\lambda=\frac{\varphi-\psi}{2},\qquad \eta=\frac{\varphi+\psi}{2},\qquad\text{so}\qquad 0\le\lambda\le\eta\le\pi-\varphi<\frac\pi2<\varphi .
 \]
-(The inequality $\mu\le\pi-\varphi$ is $\psi\le2\pi-3\varphi$; $\lambda>0$ for $\psi<\varphi$, which holds because $2\pi-3\varphi<\varphi$ when $\varphi>\pi/2$.) The chord lengths are
+(The inequality $\eta\le\pi-\varphi$ is $\psi\le2\pi-3\varphi$; $\lambda>0$ for $\psi<\varphi$, which holds because $2\pi-3\varphi<\varphi$ when $\varphi>\pi/2$.) The chord lengths are
 \[
-a:=|AB|=2\sin\lambda,\qquad b:=|AC|=2\sin\mu,\qquad c:=|BC|=2\sin\varphi .
+a:=|AB|=2\sin\lambda,\qquad b:=|AC|=2\sin\eta,\qquad c:=|BC|=2\sin\varphi .
 \]
 Since $\sin$ is increasing on $[0,\pi/2]$ and $\sin\varphi=\sin(\pi-\varphi)$, we have $a\le b\le c$, with $b=c$ exactly at $\psi=2\pi-3\varphi$ and $a=b$ exactly at $\psi=0$. So $BC$ is the longest side, as in Conjecture~\ref{conj:fan59}. As $\psi$ increases, $a$ decreases and $b$ increases, $c$ is constant. Write $F(\psi)=U_r(\{A,B,C\})$; $F$ is continuous.
 
 \begin{lemma}[derivative]\label{lem:deriv}
 On a $\psi$-interval where $s>0$ and $0<\psi<2\pi-3\varphi$ (so $0<\lambda<\mu$ and $b<c$),
 \[
-\frac{\dd\log F}{\dd\psi}=\frac{s\,r}{2D}\Big[(z+y-x)\cot\mu-(z+x-y)\cot\lambda\Big].
+\frac{\dd\log F}{\dd\psi}=\frac{s\,r}{2D}\Big[(z+y-x)\cot\eta-(z+x-y)\cot\lambda\Big].
 \]
 \end{lemma}
 \begin{proof}
@@ -60,17 +62,17 @@ From $\log U=\log2+\log x+\log y+\log z-\log D$ and $D=4xy-s^2$, $s=x+y-z$,
 \[
 \frac{\partial\log U}{\partial x}=\frac1x-\frac{4y-2s}{D}=\frac{D-x(4y-2s)}{xD}=\frac{s(2x-s)}{xD}=\frac{s\,(z+x-y)}{xD},
 \]
-and symmetrically $\partial_y\log U=s(z+y-x)/(yD)$. Now $\dd\lambda/\dd\psi=-\tfrac12$, $\dd\mu/\dd\psi=\tfrac12$, so $\dd\log x/\dd\psi=-\tfrac r2\cot\lambda$ and $\dd\log y/\dd\psi=\tfrac r2\cot\mu$, while $z$ does not depend on $\psi$. The chain rule gives the formula.
+and symmetrically $\partial_y\log U=s(z+y-x)/(yD)$. Now $\dd\lambda/\dd\psi=-\tfrac12$, $\dd\eta/\dd\psi=\tfrac12$, so $\dd\log x/\dd\psi=-\tfrac r2\cot\lambda$ and $\dd\log y/\dd\psi=\tfrac r2\cot\eta$, while $z$ does not depend on $\psi$. The chain rule gives the formula.
 \end{proof}
 
 \subsection{Monotonicity of $F$}
 \begin{lemma}[an elementary inequality]\label{lem:ineq}
-Let $0<p<q<1$ with $p^2+q^2\ge1$, let $r\ge2$ and suppose $p^r+q^r>1$. Then $q^r-p^r\ \ge\ q^2-p^2$.
+Let $0<p<q<1$, let $r\ge2$ and suppose $p^r+q^r>1$. Then $q^r-p^r\ \ge\ q^2-p^2$.
 \end{lemma}
 \begin{proof}
-Put $G(\rho)=q^\rho-p^\rho-(q^2-p^2)$ for real $\rho\ge2$, so $G(2)=0$ and $G'(\rho)=q^\rho\ln q-p^\rho\ln p$. Since $\ln p,\ln q<0$, $G'(\rho)\ge0$ is equivalent to $(q/p)^\rho\le \ln p/\ln q$. The left side is strictly increasing in $\rho$ (because $q>p$), so there is $\rho_0\in[2,\infty]$ with $G'\ge0$ on $[2,\rho_0]$ and $G'<0$ on $(\rho_0,\infty)$. Hence $G$ is nondecreasing and then decreasing on $[2,\infty)$, and on every interval $[2,\rho_1]$ we have $G\ge\min\{G(2),G(\rho_1)\}$.
+Put $G(\rho)=q^\rho-p^\rho-(q^2-p^2)$ for real $\rho\ge2$, so $G(2)=0$ and $G'(\rho)=q^\rho\ln q-p^\rho\ln p$. Since $\ln p,\ln q<0$, $G'(\rho)\ge0$ is equivalent to $(q/p)^\rho\le \ln p/\ln q$. The left side is strictly increasing in $\rho$ (because $q>p$), so the set $\{\rho\ge2:G'(\rho)\ge0\}$ is an initial segment of $[2,\infty)$ (possibly empty): $G$ is nondecreasing on it and strictly decreasing afterwards. In either case, on every interval $[2,\rho_1]$ we have $G\ge\min\{G(2),G(\rho_1)\}$.
 
-The function $\rho\mapsto p^\rho+q^\rho$ is strictly decreasing, equals at least $1$ at $\rho=2$ and tends to $0$; let $\rho_1\ge2$ be the root of $p^{\rho_1}+q^{\rho_1}=1$. Because $p^r+q^r>1$ we have $2\le r<\rho_1$, so it suffices to prove $G(\rho_1)\ge0$.
+The function $\rho\mapsto p^\rho+q^\rho$ is strictly decreasing and tends to $0$ as $\rho\to\infty$; let $\rho_1$ be the root of $p^{\rho_1}+q^{\rho_1}=1$. Because $p^r+q^r>1$ we have $2\le r<\rho_1$, so it suffices to prove $G(\rho_1)\ge0$.
 
 Put $w=q^{\rho_1}$. Then $p^{\rho_1}=1-w$, $w\in(\tfrac12,1)$ (as $q>p$), and with $\sigma=2/\rho_1\in(0,1]$ we have $q^2=w^\sigma$, $p^2=(1-w)^\sigma$. Thus
 \[
@@ -87,23 +89,19 @@ where $k(u)=-u\ln u$ and we used $\frac{1-w}{w}<1$, $\sigma\le1$. It remains to 
 $F$ is nondecreasing on $[0,2\pi-3\varphi]$.
 \end{proposition}
 \begin{proof}
-On the open set where $s>0$ and $0<\psi<2\pi-3\varphi$ we use Lemma~\ref{lem:deriv}. Here $s>0$, $D>0$, $\cot\mu>0$ (as $\mu<\pi/2$), $\cot\lambda>0$, and $z+x-y\ge x>0$ (as $y\le z$). So the sign of $\dd\log F/\dd\psi$ is the sign of
+On the open set where $s>0$ and $0<\psi<2\pi-3\varphi$ we use Lemma~\ref{lem:deriv}. Here $s>0$, $D>0$, $\cot\eta>0$ (as $\eta<\pi/2$), $\cot\lambda>0$, and $z+x-y\ge x>0$ (as $y\le z$). So the sign of $\dd\log F/\dd\psi$ is the sign of
 \[
-R_r-\frac{\cot\lambda}{\cot\mu},\qquad R_r:=\frac{z+y-x}{z+x-y}.
+R_r-\frac{\cot\lambda}{\cot\eta},\qquad R_r:=\frac{z+y-x}{z+x-y}.
 \]
-Put $p=a/c$, $q=b/c$ (so $0<p<q<1$) and $t_r=q^r-p^r\in(-1,1)$. Then $R_r=\dfrac{1+t_r}{1-t_r}$, which is an increasing function of $t_r$. For $r=2$ we compute with $\varphi=\lambda+\mu$ and $\sin^2\mu-\sin^2\lambda=\sin(\mu-\lambda)\sin(\mu+\lambda)=\sin\psi\sin\varphi$:
+Put $p=a/c$, $q=b/c$ (so $0<p<q<1$) and $t_r=q^r-p^r\in(-1,1)$. Then $R_r=\dfrac{1+t_r}{1-t_r}$, which is an increasing function of $t_r$. For $r=2$ we compute with $\varphi=\lambda+\eta$ and $\sin^2\eta-\sin^2\lambda=\sin(\eta-\lambda)\sin(\eta+\lambda)=\sin\psi\sin\varphi$:
 \[
-R_2=\frac{\sin^2\varphi+\sin\varphi\sin\psi}{\sin^2\varphi-\sin\varphi\sin\psi}=\frac{\sin\varphi+\sin\psi}{\sin\varphi-\sin\psi}=\frac{2\sin\mu\cos\lambda}{2\cos\mu\sin\lambda}=\frac{\cot\lambda}{\cot\mu},
+R_2=\frac{\sin^2\varphi+\sin\varphi\sin\psi}{\sin^2\varphi-\sin\varphi\sin\psi}=\frac{\sin\varphi+\sin\psi}{\sin\varphi-\sin\psi}=\frac{2\sin\eta\cos\lambda}{2\cos\eta\sin\lambda}=\frac{\cot\lambda}{\cot\eta},
 \]
-where $\sin\varphi+\sin\psi=2\sin\mu\cos\lambda$ and $\sin\varphi-\sin\psi=2\cos\mu\sin\lambda$. Hence the sign of $\dd\log F/\dd\psi$ is the sign of $R_r-R_2$, i.e.\ of $t_r-t_2$, i.e.\ of $q^r-p^r-(q^2-p^2)$.
+where $\sin\varphi+\sin\psi=2\sin\eta\cos\lambda$ and $\sin\varphi-\sin\psi=2\cos\eta\sin\lambda$. Hence the sign of $\dd\log F/\dd\psi$ is the sign of $R_r-R_2$, i.e.\ of $t_r-t_2$, i.e.\ of $q^r-p^r-(q^2-p^2)$.
 
-We check the hypotheses of Lemma~\ref{lem:ineq}. First $p^r+q^r>1$ is $s>0$. Second, using $\varphi=\lambda+\mu$,
-\[
-a^2+b^2-c^2=4\big(\sin^2\lambda+\sin^2\mu-\sin^2(\lambda+\mu)\big)=-8\sin\lambda\sin\mu\cos\varphi\ \ge0,
-\]
-because $\cos\varphi<0$; so $p^2+q^2\ge1$. By Lemma~\ref{lem:ineq}, $t_r\ge t_2$, hence $\dd\log F/\dd\psi\ge0$ wherever $s>0$ in the open interval.
+We check the hypotheses of Lemma~\ref{lem:ineq}: $0<p<q<1$ was noted above, and $p^r+q^r>1$ is exactly $s>0$. By Lemma~\ref{lem:ineq}, $t_r\ge t_2$, hence $\dd\log F/\dd\psi\ge0$ wherever $s>0$ in the open interval.
 
-It remains to treat the branches. Suppose $s>0$ at some $\psi_1\in[0,2\pi-3\varphi)$ and let $\psi_2>\psi_1$ be such that $s>0$ on $[\psi_1,\psi_2)$. Then $F$ is nondecreasing on $[\psi_1,\psi_2)$ and, by continuity, $F(\psi_2)\ge F(\psi_1)>z/2$; so $s(\psi_2)>0$ (if $s(\psi_2)\le 0$ we would have $F(\psi_2)=z/2$). So once $s>0$, it stays positive up to $2\pi-3\varphi$, and $F$ is nondecreasing on that whole stretch (it is continuous, and differentiable with nonnegative derivative except at the two endpoints). Before that stretch we are on the two-point branch, where $F\equiv z/2$ is constant; at the point where the branch changes $F$ is continuous, and $F\ge z/2$ always. Thus $F$ is nondecreasing on $[0,2\pi-3\varphi]$.
+It remains to treat the branches. Suppose $s(\psi_1)>0$ for some $\psi_1\in[0,2\pi-3\varphi)$, and let $\psi_2=\sup\{\psi'\in(\psi_1,2\pi-3\varphi]: s>0\text{ on }[\psi_1,\psi')\}$. On $[\psi_1,\psi_2)$ the function $F$ is continuous and nondecreasing (it is differentiable with nonnegative derivative on the open set where $s>0$ and $0<\psi<2\pi-3\varphi$), so $F(\psi_2)\ge F(\psi_1)>z/2$ by continuity. If $\psi_2<2\pi-3\varphi$ then $s(\psi_2)=0$ and $F(\psi_2)=z/2$, a contradiction; hence $\psi_2=2\pi-3\varphi$, i.e.\ once $s>0$ it stays positive up to the endpoint, and $F$ is nondecreasing on $[\psi_1,2\pi-3\varphi]$. On the set where $s\le0$, $F\equiv z/2$ is constant, and $s>0$ at $\psi$ implies $s>0$ later, so this set is an initial interval $[0,\psi_*]$ (possibly empty) on which $F=z/2$. Since $F$ is continuous and $F\ge z/2$ always, $F$ is nondecreasing on $[0,2\pi-3\varphi]$. The degenerate case $\varphi=2\pi/3$ (where $2\pi-3\varphi=0$) is trivial.
 \end{proof}
 
 \begin{proof}[Proof of Conjecture~\ref{conj:fan59}]
@@ -126,10 +124,10 @@ where the last equality uses $\ell=2\sin\theta$, $\beta=4\sin\theta\cos\theta$. 
 \iint|x-y|^r\dd\mu_N\dd\mu_N=2\Big[2\,m_1m_2\ell^r+m_2^2\beta^r\Big]=\frac{2\ell^{2r}\,(4\ell^r-\beta^r)}{(4\ell^r-\beta^r)^2}=U_r(T_N).
 \]
 
-\emph{Upper bound.} By (I2) it suffices to show $U_r(T)\le U_r(T_N)$ for every $T\subset P_N$ with at most three points. Pairs give $U_r=d^r/2\le\ell^r/2\le U_r(T_N)$ (where $d\le\ell$ is the distance, and $U_r(T_N)\ge\ell^r/2$ because $U\ge z/2$ in (I1)). Let $T=\{A,B,C\}\subset P_N$ be a triple with longest side $BC$.
+\emph{Upper bound.} By (I2) it suffices to show $U_r(T)\le U_r(T_N)$ for every $T\subset P_N$ with at most three points. Single points give $U_r=0$, and for a pair at distance $d$ one has $U_r=\max_{0\le p\le1}2p(1-p)d^r=d^r/2$, so pairs give $U_r=d^r/2\le\ell^r/2\le U_r(T_N)$ (where $d\le\ell$ is the distance, and $U_r(T_N)\ge\ell^r/2$ because $U\ge z/2$ in (I1)). Let $T=\{A,B,C\}\subset P_N$ be a triple with longest side $BC$.
 \begin{itemize}[leftmargin=2em]
 \item If $a^r+b^r\le c^r$ (two-point branch), $U_r(T)=c^r/2\le\ell^r/2\le U_r(T_N)$.
-\item If $a^r+b^r>c^r$, then, since $(a/c)^r\le(a/c)^2$ and $(b/c)^r\le (b/c)^2$ for $r>2$, we get $a^2+b^2>c^2$, so all angles of the triangle are acute and $T$ is an acute inscribed triangle: its three arcs are all smaller than $\pi$. By a rotation and possibly a reflection, $B=e^{i\varphi}$, $C=e^{-i\varphi}$, $A=e^{i\psi}$ with $\psi\in[0,\varphi)$; the arc $BC$ not containing $A$ has length $2\pi-2\varphi<\pi$, so $\varphi>\pi/2$; the arcs $AB,AC$ have lengths $\varphi-\psi,\ \varphi+\psi$; $BC$ longest means $2\pi-2\varphi\ge\varphi+\psi$, i.e.\ $\psi\le2\pi-3\varphi$; and since the three arcs sum to $2\pi$ the longest is at least $2\pi/3$, so $\varphi\le2\pi/3$. Thus $T$ is exactly in the configuration of Theorem~\ref{thm:riesz} and, by Proposition~\ref{prop:mono}, $U_r(T)\le U_r(T')$ where $T'$ is the configuration with $\psi=2\pi-3\varphi$, i.e.\ $|AC|=|BC|=:L=2\sin\varphi$. This isosceles triangle, inscribed in the unit circle with legs $L$, is congruent to $\{(1,0),e^{i\alpha},e^{-i\alpha}\}$ with $2\sin(\alpha/2)=L$, i.e.\ $\alpha=2\pi-2\varphi\in[2\pi/3,\pi)$. As $L=|BC|$ is a chord of $P_N$, $L\le\ell=2\sin\theta$, so $\alpha/2\le\theta$ (both lie in $(0,\pi/2)$) and $\alpha\le2\theta=\pi-\pi/N$. By (I3), $U_r(T')\le U_r(\{(1,0),e^{i(\pi-\pi/N)},e^{-i(\pi-\pi/N)}\})=U_r(T_N)$.
+\item If $a^r+b^r>c^r$, then, since $(a/c)^r\le(a/c)^2$ and $(b/c)^r\le (b/c)^2$ for $r>2$, we get $a^2+b^2>c^2$, so all angles of the triangle are acute and $T$ is an acute inscribed triangle: its three arcs are all smaller than $\pi$. Rotate so that the midpoint of the arc $BC$ not containing $A$ is $e^{i\pi}$; if that arc has length $2\pi-2\varphi$ (which is $<\pi$, so $\varphi>\pi/2$) then $B,C=e^{\pm i\varphi}$ (after naming), and $A=e^{i\psi}$ lies on the complementary arc, $|\psi|<\varphi$; after a reflection in the $x$-axis, $\psi\in[0,\varphi)$; the arcs $AB,AC$ have lengths $\varphi-\psi,\ \varphi+\psi$; $BC$ longest means $2\pi-2\varphi\ge\varphi+\psi$, i.e.\ $\psi\le2\pi-3\varphi$; and since the three arcs sum to $2\pi$ the longest is at least $2\pi/3$, so $\varphi\le2\pi/3$. Thus $T$ is exactly in the configuration of Theorem~\ref{thm:riesz} and, by Proposition~\ref{prop:mono}, $U_r(T)\le U_r(T')$ where $T'$ is the configuration with $\psi=2\pi-3\varphi$, i.e.\ $|AC|=|BC|=:L=2\sin\varphi$. An isosceles triangle inscribed in the unit circle with legs $L$ is unique up to congruence (its apex is a point of the circle and the other two vertices are the two points of the circle at distance $L$ from it), hence $T'$ is congruent to $\{(1,0),e^{i\alpha},e^{-i\alpha}\}$ with $2\sin(\alpha/2)=L$, i.e.\ $\alpha=2\pi-2\varphi\in[2\pi/3,\pi)$ (as $\varphi\in(\pi/2,2\pi/3]$). As $L=|BC|$ is a chord of $P_N$, $L\le\ell=2\sin\theta$, so $\alpha/2\le\theta$ (both lie in $(0,\pi/2)$) and $\alpha\le2\theta=\pi-\pi/N$, where $2\theta\ge2\pi/3$ because $N\ge3$. By (I3), $U_r(T')\le U_r(\{(1,0),e^{i(\pi-\pi/N)},e^{-i(\pi-\pi/N)}\})=U_r(T_N)$.
 \end{itemize}
 Hence $U_r(P_N)\le U_r(T_N)=\iint|x-y|^r\dd\mu_N\dd\mu_N\le U_r(P_N)$, so $U_r(P_N)=U_r(T_N)$ and $\mu_N$ is an equilibrium measure of $P_N$, supported on the three points of Conjecture~\ref{conj:fan56}. This proves Conjecture~\ref{conj:fan56}. \hfill$\square$
 

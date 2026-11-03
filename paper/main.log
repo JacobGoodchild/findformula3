@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  3 NOV 2026 08:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2026.11.3)  3 NOV 2026 08:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -583,16 +583,17 @@ LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 2
 6.
 (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]) (./sec_riesz.tex [3]
+) [2{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathex.enc}]) (./sec_riesz.tex [3] 
+[4]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 66.
+(hyperref)                removing `math shift' on input line 68.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 66.
+(hyperref)                removing `math shift' on input line 68.
 
-[4] [5] [6]) (./sec_gregory.tex [7]
+[5] [6]) (./sec_gregory.tex [7]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 36.
@@ -714,13 +715,10 @@ L3 programming layer <2024-01-22>
  ***********
 
 
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: 10E0A30E520583131B680732E95B2949;5834
-(rerunfilecheck)             After:  424118CD69DD834EFC346155D77CBB6B;5839.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 424118CD69DD834EFC346155D77CBB6B;5839.
  ) 
 Here is how much of TeX's memory you used:
  12405 strings out of 476106
@@ -729,7 +727,7 @@ Here is how much of TeX's memory you used:
  34058 multiletter control sequences out of 15000+600000
  641632 words of font info for 98 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 80i,11n,82p,1365b,743s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,11n,82p,1715b,605s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf/fonts/type1/public/lm/lmbx10.pfb></usr/share/texmf/fonts/ty
 pe1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></u
 sr/share/texmf/fonts/type1/public/lm/lmmi10.pfb></usr/share/texmf/fonts/type1/p
@@ -745,10 +743,10 @@ exmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/type1/public/lm/lm
 tt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msa
 m10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm
 10.pfb>
-Output written on main.pdf (19 pages, 460035 bytes).
+Output written on main.pdf (19 pages, 461538 bytes).
 PDF statistics:
- 561 PDF objects out of 1000 (max. 8388607)
- 487 compressed objects within 5 object streams
+ 562 PDF objects out of 1000 (max. 8388607)
+ 488 compressed objects within 5 object streams
  123 named destinations out of 1000 (max. 500000)
  217 words of extra memory for PDF output out of 10000 (max. 10000000)
 
