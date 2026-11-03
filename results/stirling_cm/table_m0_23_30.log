@@ -2,3 +2,5 @@
   the requested tolerance from being achieved.  The error may be 
   underestimated.
   v, err = quad(hpf, 0, t, weight='alg', wvar=(0, -a), limit=200, epsabs=1e-16, epsrel=1e-13)
+n=23 m=0  d_CM = 44 + 0.1571694448   delta=0.1571694448  (2n-1)*delta=7.072625  t*=0.8299 [163s]
+n=24 m=0  d_CM = 46 + 0.1512970350   delta=0.1512970350  (2n-1)*delta=7.110961  t*=0.7962 [173s]
