@@ -66,7 +66,7 @@ The proposition reproduces every value in Finch's paper that we tested: $\delta_
 \end{remark}
 
 \subsection{The second derivative $C''(2)$ of an orbit limit}
-Finch~\cite{FinchIII} studies $x_{n+1}=x_n+1+1/x_n^2$ and the limit $C(x_0)=\lim_{n\to\infty}(x_n-n)$. He computes by finite differences $C(2)=2.59878685582487\ldots$, $C'(2)=0.66156132404868\ldots$, $C''(2)\approx0.37462642198301734111$, notes that an earlier series estimate $0.3909\ldots$ disagrees, and writes: ``An independent confirmation of the $0.3746$ estimate remains open.''
+Finch~\cite{FinchIII} studies $x_{n+1}=x_n+1+1/x_n^2$ and the limit $C(x_0)=\lim_{n\to\infty}(x_n-n)$. He obtains $C(2)=2.59878685582487\ldots$ from the asymptotic expansion of $x_n$ and, by finite differences of this computation, $C'(2)\approx0.66156132404868\ldots$ and $C''(2)\approx0.37462642198301734111$; he notes that an earlier series estimate $0.3909\ldots$ disagrees, and writes: ``An independent confirmation of the $0.3746$ estimate remains open.''
 
 Let $x_k$ be the orbit of $x_0$, $f(x)=x+1+x^{-2}$ so $f'(x)=1-2x^{-3}$. Since $x_k-k\to C$ and $\prod_k f'(x_k)$ converges ($x_k\sim k$, $\sum x_k^{-3}<\infty$), $C'(x_0)=\prod_{k\ge0}(1-2x_k^{-3})$. Writing $D_k=\prod_{j<k}(1-2x_j^{-3})=\dd x_k/\dd x_0$ and differentiating once more, $\dd^2x_k/\dd x_0^2=:E_k$ satisfies $E_{k+1}=f'(x_k)E_k+f''(x_k)D_k^2$, with $f''(x)=6x^{-4}$, and $C''(x_0)=\lim_kE_k$. Solving the linear recursion,
 \begin{equation}\label{eq:Cpp}
