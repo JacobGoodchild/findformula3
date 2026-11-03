@@ -142,3 +142,4 @@ Go. Set up the wake-up alarms, write CLAUDE.md, then start.
 - 03:31 UTC: jobs died again; proved odd m<=351; stirling n=27 d_CM=52.1360471128. Relaunched rigorous_diag 353..401, stirling 28..30.
 - 04:05 UTC: jobs died again; proved odd m<=353. Relaunched rigorous_diag 355..401, stirling 28..30.
 - 04:51 UTC: jobs died again; proved odd m<=355. Relaunched rigorous_diag 357..401, stirling 28..30.
+- 05:01 UTC: proved odd m<=357; relaunched rigorous_diag 359..401; stirling n=28 never completes between restarts -> final table uses n<=27. verify_all.py running in background (scratchpad log).
