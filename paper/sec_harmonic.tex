@@ -22,11 +22,11 @@ Multiple zeta values are $\zeta(s_1,\dots,s_r)=\sum_{n_1>\dots>n_r\ge1}n_1^{-s_1
 \item The output is a $\Q$-linear combination of multiple zeta values. In step~1 a term with $H_k^m$ carries $q+1-m$ factors of the form $1/(k+i)$, $1\le i\le q$, and the factor $\prod_j(k+j)^{-1}$ has simple poles; hence the pole at $k=-a$ has order $s\le q+2-m$, and the sums $\sum H_p^m p^{-s}$ that arise have weight $m+s\le q+2$. The shift reductions of step~2 do not increase the weight.
 \end{enumerate}
 
-\begin{theorem}[computer-assisted]\label{thm:harmonic}
-For $1\le q\le9$ the procedure above expresses $S_q$ as an explicit $\Q$-linear combination of multiple zeta values of weight at most $q+2$. The expression is the output of a program that works in exact rational arithmetic; the program is in the repository.
-\end{theorem}
+\begin{proposition}[computer-assisted]\label{thm:harmonic}
+For $1\le q\le9$ the procedure above produces an explicit $\Q$-linear combination of multiple zeta values of weight at most $q+2$, computed in exact rational arithmetic by a program in the repository (which asserts the cancellation of all divergent terms). For each such $q$ the combination agrees with an independent high-precision numerical evaluation of $S_q$ to about $10^{-62}$. Thus the statement ``$S_q$ equals this combination'' is established by the algorithm, whose correctness rests on the argument above and on the exactness of the arithmetic, and is corroborated numerically; it is not a formal proof checked by a proof assistant.
+\end{proposition}
 
-We checked each of these expressions against independent high-precision numerics for $S_q$ (Euler--Maclaurin summation with exact Taylor data): the exact MZV combinations agree with the numerical values to about $10^{-62}$ for $q\le9$. The same procedure applies verbatim for every $q$; we do not claim a theorem for all $q$ because we have only executed it for $q\le9$.
+The same procedure applies verbatim for every $q$; we do not claim a theorem for all $q$ because we have only executed it for $q\le9$.
 
 \subsection{Closed forms}
 Every multiple zeta value of weight $\le7$ is a polynomial with rational coefficients in single zeta values $\zeta(n)$ (a classical result, available through the standard tables of multiple zeta values), and at weight $8$ one new generator, for instance $\zeta(5,3)$, is needed. We found the rational coefficients of these reductions by PSLQ at 150 digits (the MZVs being computed with PARI/GP), so the closed forms below are \emph{numerical identifications} of exact reductions; we label them accordingly. They were then checked against independent numerics (45 digits for $q\le8$).
