@@ -1,0 +1,41 @@
+\section{Gurland's ratio of gamma functions}\label{sec:gurland}
+
+Wi\'sniewska~\cite{Wis} studies the modified Gurland ratio
+\[
+G^\star(x,y)=\frac{\Gamma(1+x)\,\Gamma(1+y)}{\Gamma^2\!\big(1+\frac{x+y}2\big)},\qquad x,y>0,
+\]
+and proves, for integers $m\ge2$, the finite expansion
+\[
+\ln G^\star(x,y)=S_m(x,y)+R_{nm}(x,y),\qquad S_m(x,y)=\sum_{k=1}^{m-1}\frac1k\Big(\frac{x-y}2\Big)^{2k}\zeta\Big(2k,1+\frac{x+y}2\Big),
+\]
+with $0\le R_{nm}(x,y)\le\varepsilon_n^m(x,y)$, where $\zeta(s,a)=\sum_{n\ge0}(n+a)^{-s}$ is the Hurwitz zeta function. From this she deduces $\ln G^\star=S_\infty:=\lim_mS_m$ under the condition $|x-y|<2(1+\sqrt{xy})$ and ends Section 2 with three open problems: (1) ``Does $R_{nm}(x,y)\to0$ hold for every $x,y>0$?'' (2) ``Does $\ln G^\star(x,y)=S_\infty(x,y)$ hold generally, and if not, how large the difference can be?'' (3) ``How is $t(x,y)$ located in the interval $[\sqrt{xy},\frac{x+y}2]$?'' where $t$ is defined by $\ln G^\star=\big(\frac{x-y}2\big)^2\zeta(2,1+t)$ (her Corollary 3).
+
+\subsection{Problems 1 and 2}
+\begin{proposition}\label{prop:gurland}
+For all $x,y>0$, with $h=\frac{x+y}2$, $d=\frac{x-y}2$,
+\[
+\ln G^\star(x,y)=\sum_{k=1}^\infty\frac1k\,d^{2k}\,\zeta(2k,1+h),
+\]
+the series converging absolutely, with radius of convergence exactly $1+h$ in the variable $d$; moreover $|d|\le h+1-(1+\min(x,y))$ for all $x,y>0$, so the convergence is geometric with ratio at most $(d/(1+h))^2<1$. In particular $R_{nm}(x,y)\to0$ as $m\to\infty$ and $\ln G^\star=S_\infty$ for every $x,y>0$.
+\end{proposition}
+\begin{proof}
+Put $a=1+h$ and $f(z)=\ln\Gamma(a+z)$ for $|z|<a$. Here $\ln\Gamma$ is the branch that is real on $(0,\infty)$; it is holomorphic on the half-plane $\operatorname{Re}w>0$ (the zeros of $1/\Gamma$ are absent and the poles of $\Gamma$ lie on the non-positive real axis). For $|z|<a$ we have $\operatorname{Re}(a+z)>0$, so $f$ is holomorphic in the disc $|z|<a$, and its Taylor series at $0$ converges to $f$ there. Its coefficients are $f^{(j)}(0)=\psi^{(j-1)}(a)$ for $j\ge1$, and $\psi^{(n)}(a)=(-1)^{n+1}n!\,\zeta(n+1,a)$ for $n\ge1$; hence $f^{(2k)}(0)=(2k-1)!\,\zeta(2k,a)$ for $k\ge1$. Since $1+x=a+d$ and $1+y=a-d$, we have $\ln G^\star=f(d)+f(-d)-2f(0)$, and $|d|<a$ holds for all $x,y>0$ because $a-|d|=1+\min(x,y)>1$. Adding the Taylor series at $d$ and $-d$, the odd terms cancel:
+\[
+\ln G^\star=2\sum_{k\ge1}\frac{f^{(2k)}(0)}{(2k)!}d^{2k}=\sum_{k\ge1}\frac1k\,\zeta(2k,a)\,d^{2k}.
+\]
+The terms are nonnegative, and $\zeta(2k,a)\ge a^{-2k}$, so for $|d|=a$ the series would diverge (it is bounded below by $\sum\frac1k$); thus the radius is exactly $a$. For $|d|<a$, $\zeta(2k,a)=a^{-2k}(1+O((a/(a+1))^{2k}))$ and the terms are $O\big(k^{-1}(d/a)^{2k}\big)$. Finally $S_m$ is the $(m-1)$-st partial sum, so $R_{nm}=\ln G^\star-S_m\to0$.
+\end{proof}
+
+Thus the answer to Problems 1 and 2 is ``yes'' and the difference $\ln G^\star-S_\infty$ is $0$. The argument is elementary (it is just the radius of convergence of the Taylor series of $\ln\Gamma$ at $1+h$), and we do not regard it as deep; it was not stated in~\cite{Wis}, whose sufficient condition $|x-y|<2(1+\sqrt{xy})$ is therefore not necessary. As a sanity check, for $(x,y)=(0.01,100)$, where $|d|/a=0.98$, the series evaluated with 60--120 working digits agrees with $\ln G^\star$ and the remainders behave like the predicted $\sim r^{2N}/(N(1-r^2))$, $r=|d|/a$ (about $10^{-10}$ after 500 terms).
+
+\subsection{Problem 3: partial information (numerical)}
+Write $g=\sqrt{xy}$, so $g\le t\le h$. From Proposition~\ref{prop:gurland}, as $d\to0$ with $h$ fixed,
+\[
+\frac{\ln G^\star}{d^2}=\psi'(1+h)+\frac{d^2}{12}\psi'''(1+h)+O(d^4),\qquad\text{so}\qquad t=h+\frac{d^2}{12}\frac{\psi'''(1+h)}{\psi''(1+h)}+O(d^4),
+\]
+while $h-g=d^2/(2h)+O(d^4)$. Hence the relative position $\vartheta=(h-t)/(h-g)$ of $t$ between $h$ and $g$ satisfies $\vartheta\to\frac h6\,\frac{\psi'''(1+h)}{-\psi''(1+h)}$ as $d\to0$, which tends to $\frac13$ as $h\to\infty$ (using $\psi''(z)\sim-z^{-2}$, $\psi'''(z)\sim2z^{-3}$). So no bound of the form $t\ge h-c\,(h-g)$ can hold with $c<\frac13$. In a numerical search (20\,000 random points with $x,y\in[10^{-3},10^{3.5}]$, the largest 200 values re-evaluated with 40-digit arithmetic) we found $\vartheta<\frac13$ with maximum $0.33327$, which suggests:
+
+\begin{conjecture}\label{conj:gurland3}
+For all $x\ne y$ in $(0,\infty)$, $t(x,y)>\dfrac{x+y+\sqrt{xy}}3$ (equivalently $\vartheta<\tfrac13$). The constant $\tfrac13$ cannot be improved.
+\end{conjecture}
+We have no proof of this inequality. (It is a statement about a Hurwitz-zeta quantity for which a termwise comparison in the Laplace variable fails.)

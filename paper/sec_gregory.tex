@@ -1,0 +1,64 @@
+\section{Sign thresholds of higher-order Gregory coefficients}\label{sec:gregory}
+
+\subsection{The question}
+Let $G_n^{(\ell)}$ be the Taylor coefficients of $\big(x/\ln(1+x)\big)^\ell=\sum_{n\ge0}G_n^{(\ell)}x^n$ (higher-order Gregory coefficients; $\ell=1$ gives the classical Gregory coefficients). Xu and Zhao~\cite{XZ} prove (their Theorem 5.1) that for each $\ell\ge1$ there is a positive integer $\Gr(\ell)$ such that $(-1)^{n-1}G_n^{(\ell)}>0$ for all $n\ge\Gr(\ell)$. Their wording only asserts the existence of \emph{some} integer; they then quote ``exact values'' $\Gr(3)=11$, $\Gr(4)=36$, $\Gr(5)=113$, $\Gr(6)=346$, $\Gr(7)=1030$, so we read $\Gr(\ell)$ as the \emph{least} such integer, i.e.\ $1+{}$the largest $n\ge1$ with $(-1)^{n-1}G_n^{(\ell)}\le0$. (A few small-$n$ coefficients vanish, e.g.\ $G^{(\ell)}_{\ell+1}=0$ for even $\ell$ and $G_\ell^{(\ell)}=0$ for odd $\ell\ge3$; they lie far below the last bad $n$.) They ask:
+
+\begin{conjecture}[Xu--Zhao~\cite{XZ}, Conjecture 6.1]\label{conj:xz}
+For all $\ell\ge5$ we have $0.47\cdot3^\ell<\Gr(\ell)<0.477\cdot3^\ell$.
+\end{conjecture}
+
+The conjecture is based on the observation that the largest real root $r(\ell)$ of the polynomial appearing in their proof, and $\Gr(\ell)$, ``seem to increase by roughly tripling''.
+
+\subsection{Results}
+\begin{theorem}\label{thm:gregory}
+Conjecture~\ref{conj:xz} is false. Indeed:
+\begin{enumerate}[label=(\roman*),leftmargin=2em]
+\item $\Gr(5)=113<114.21=0.47\cdot3^5$. This follows from the value $113$ stated in~\cite{XZ}; we also reproduce it.
+\item (computer-assisted, rigorous) $\Gr(\ell)$ equals $11,36,113,346,1030,2995,8580,24303$ for $\ell=3,\dots,10$. Thus $\Gr(\ell)<0.47\cdot3^\ell$ also for $\ell=8,9,10$ ($3083.7$, $9251.0$, $27753.0$ against $2995$, $8580$, $24303$). The values for $\ell=3,\dots,7$ agree with~\cite{XZ}; those for $\ell=8,9,10$ are new.
+\end{enumerate}
+\end{theorem}
+
+\noindent\emph{Proof of (i).} A one-line comparison of the stated value with the stated lower bound.
+
+\noindent\emph{Proof of (ii) (computer-assisted).} The argument has two parts, as in the proof of Theorem 5.1 of~\cite{XZ}.
+
+\emph{Finite range.} The coefficients $G_n^{(\ell)}$, $n\le N_{\max}$, were computed as ball-valued power series (Arb through python-flint, via $\exp(-\ell\log(\log(1+x)/x))$) with every sign certified; the working precision was raised until all coefficients with $n\ge50$ had a definite sign (128 bits sufficed in the independent run below). This gives the largest $n\le N_{\max}$ with the wrong sign.
+
+\emph{Tail.} For $n>\ell+3$, \cite{XZ} writes $(-1)^{n-1}G_n^{(\ell)}=\int_1^\infty h(z)f_n(z)\,\dd z$ (their identity (6)) with explicit $h$, $f_n$, and, by cutting the integral at the largest real root $r=r(\ell)$ of $h$ and bounding the pieces, shows that $(-1)^{n-1}G^{(\ell)}_n>0$ for all $n\ge n_2(\ell)$, where $n_2(\ell)$ is the least $n$ for which an explicit inequality involving integrals over $[1,r]$ and $[0,1/r]$ holds (an inequality which is monotone in $n$). Evaluating that inequality with rigorous interval integration (Arb), with certified isolation of the $\ell-1$ real roots of the polynomial $H_\ell$ of~\cite{XZ}, gives $n_2(\ell)=15,52,168,519,1548,4514,12944,36685$ for $\ell=3,\dots,10$, with positive certified margins; for $\ell=4,\dots,10$ these are the values of Table 2 of~\cite{XZ} ($\ell=3$: $15$ instead of their $16$). All are below the ranges scanned ($N_{\max}\ge6000$ for $\ell\le8$ and $\ge45000$ for $\ell=9,10$). The values of $\Gr(\ell)$ then follow. \hfill$\square$
+
+\smallskip
+We stress what this proof takes from~\cite{XZ}: the integral identity (6), the structure of the inequality and its monotonicity in $n$ (we re-checked (6) numerically against exact coefficients and the root counts by certified isolation, but did not re-prove them). The sign scan and the tail evaluation were carried out twice, by independent implementations (the second written without access to the first), with the same values of $\Gr(\ell)$ and, for $\ell=5,\dots,10$, the same thresholds $n_2(\ell)$ (our first, non-rigorous implementation gave $18,53$ instead of $15$/$16$, $52$ for $\ell=3,4$; this does not affect $\Gr(3),\Gr(4)$).
+
+\begin{remark}
+Table~1 of~\cite{XZ} lists $r(9)\approx5065$; with $r(\ell)=\exp(\pi\cot(\pi/\ell))$ (see below) one gets $r(9)=5605.2$, so we believe $5065$ is a transposition of digits (their $n_2(9)$ agrees with ours).
+\end{remark}
+
+\subsection{More values and the growth of $\Gr(\ell)$}
+The same scan, with the tail inequality evaluated numerically (not rigorously, and without certified margins) gives $\Gr(11)=68283$, $\Gr(12)=190698$, $\Gr(13)=530152$, $\Gr(14)=1468691$; an independent sign scan (to $N=1.2\cdot10^5$) reproduced $\Gr(11)$. Table~\ref{tab:gr} lists the data together with $r(\ell)=\exp(\pi\cot(\pi/\ell))$.
+
+\begin{table}[h]
+\centering
+\caption{$\Gr(\ell)$ for $3\le\ell\le14$ (rigorous for $\ell\le10$; numerical for $\ell=11,\dots,14$). $r(\ell)=\exp(\pi\cot(\pi/\ell))$.}\label{tab:gr}
+\begin{tabular}{rrrrrr}
+\toprule
+$\ell$ & $\Gr(\ell)$ & $\Gr(\ell)/3^\ell$ & $r(\ell)$ & $\Gr(\ell)/r(\ell)$ & $\Gr(\ell)/\Gr(\ell-1)$\\
+\midrule
+3 & 11 & 0.4074 & 6.1 & 1.7934 & --\\
+4 & 36 & 0.4444 & 23.1 & 1.5557 & 3.273\\
+5 & 113 & 0.4650 & 75.5 & 1.4968 & 3.139\\
+6 & 346 & 0.4746 & 230.8 & 1.4994 & 3.062\\
+7 & 1030 & 0.4710 & 681.0 & 1.5124 & 2.977\\
+8 & 2995 & 0.4565 & 1967.4 & 1.5223 & 2.908\\
+9 & 8580 & 0.4359 & 5605.2 & 1.5307 & 2.865\\
+10 & 24303 & 0.4116 & 15816.8 & 1.5365 & 2.833\\
+11 & 68283 & 0.3855 & 44324.0 & 1.5405 & 2.810\\
+12 & 190698 & 0.3588 & 123572.5 & 1.5432 & 2.793\\
+13 & 530152 & 0.3325 & 343156.7 & 1.5449 & 2.780\\
+14 & 1468691 & 0.3071 & 949999.5 & 1.5460 & 2.770\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{The root $r(\ell)$.} In~\cite{XZ}, $h(z)=(-\pi)^{\ell-1}H_\ell(\log z/\pi)\,(\log^2z+\pi^2)^{-\ell}$ and $r(\ell)=\exp(\pi\rho_\ell)$ with $\rho_\ell$ the largest root of $H_\ell$ (they note $\rho_3=\sqrt3/3$). Expanding the explicit expression for $h$ in~\cite{XZ} gives $h(z)=(-1)^{\ell-1}\operatorname{Im}\big[(\log z+i\pi)^\ell\big]\big/\big(\pi(\log^2z+\pi^2)^\ell\big)$, so its real zeros are the $\log z=\pi\cot(k\pi/\ell)$, $k=1,\dots,\ell-1$, and so $\rho_\ell=\cot(\pi/\ell)$ and $r(\ell)=\exp(\pi\cot(\pi/\ell))$. This is consistent with their table apart from the entry noted above. As $\ell\to\infty$, $\ln r(\ell)=\ell-\pi^2/(3\ell)+O(\ell^{-3})$, so $r(\ell)$ grows like $e^\ell$ and not $3^\ell$; the upper bound $A(\ell)=\exp\big(\pi\sqrt{(\ell-1)(\ell-2)/6}\big)$ for $r(\ell)$ given in~\cite{XZ} grows like $3.606^\ell$ and is far from sharp.
+
+\paragraph{Observations (not theorems).} In Table~\ref{tab:gr}, $\Gr(\ell)/3^\ell$ peaks at $\ell=6$ and then decreases; the ratios $\Gr(\ell)/\Gr(\ell-1)$ decrease from $3.27$ at $\ell=4$ to $2.77$ at $\ell=14$ and $\Gr(\ell)/r(\ell)$ stays between $1.49$ and $1.55$. This suggests $\Gr(\ell)=\Theta(r(\ell))=\exp(\ell+O(1))$, i.e.\ growth rate $e$ and not $3$; so the upper bound $0.477\cdot3^\ell$ of Conjecture~\ref{conj:xz} should hold for large $\ell$ while its lower bound fails for all large $\ell$. A heuristic stationary-phase computation based on the integral representation of~\cite{XZ} predicts $\Gr(\ell)\sim e^{\ell+1-\gamma}$ ($\gamma$ Euler's constant); a numerical evaluation of the last sign change of the real-$n$ extension up to $\ell=100$ gives $\Gr/r$ decreasing slowly to about $1.533$, to be compared with $e^{1-\gamma}=1.526$. We have not proved this, and we did not have this evaluation reproduced independently; we include it only as a conjecture.
